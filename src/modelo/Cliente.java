@@ -6,13 +6,15 @@ public class Cliente {
     private String apellido;
     private String usuario;
     private String clave;
-    private String ciudad;
+    private Ciudad ciudad;
     private String direccion;
     private String nCedula;
     private String nCelular;
 
+    
+        // constructor
     public Cliente(String nombre, String apellido, String usuario, String clave, 
-            String ciudad, String direccion, String nCedula, String nCelular) {
+            Ciudad ciudad, String direccion, String nCedula, String nCelular) {
         
         this.nombre = nombre;
         this.apellido = apellido;
@@ -25,6 +27,12 @@ public class Cliente {
     }
 
     public Cliente() {
+    }
+
+        // constructor para ingresar
+    public Cliente(String usuario, String clave) {
+        this.usuario = usuario;
+        this.clave = clave;
     }
     
     
