@@ -45,7 +45,7 @@
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-          <Color blue="99" green="99" red="99" type="rgb"/>
+          <Color blue="cc" green="cc" red="cc" type="rgb"/>
         </Property>
       </Properties>
 
@@ -66,31 +66,36 @@
               </Group>
               <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
-                          <Component id="jLabel1" min="-2" pref="168" max="-2" attributes="0"/>
-                      </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                           <Component id="jLabel2" min="-2" pref="393" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="btnGerencia" min="-2" pref="121" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Group type="102" attributes="0">
-                                          <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
-                                          <Component id="btnIngresaC" min="-2" pref="121" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Component id="btnIngresarE" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="jLabel4" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="btnIngresaC" min="-2" pref="121" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="btnIngresarE" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="58" max="-2" attributes="0"/>
                                   <Component id="txtIngresoMensaje" min="-2" pref="196" max="-2" attributes="0"/>
                               </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
+                                  <Component id="btnGerencia" min="-2" pref="121" max="-2" attributes="0"/>
+                              </Group>
                           </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" pref="111" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel5" min="-2" pref="156" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -105,9 +110,12 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" pref="30" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabel1" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                      <Component id="jLabel5" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                   <Component id="jSeparator2" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" pref="34" max="-2" attributes="0"/>
@@ -125,10 +133,11 @@
                   <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                   <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="btnIngresarE" min="-2" pref="34" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
-                  <Component id="btnGerencia" min="-2" pref="34" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="btnIngresarE" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                      <Component id="btnGerencia" alignment="3" min="-2" pref="34" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -139,7 +148,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Bauhaus 93" size="18" style="2"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Bienvenido!"/>
+            <Property name="text" type="java.lang.String" value="Bienvenido a"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
@@ -149,6 +158,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnRegistro">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="99" red="99" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="0"/>
             </Property>
@@ -176,6 +188,9 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnIngresaC">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="99" red="99" type="rgb"/>
+            </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="0"/>
             </Property>
@@ -184,24 +199,46 @@
         </Component>
         <Component class="javax.swing.JButton" name="btnIngresarE">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="99" red="99" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Ingresar Como Empleado"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="btnGerencia">
           <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="99" green="99" red="99" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Gerencia"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtIngresoMensaje">
+        </Component>
+        <Component class="javax.swing.JSeparator" name="jSeparator1">
           <Properties>
-            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="66" red="66" type="rgb"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JSeparator" name="jSeparator1">
-        </Component>
         <Component class="javax.swing.JSeparator" name="jSeparator2">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="66" red="66" type="rgb"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="66" green="66" red="66" type="rgb"/>
+            </Property>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabel5">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Stencil" size="24" style="0"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="LogiX!"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

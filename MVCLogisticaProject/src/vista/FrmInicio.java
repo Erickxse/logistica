@@ -38,17 +38,19 @@ public class FrmInicio extends javax.swing.JFrame {
         txtIngresoMensaje = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Inicio");
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel1.setFont(new java.awt.Font("Bauhaus 93", 2, 18)); // NOI18N
-        jLabel1.setText("Bienvenido!");
+        jLabel1.setText("Bienvenido a");
 
         jLabel2.setText("Sistema de Transporte de Mensajeria y Paqueteria");
 
+        btnRegistro.setBackground(new java.awt.Color(153, 153, 153));
         btnRegistro.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnRegistro.setText("REGISTRATE");
         btnRegistro.addActionListener(new java.awt.event.ActionListener() {
@@ -63,14 +65,23 @@ public class FrmInicio extends javax.swing.JFrame {
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setText("ó");
 
+        btnIngresaC.setBackground(new java.awt.Color(153, 153, 153));
         btnIngresaC.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnIngresaC.setText("INGRESA");
 
+        btnIngresarE.setBackground(new java.awt.Color(153, 153, 153));
         btnIngresarE.setText("Ingresar Como Empleado");
 
+        btnGerencia.setBackground(new java.awt.Color(153, 153, 153));
         btnGerencia.setText("Gerencia");
 
-        txtIngresoMensaje.setBackground(new java.awt.Color(204, 204, 204));
+        jSeparator1.setForeground(new java.awt.Color(102, 102, 102));
+
+        jSeparator2.setBackground(new java.awt.Color(102, 102, 102));
+        jSeparator2.setForeground(new java.awt.Color(102, 102, 102));
+
+        jLabel5.setFont(new java.awt.Font("Stencil", 0, 24)); // NOI18N
+        jLabel5.setText("LogiX!");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -89,24 +100,28 @@ public class FrmInicio extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(43, 43, 43)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 393, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(48, 48, 48)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnGerencia, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jLabel4)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(btnIngresaC, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(btnIngresarE))
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnIngresaC, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnIngresarE))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(58, 58, 58)
-                                .addComponent(txtIngresoMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(txtIngresoMensaje, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(107, 107, 107)
+                                .addComponent(btnGerencia, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(43, 43, 43)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -116,9 +131,11 @@ public class FrmInicio extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(2, 2, 2)
+                .addGap(16, 16, 16)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(1, 1, 1)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -134,10 +151,10 @@ public class FrmInicio extends javax.swing.JFrame {
                 .addGap(56, 56, 56)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnIngresarE, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29)
-                .addComponent(btnGerencia, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnIngresarE, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnGerencia, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(106, 106, 106))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -208,6 +225,7 @@ public class FrmInicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
