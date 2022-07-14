@@ -96,7 +96,7 @@
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                               <Component id="txtDireccion" pref="118" max="32767" attributes="0"/>
-                                              <Component id="txtContraseña" max="32767" attributes="0"/>
+                                              <Component id="txtClave" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
@@ -152,7 +152,7 @@
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="txtUsuario" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="txtContraseña" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtClave" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Component id="btnCrearCuenta" min="-2" max="-2" attributes="0"/>
@@ -206,7 +206,7 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel5">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Contrase&#xf1;a:"/>
+            <Property name="text" type="java.lang.String" value="Clave:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtCiudad">
@@ -239,7 +239,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtContrase&#xf1;a">
+        <Component class="javax.swing.JTextField" name="txtClave">
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>

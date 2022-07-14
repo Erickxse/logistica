@@ -42,7 +42,7 @@ public class FrmRegistroCliente extends javax.swing.JFrame {
         txtUsuario = new javax.swing.JTextField();
         txtApellido = new javax.swing.JTextField();
         txtDireccion = new javax.swing.JTextField();
-        txtContraseña = new javax.swing.JTextField();
+        txtClave = new javax.swing.JTextField();
         txtNombre = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
         btnCrearCuenta = new javax.swing.JButton();
@@ -65,7 +65,7 @@ public class FrmRegistroCliente extends javax.swing.JFrame {
 
         jLabel4.setText("Usuario:");
 
-        jLabel5.setText("Contraseña:");
+        jLabel5.setText("Clave:");
 
         btnCrearCuenta.setText("Crear Cuenta");
         btnCrearCuenta.addActionListener(new java.awt.event.ActionListener() {
@@ -119,7 +119,7 @@ public class FrmRegistroCliente extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(txtDireccion, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE)
-                                            .addComponent(txtContraseña)))))
+                                            .addComponent(txtClave)))))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(btnCrearCuenta, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -160,7 +160,7 @@ public class FrmRegistroCliente extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(jLabel5)
                     .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtClave, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(27, 27, 27)
                 .addComponent(btnCrearCuenta)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -243,7 +243,7 @@ public class FrmRegistroCliente extends javax.swing.JFrame {
     public javax.swing.JTextField txtApellido;
     public javax.swing.JTextField txtCedula;
     public javax.swing.JTextField txtCiudad;
-    public javax.swing.JTextField txtContraseña;
+    public javax.swing.JTextField txtClave;
     public javax.swing.JTextField txtDireccion;
     public javax.swing.JTextField txtNombre;
     public javax.swing.JTextField txtTelefono;
