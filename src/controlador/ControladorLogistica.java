@@ -49,15 +49,17 @@ public class ControladorLogistica implements ActionListener, KeyListener {
     FrmIngresoC objVistaIngresoC = new FrmIngresoC();
     
     
-    public ControladorLogistica(FrmInicio inicio, ClienteDAO cdao, FrmIngresoC ingreso){
+    public ControladorLogistica(FrmInicio inicio,FrmIngresoC ingreso){
         objVistaInicio = inicio;
-        objCDAO = cdao;
         objVistaIngresoC = ingreso;
+        
+        //BOTONES JFRAME (INTERFAZ) INICIO
         objVistaInicio.btnIngresaC.addActionListener(this);
-        /*objVistaInicio.btnIngresarE.addActionListener(this);
+        objVistaInicio.btnIngresarE.addActionListener(this);
         objVistaInicio.btnRegistro.addActionListener(this);
         objVistaInicio.btnGerencia.addActionListener(this);
-        objVistaInicio.btnSalir.addActionListener(this);*/
+        objVistaInicio.btnSalir.addActionListener(this);
+       
     }
     
     //abstract metods
@@ -67,6 +69,7 @@ public class ControladorLogistica implements ActionListener, KeyListener {
         if(e.getSource()== objVistaInicio.btnIngresaC){ 
             FrmIngresoC ingreso = new FrmIngresoC();
             ingreso.setVisible(true);
+            objVistaInicio.setVisible(false);
         }
     }
 
