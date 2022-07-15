@@ -18,7 +18,7 @@ import vista.FrmIngresoC;
 import vista.FrmInicio;
 import vista.FrmRegistroCliente;
 
-public class ControladorLogistica implements ActionListener, KeyListener {
+public class ControladorInicio implements ActionListener, KeyListener {
 
     
         //cliente
@@ -49,7 +49,7 @@ public class ControladorLogistica implements ActionListener, KeyListener {
     FrmIngresoC objVistaIngresoC = new FrmIngresoC();
     
     
-    public ControladorLogistica(FrmInicio inicio,FrmIngresoC ingreso){
+    public ControladorInicio(FrmInicio inicio,FrmIngresoC ingreso){
         objVistaInicio = inicio;
         objVistaIngresoC = ingreso;
         

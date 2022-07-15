@@ -9,7 +9,7 @@ public class GestorLogistica {
             FrmInicio in = new FrmInicio();
             FrmIngresoC inc = new FrmIngresoC();
             
-            ControladorLogistica cl = new ControladorLogistica(in, inc);
+            ControladorInicio cl = new ControladorInicio(in, inc);
             ControladorIngresoC cic = new ControladorIngresoC(inc, in);
             
             in.setVisible(true);
