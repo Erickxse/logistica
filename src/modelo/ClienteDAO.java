@@ -22,4 +22,7 @@ public class ClienteDAO {
         documento.put("celularC", c.getnCelular());
         objCon.coleccionCliente.insert(documento); //insertar en base de datos
     }
+    
+    
+    
 }
