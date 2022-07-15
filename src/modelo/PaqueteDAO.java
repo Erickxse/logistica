@@ -1,13 +1,20 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package modelo;
 
-/**
- *
- * @author SR. MORA
- */
+import com.mongodb.BasicDBObject;
+
 public class PaqueteDAO {
     
+    public void insertarPaquete(Paquete p){
+        
+        ConexionBD objCon = new ConexionBD();
+        BasicDBObject documento = new BasicDBObject();
+        documento.put("codigoP", p.getCodigo());
+        documento.put("pesoP", p.getPeso());
+        documento.put("ciudadP1", p.getCiudad1());
+        documento.put("ciudadP2", p.getCiudad2());
+        documento.put("direccionP1", p.getDireccion1());
+        documento.put("direccionP2", p.getDireccion2());
+        objCon.coleccionPaquete.insert(documento); //insertar paquete A BD
+    }
 }
