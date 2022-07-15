@@ -21,5 +21,58 @@ public class Paquete {
     public Paquete() {
     }
     
+    //GETS 
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public double getPeso() {
+        return peso;
+    }
+
+    public Ciudad getCiudad1() {
+        return ciudad1;
+    }
+
+    public Ciudad getCiudad2() {
+        return ciudad2;
+    }
+
+    public String getDireccion1() {
+        return direccion1;
+    }
+
+    public String getDireccion2() {
+        return direccion2;
+    }
+    
+    
+    //SETS
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public void setPeso(double peso) {
+        this.peso = peso;
+    }
+
+    public void setCiudad1(Ciudad ciudad1) {
+        this.ciudad1 = ciudad1;
+    }
+
+    public void setCiudad2(Ciudad ciudad2) {
+        this.ciudad2 = ciudad2;
+    }
+
+    public void setDireccion1(String direccion1) {
+        this.direccion1 = direccion1;
+    }
+
+    public void setDireccion2(String direccion2) {
+        this.direccion2 = direccion2;
+    }
+    
     
 }
