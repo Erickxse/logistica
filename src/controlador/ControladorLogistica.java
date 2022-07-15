@@ -54,10 +54,10 @@ public class ControladorLogistica implements ActionListener, KeyListener {
         objCDAO = cdao;
         objVistaIngresoC = ingreso;
         objVistaInicio.btnIngresaC.addActionListener(this);
-        objVistaInicio.btnIngresarE.addActionListener(this);
+        /*objVistaInicio.btnIngresarE.addActionListener(this);
         objVistaInicio.btnRegistro.addActionListener(this);
         objVistaInicio.btnGerencia.addActionListener(this);
-        objVistaInicio.btnSalir.addActionListener(this);
+        objVistaInicio.btnSalir.addActionListener(this);*/
     }
     
     //abstract metods
@@ -65,6 +65,8 @@ public class ControladorLogistica implements ActionListener, KeyListener {
     public void actionPerformed(ActionEvent e) {
                 
         if(e.getSource()== objVistaInicio.btnIngresaC){ 
+            FrmIngresoC ingreso = new FrmIngresoC();
+            ingreso.setVisible(true);
         }
     }
 

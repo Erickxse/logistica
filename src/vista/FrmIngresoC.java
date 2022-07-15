@@ -137,11 +137,11 @@ public class FrmIngresoC extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnIngresarC;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel3;
     public javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtClaveC;
-    private javax.swing.JTextField txtUsuarioC;
+    public javax.swing.JTextField txtClaveC;
+    public javax.swing.JTextField txtUsuarioC;
     // End of variables declaration//GEN-END:variables
 }
