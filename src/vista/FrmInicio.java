@@ -38,7 +38,7 @@ public class FrmInicio extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel5 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnSalir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Inicio");
@@ -68,6 +68,11 @@ public class FrmInicio extends javax.swing.JFrame {
         btnIngresaC.setBackground(new java.awt.Color(153, 153, 153));
         btnIngresaC.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnIngresaC.setText("INGRESA");
+        btnIngresaC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIngresaCActionPerformed(evt);
+            }
+        });
 
         btnIngresarE.setBackground(new java.awt.Color(153, 153, 153));
         btnIngresarE.setText("Ingresar Como Empleado");
@@ -83,8 +88,8 @@ public class FrmInicio extends javax.swing.JFrame {
         jLabel5.setFont(new java.awt.Font("Stencil", 0, 24)); // NOI18N
         jLabel5.setText("LogiX!");
 
-        jButton1.setBackground(new java.awt.Color(153, 153, 153));
-        jButton1.setText("Salir ");
+        btnSalir.setBackground(new java.awt.Color(153, 153, 153));
+        btnSalir.setText("Salir ");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -116,7 +121,7 @@ public class FrmInicio extends javax.swing.JFrame {
                         .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(213, 213, 213)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(btnSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(48, 48, 48)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -155,7 +160,7 @@ public class FrmInicio extends javax.swing.JFrame {
                     .addComponent(btnIngresarE, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnGerencia, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54)
-                .addComponent(jButton1)
+                .addComponent(btnSalir)
                 .addGap(30, 30, 30))
         );
 
@@ -182,6 +187,10 @@ public class FrmInicio extends javax.swing.JFrame {
     private void btnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnRegistroActionPerformed
+
+    private void btnIngresaCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresaCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnIngresaCActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,17 +228,17 @@ public class FrmInicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnGerencia;
-    private javax.swing.JButton btnIngresaC;
-    private javax.swing.JButton btnIngresarE;
-    private javax.swing.JButton btnRegistro;
-    private javax.swing.JButton jButton1;
+    public javax.swing.JButton btnGerencia;
+    public javax.swing.JButton btnIngresaC;
+    public javax.swing.JButton btnIngresarE;
+    public javax.swing.JButton btnRegistro;
+    public javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     // End of variables declaration//GEN-END:variables

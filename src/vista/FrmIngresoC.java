@@ -140,7 +140,7 @@ public class FrmIngresoC extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtClaveC;
     private javax.swing.JTextField txtUsuarioC;
     // End of variables declaration//GEN-END:variables

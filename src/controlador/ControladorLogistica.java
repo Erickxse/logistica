@@ -43,18 +43,29 @@ public class ControladorLogistica implements ActionListener, KeyListener {
     GerenteDAO objGDAO = new GerenteDAO();
     Gerente objGerente = new Gerente();
     
-    //INTERFACES
+    //INTERFACES FRAMES
     FrmInicio objVistaInicio = new FrmInicio();
     FrmRegistroCliente objVistaRCliente = new FrmRegistroCliente();
     FrmIngresoC objVistaIngresoC = new FrmIngresoC();
     
     
-    
+    public ControladorLogistica(FrmInicio inicio, ClienteDAO cdao, FrmIngresoC ingreso){
+        objVistaInicio = inicio;
+        objCDAO = cdao;
+        objVistaIngresoC = ingreso;
+        objVistaInicio.btnIngresaC.addActionListener(this);
+        objVistaInicio.btnIngresarE.addActionListener(this);
+        objVistaInicio.btnRegistro.addActionListener(this);
+        objVistaInicio.btnGerencia.addActionListener(this);
+        objVistaInicio.btnSalir.addActionListener(this);
+    }
     
     //abstract metods
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+                
+        if(e.getSource()== objVistaInicio.btnIngresaC){ 
+        }
     }
 
     @Override
