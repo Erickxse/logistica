@@ -71,6 +71,11 @@ public class FrmInicio extends javax.swing.JFrame {
 
         btnGerencia.setBackground(new java.awt.Color(153, 153, 153));
         btnGerencia.setText("Gerencia");
+        btnGerencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGerenciaActionPerformed(evt);
+            }
+        });
 
         jSeparator1.setForeground(new java.awt.Color(102, 102, 102));
 
@@ -183,6 +188,10 @@ public class FrmInicio extends javax.swing.JFrame {
     private void btnIngresaCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresaCActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnIngresaCActionPerformed
+
+    private void btnGerenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerenciaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnGerenciaActionPerformed
 
     /**
      * @param args the command line arguments

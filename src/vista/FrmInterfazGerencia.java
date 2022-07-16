@@ -36,7 +36,7 @@ public class FrmInterfazGerencia extends javax.swing.JFrame {
         btnAgregarT = new javax.swing.JButton();
         btnQuitarT = new javax.swing.JButton();
         btnVerT = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnCerrarSesion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -61,8 +61,8 @@ public class FrmInterfazGerencia extends javax.swing.JFrame {
 
         btnVerT.setText("Ver Unidades Activas");
 
-        jButton1.setBackground(new java.awt.Color(204, 204, 204));
-        jButton1.setText("< Cerrar Sesion");
+        btnCerrarSesion.setBackground(new java.awt.Color(204, 204, 204));
+        btnCerrarSesion.setText("< Cerrar Sesion");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -83,7 +83,7 @@ public class FrmInterfazGerencia extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(btnCerrarSesion)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,7 +119,7 @@ public class FrmInterfazGerencia extends javax.swing.JFrame {
                     .addComponent(btnVerE)
                     .addComponent(btnVerT))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(btnCerrarSesion)
                 .addGap(17, 17, 17))
         );
 
@@ -180,11 +180,11 @@ public class FrmInterfazGerencia extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnAgregarE;
     public javax.swing.JButton btnAgregarT;
+    public javax.swing.JButton btnCerrarSesion;
     public javax.swing.JButton btnEliminarE;
     public javax.swing.JButton btnQuitarT;
     public javax.swing.JButton btnVerE;
     public javax.swing.JButton btnVerT;
-    public javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

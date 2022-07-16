@@ -43,7 +43,7 @@ public class FrmRegistrarE extends javax.swing.JFrame {
         txtContraseña = new javax.swing.JTextField();
         btnRegistrarE = new javax.swing.JButton();
         cmbCiudadE = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        btnRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,7 +72,7 @@ public class FrmRegistrarE extends javax.swing.JFrame {
 
         btnRegistrarE.setText("Registrar");
 
-        jButton1.setText("< Regresar");
+        btnRegresar.setText("< Regresar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -111,7 +111,7 @@ public class FrmRegistrarE extends javax.swing.JFrame {
                                     .addComponent(jLabel7)))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(16, 16, 16)
-                                .addComponent(jButton1)))
+                                .addComponent(btnRegresar)))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtDireccion, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -164,7 +164,7 @@ public class FrmRegistrarE extends javax.swing.JFrame {
                         .addContainerGap(26, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
+                        .addComponent(btnRegresar)
                         .addGap(15, 15, 15))))
         );
 
@@ -229,8 +229,8 @@ public class FrmRegistrarE extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnRegistrarE;
+    public javax.swing.JButton btnRegresar;
     public javax.swing.JComboBox<String> cmbCiudadE;
-    public javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

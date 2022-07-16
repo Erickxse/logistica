@@ -5,7 +5,10 @@ import vista.FrmGerencia;
 import vista.FrmIngresoC;
 import vista.FrmIngresoE;
 import vista.FrmInicio;
+import vista.FrmInterfazGerencia;
+import vista.FrmRegistrarE;
 import vista.FrmRegistroCliente;
+import vista.FrmTransporte;
 
 public class GestorLogistica {
  
@@ -13,40 +16,40 @@ public class GestorLogistica {
             FrmInicio in = new FrmInicio();
             FrmIngresoC inc = new FrmIngresoC();
             FrmRegistroCliente registroCliente = new FrmRegistroCliente();
-            FrmIngresoE ingresoe = new FrmIngresoE();
+            FrmIngresoE ingresoE = new FrmIngresoE();
             FrmGerencia gerencia = new FrmGerencia();
+            FrmInterfazGerencia interfaz = new FrmInterfazGerencia();
+            FrmRegistrarE regE = new FrmRegistrarE();
+            FrmTransporte tran = new FrmTransporte();
             
-
                 //DAO
             ClienteDAO objClienteDAO = new ClienteDAO();
-            
-            ControladorInicio cl = new ControladorInicio(in, inc, registroCliente, ingresoe, gerencia);
+
+            ControladorInicio cl = new ControladorInicio(in, inc, registroCliente, ingresoE, gerencia);
             ControladorIngresoC cic = new ControladorIngresoC(inc, in);
             ControladorRegistroC registroClienteControlador = new ControladorRegistroC(registroCliente, in, objClienteDAO);
-            ControladorIngresoE ingresoEControlador = new ControladorIngresoE(ingresoe, in);
-            ControladorGerencia gerenciaCont = new ControladorGerencia(gerencia, in);
+            ControladorIngresoE ingresoEControlador = new ControladorIngresoE(ingresoE, in);
+            ControladorGerencia gerenciaCont = new ControladorGerencia(gerencia, in, interfaz);
+            ControladorInterfazGerencia interfazGerencia = new ControladorInterfazGerencia(interfaz, gerencia, regE, tran);
 
-
-            
             
             in.setVisible(true);
             in.setLocationRelativeTo(in);
-           
-      
+            
             inc.setVisible(false);
             inc.setLocationRelativeTo(in);
-            
             
             registroCliente.setVisible(false);
             registroCliente.setLocationRelativeTo(in);
             
-            ingresoe.setVisible(false);
-            ingresoe.setLocationRelativeTo(in);
+            ingresoE.setVisible(false);
+            ingresoE.setLocationRelativeTo(in);
             
             gerencia.setVisible(false);
             gerencia.setLocationRelativeTo(in);
             
-            
+            interfaz.setVisible(false);
+            interfaz.setLocationRelativeTo(in);
         }
         
 }

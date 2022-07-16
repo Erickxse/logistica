@@ -89,7 +89,7 @@
                               </Group>
                               <Group type="102" attributes="0">
                                   <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                                  <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnRegresar" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
@@ -159,7 +159,7 @@
                       </Group>
                       <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnRegresar" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
                       </Group>
                   </Group>
@@ -263,7 +263,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="btnRegresar">
           <Properties>
             <Property name="text" type="java.lang.String" value="&lt; Regresar"/>
           </Properties>

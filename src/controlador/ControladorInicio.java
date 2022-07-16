@@ -43,7 +43,6 @@ public class ControladorInicio implements ActionListener, KeyListener {
     //abstract metods
     @Override
     public void actionPerformed(ActionEvent e) {
-             
         if(e.getSource()== objVistaInicio.btnIngresaC){ 
             objVistaIngresoC.setVisible(true);
             objVistaInicio.setVisible(false);
