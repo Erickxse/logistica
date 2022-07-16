@@ -4,6 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import modelo.Ciudad;
+import modelo.Cliente;
+import modelo.ClienteDAO;
 import vista.FrmInicio;
 import vista.FrmRegistroCliente;
 
@@ -12,13 +15,35 @@ public class ControladorRegistroC implements ActionListener, KeyListener{
     
     FrmRegistroCliente objVistaRegistroC = new FrmRegistroCliente();
     FrmInicio objVistaInicio = new FrmInicio();
+    ClienteDAO objClienteDAO = new ClienteDAO();
 
-    public ControladorRegistroC(FrmRegistroCliente registro, FrmInicio inicio ) {
+    public ControladorRegistroC(FrmRegistroCliente registro, FrmInicio inicio, ClienteDAO cdao ) {
         objVistaRegistroC = registro;
-        objVistaInicio = inicio;    
+        objVistaInicio = inicio;
+        objClienteDAO = cdao;
+        
         
         objVistaRegistroC.btnRegresarIC.addActionListener(this);
         objVistaRegistroC.btnRegistrarC.addActionListener(this);
+        
+        //combo box
+        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.AMBATO.name());
+        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.AZOGUES.name());
+        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.CUENCA.name());
+        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.ESMERALDAS.name());
+        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.GUARANDA.name());
+        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.GUAYAQUIL.name());
+        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.IBARRA.name());
+        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.LATACUNGA.name());
+        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.MACHALA.name());
+        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.MANTA.name());
+        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.QUITO.name());
+        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.RIOBAMBA.name());
+        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.STO_DOMINGO.name());
+        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.TENA.name());
+        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.TULCAN.name());
+        
+        
                
     }
     
@@ -28,6 +53,24 @@ public class ControladorRegistroC implements ActionListener, KeyListener{
         if (e.getSource()==objVistaRegistroC.btnRegresarIC) {
             objVistaInicio.setVisible(true);
             objVistaRegistroC.setVisible(false);
+        }
+        
+        if(e.getSource()==objVistaRegistroC.btnRegistrarC){
+            
+          
+            String nombre = objVistaRegistroC.txtNombre.getText();
+            String apellido = objVistaRegistroC.txtApellido.getText();
+            String usuario = objVistaRegistroC.txtUsuario.getText();
+            String clave = objVistaRegistroC.txtUsuario.getText();
+            String ciudad = objVistaRegistroC.cmbCiudadC.getName();
+            String direccion = objVistaRegistroC.txtDireccion.getText();
+            String nCedula = objVistaRegistroC.txtCedula.getText();
+            String nCelular = objVistaRegistroC.txtTelefono.getText();
+            
+            Cliente objCliente = new Cliente(nombre, apellido, usuario, clave, ciudad, 
+                    direccion, nCedula, nCelular);
+            objClienteDAO.insertarCliente(objCliente);
+        
         }
     }
 

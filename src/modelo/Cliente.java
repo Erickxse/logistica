@@ -6,7 +6,7 @@ public class Cliente {
     private String apellido;
     private String usuario;
     private String clave;
-    private Ciudad ciudad;
+    private String ciudad;
     private String direccion;
     private String nCedula;
     private String nCelular;
@@ -14,7 +14,7 @@ public class Cliente {
     
         // constructor
     public Cliente(String nombre, String apellido, String usuario, String clave, 
-            Ciudad ciudad, String direccion, String nCedula, String nCelular) {
+            String ciudad, String direccion, String nCedula, String nCelular) {
         
         this.nombre = nombre;
         this.apellido = apellido;
@@ -54,7 +54,7 @@ public class Cliente {
         return clave;
     }
 
-    public Ciudad getCiudad() {
+    public String getCiudad() {
         return ciudad;
     }
 
@@ -88,7 +88,7 @@ public class Cliente {
         this.clave = clave;
     }
 
-    public void setCiudad(Ciudad ciudad) {
+    public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
     }
 
@@ -106,6 +106,11 @@ public class Cliente {
     
     
     //to string
+
+    @Override
+    public String toString() {
+        return "Cliente{" + "nombre=" + nombre + ", apellido=" + apellido + ", usuario=" + usuario + ", clave=" + clave + ", ciudad=" + ciudad + ", direccion=" + direccion + ", nCedula=" + nCedula + ", nCelular=" + nCelular + '}';
+    }
     
     
     

@@ -1,5 +1,6 @@
 package controlador;
 
+import modelo.ClienteDAO;
 import vista.FrmGerencia;
 import vista.FrmIngresoC;
 import vista.FrmIngresoE;
@@ -16,9 +17,12 @@ public class GestorLogistica {
             FrmGerencia gerencia = new FrmGerencia();
             
 
+                //DAO
+            ClienteDAO objClienteDAO = new ClienteDAO();
+            
             ControladorInicio cl = new ControladorInicio(in, inc, registroCliente, ingresoe, gerencia);
             ControladorIngresoC cic = new ControladorIngresoC(inc, in);
-            ControladorRegistroC registroClienteControlador = new ControladorRegistroC(registroCliente, in);
+            ControladorRegistroC registroClienteControlador = new ControladorRegistroC(registroCliente, in, objClienteDAO);
             ControladorIngresoE ingresoEControlador = new ControladorIngresoE(ingresoe, in);
             ControladorGerencia gerenciaCont = new ControladorGerencia(gerencia, in);
 
