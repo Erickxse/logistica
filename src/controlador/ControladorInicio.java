@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import vista.FrmGerencia;
 import vista.FrmIngresoC;
 import vista.FrmIngresoE;
 import vista.FrmInicio;
@@ -18,13 +19,17 @@ public class ControladorInicio implements ActionListener, KeyListener {
     FrmRegistroCliente objVistaRCliente = new FrmRegistroCliente();
     FrmIngresoC objVistaIngresoC = new FrmIngresoC();
     FrmIngresoE objVistaIngresoE = new FrmIngresoE();
+    FrmGerencia objVistaGerencia = new FrmGerencia();
     
     
-    public ControladorInicio(FrmInicio inicio,FrmIngresoC ingreso, FrmRegistroCliente registro, FrmIngresoE ingresoe){
+    public ControladorInicio(FrmInicio inicio,FrmIngresoC ingreso, FrmRegistroCliente registro, 
+            FrmIngresoE ingresoe, FrmGerencia gerencia){
+        
         objVistaInicio = inicio;
         objVistaIngresoC = ingreso;
         objVistaRCliente = registro;
         objVistaIngresoE = ingresoe;
+        objVistaGerencia = gerencia;
         
         //BOTONES JFRAME (INTERFAZ) INICIO
         objVistaInicio.btnIngresaC.addActionListener(this);
@@ -50,6 +55,15 @@ public class ControladorInicio implements ActionListener, KeyListener {
         if(e.getSource()==objVistaInicio.btnIngresarE){
             objVistaIngresoE.setVisible(true);
             objVistaInicio.setVisible(false);
+        }
+        
+        if(e.getSource()==objVistaInicio.btnGerencia){
+            objVistaGerencia.setVisible(true);
+            objVistaInicio.setVisible(false);
+        }
+        
+        if(e.getSource() == objVistaInicio.btnSalir){
+            System.exit(0);
         }
     }
 

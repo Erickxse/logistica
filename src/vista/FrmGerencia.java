@@ -30,7 +30,7 @@ public class FrmGerencia extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtCodigoGerente = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btnIngresar = new javax.swing.JButton();
         btnRegresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -40,7 +40,7 @@ public class FrmGerencia extends javax.swing.JFrame {
 
         jLabel2.setText("Codigo Unico de Gerente:");
 
-        jButton1.setText("Ingresar ");
+        btnIngresar.setText("Ingresar ");
 
         btnRegresar.setText("< Regresar");
 
@@ -63,7 +63,7 @@ public class FrmGerencia extends javax.swing.JFrame {
                         .addGap(14, 14, 14)
                         .addComponent(btnRegresar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1)
+                        .addComponent(btnIngresar)
                         .addGap(32, 32, 32)))
                 .addContainerGap(64, Short.MAX_VALUE))
         );
@@ -78,7 +78,7 @@ public class FrmGerencia extends javax.swing.JFrame {
                     .addComponent(txtCodigoGerente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
+                    .addComponent(btnIngresar)
                     .addComponent(btnRegresar))
                 .addContainerGap(11, Short.MAX_VALUE))
         );
@@ -139,8 +139,8 @@ public class FrmGerencia extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnIngresar;
     public javax.swing.JButton btnRegresar;
-    public javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

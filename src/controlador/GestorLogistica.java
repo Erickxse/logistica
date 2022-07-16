@@ -1,5 +1,6 @@
 package controlador;
 
+import vista.FrmGerencia;
 import vista.FrmIngresoC;
 import vista.FrmIngresoE;
 import vista.FrmInicio;
@@ -12,31 +13,34 @@ public class GestorLogistica {
             FrmIngresoC inc = new FrmIngresoC();
             FrmRegistroCliente registroCliente = new FrmRegistroCliente();
             FrmIngresoE ingresoe = new FrmIngresoE();
+            FrmGerencia gerencia = new FrmGerencia();
             
 
-            ControladorInicio cl = new ControladorInicio(in, inc, registroCliente, ingresoe);
+            ControladorInicio cl = new ControladorInicio(in, inc, registroCliente, ingresoe, gerencia);
             ControladorIngresoC cic = new ControladorIngresoC(inc, in);
             ControladorRegistroC registroClienteControlador = new ControladorRegistroC(registroCliente, in);
             ControladorIngresoE ingresoEControlador = new ControladorIngresoE(ingresoe, in);
+            ControladorGerencia gerenciaCont = new ControladorGerencia(gerencia, in);
 
-            //ControladorInicio cl = new ControladorInicio(in, inc);
 
             
             
             in.setVisible(true);
             in.setLocationRelativeTo(in);
-            
-            //ControladorIngresoC cic = new ControladorIngresoC(inc, in);
+           
       
             inc.setVisible(false);
-            inc.setLocationRelativeTo(inc);
+            inc.setLocationRelativeTo(in);
             
             
             registroCliente.setVisible(false);
-            registroCliente.setLocationRelativeTo(registroCliente);
+            registroCliente.setLocationRelativeTo(in);
             
             ingresoe.setVisible(false);
-            ingresoe.setLocationRelativeTo(ingresoe);
+            ingresoe.setLocationRelativeTo(in);
+            
+            gerencia.setVisible(false);
+            gerencia.setLocationRelativeTo(in);
             
             
         }
