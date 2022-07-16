@@ -22,7 +22,7 @@ public class ControladorIngresoC implements ActionListener, KeyListener{
         objVistaInicio = inicio;
         
         objVistaIngresoC.btnIngresarC.addActionListener(this);
-        objVistaIngresoC.btnRegresar.addActionListener(this);
+        ingreso.btnRegresar.addActionListener(this);
         
     }
     //ABSTRACT METODS
@@ -32,6 +32,7 @@ public class ControladorIngresoC implements ActionListener, KeyListener{
         if(e.getSource()==objVistaIngresoC.btnRegresar){
             objVistaInicio.setVisible(true);
             objVistaIngresoC.setVisible(false);
+            
         }
     }
     

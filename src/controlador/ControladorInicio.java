@@ -4,16 +4,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import modelo.Cliente;
-import modelo.ClienteDAO;
-import modelo.Empleado;
-import modelo.EmpleadoDAO;
-import modelo.Gerente;
-import modelo.GerenteDAO;
-import modelo.Paquete;
-import modelo.PaqueteDAO;
-import modelo.Transporte;
-import modelo.TransporteDAO;
 import vista.FrmIngresoC;
 import vista.FrmIngresoE;
 import vista.FrmInicio;
@@ -22,28 +12,7 @@ import vista.FrmRegistroCliente;
 public class ControladorInicio implements ActionListener, KeyListener {
 
     
-        //cliente
-    ClienteDAO objCDAO = new ClienteDAO();
-    Cliente objCliente = new Cliente();
-    
-        //paquete
-    PaqueteDAO objPDAO = new PaqueteDAO();
-    Paquete objPaquete = new Paquete();
-    
-        //empleado
-    
-    EmpleadoDAO objEDAO = new EmpleadoDAO();
-    Empleado objEmpleado = new Empleado();
-    
-        //transporte
-    
-    TransporteDAO objTDAO = new TransporteDAO();
-    Transporte objTransporte = new Transporte();
-    
-        //gerente 
-    GerenteDAO objGDAO = new GerenteDAO();
-    Gerente objGerente = new Gerente();
-    
+
     //INTERFACES FRAMES
     FrmInicio objVistaInicio = new FrmInicio();
     FrmRegistroCliente objVistaRCliente = new FrmRegistroCliente();
@@ -58,12 +27,11 @@ public class ControladorInicio implements ActionListener, KeyListener {
         objVistaIngresoE = ingresoe;
         
         //BOTONES JFRAME (INTERFAZ) INICIO
-        objVistaInicio.btnIngresaC.addActionListener(this);
+        inicio.btnIngresaC.addActionListener(this);
         objVistaInicio.btnIngresarE.addActionListener(this);
         objVistaInicio.btnRegistroIC.addActionListener(this);
         objVistaInicio.btnGerencia.addActionListener(this);
-        objVistaInicio.btnSalir.addActionListener(this);
-       
+        objVistaInicio.btnSalir.addActionListener(this);  
     }
 
     ControladorInicio(FrmInicio in, FrmIngresoC inc, FrmRegistroCliente registroCliente) {
@@ -75,8 +43,7 @@ public class ControladorInicio implements ActionListener, KeyListener {
     public void actionPerformed(ActionEvent e) {
              
         if(e.getSource()== objVistaInicio.btnIngresaC){ 
-            FrmIngresoC ingreso = new FrmIngresoC();
-            ingreso.setVisible(true);
+            objVistaIngresoC.setVisible(true);
             objVistaInicio.setVisible(false);
         }
         if(e.getSource()==objVistaInicio.btnRegistroIC){
