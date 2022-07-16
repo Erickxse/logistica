@@ -10,11 +10,13 @@ public class GestorLogistica {
             FrmIngresoC inc = new FrmIngresoC();
             
             ControladorInicio cl = new ControladorInicio(in, inc);
-            ControladorIngresoC cic = new ControladorIngresoC(inc, in);
+            
             
             in.setVisible(true);
             in.setLocationRelativeTo(in);
             
+            ControladorIngresoC cic = new ControladorIngresoC(inc, in);
+      
             inc.setVisible(false);
             inc.setLocationRelativeTo(inc);
         }
