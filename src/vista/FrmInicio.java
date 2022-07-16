@@ -21,7 +21,7 @@ public class FrmInicio extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        btnRegistro = new javax.swing.JButton();
+        btnRegistroIC = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         btnIngresaC = new javax.swing.JButton();
@@ -42,12 +42,12 @@ public class FrmInicio extends javax.swing.JFrame {
 
         jLabel2.setText("Sistema de Transporte de Mensajeria y Paqueteria");
 
-        btnRegistro.setBackground(new java.awt.Color(153, 153, 153));
-        btnRegistro.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        btnRegistro.setText("REGISTRATE");
-        btnRegistro.addActionListener(new java.awt.event.ActionListener() {
+        btnRegistroIC.setBackground(new java.awt.Color(153, 153, 153));
+        btnRegistroIC.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        btnRegistroIC.setText("REGISTRATE");
+        btnRegistroIC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistroActionPerformed(evt);
+                btnRegistroICActionPerformed(evt);
             }
         });
 
@@ -91,7 +91,7 @@ public class FrmInicio extends javax.swing.JFrame {
                 .addGap(32, 32, 32)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                .addComponent(btnRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnRegistroIC, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(231, 231, 231))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -139,7 +139,7 @@ public class FrmInicio extends javax.swing.JFrame {
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnRegistro, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRegistroIC, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel3))
                 .addGap(29, 29, 29)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -176,9 +176,9 @@ public class FrmInicio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnRegistroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroActionPerformed
+    private void btnRegistroICActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistroICActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnRegistroActionPerformed
+    }//GEN-LAST:event_btnRegistroICActionPerformed
 
     private void btnIngresaCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresaCActionPerformed
         // TODO add your handling code here:
@@ -200,7 +200,7 @@ public class FrmInicio extends javax.swing.JFrame {
     public javax.swing.JButton btnGerencia;
     public javax.swing.JButton btnIngresaC;
     public javax.swing.JButton btnIngresarE;
-    public javax.swing.JButton btnRegistro;
+    public javax.swing.JButton btnRegistroIC;
     public javax.swing.JButton btnSalir;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

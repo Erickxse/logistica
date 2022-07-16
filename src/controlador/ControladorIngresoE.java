@@ -4,37 +4,23 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import vista.FrmIngresoC;
+import vista.FrmIngresoE;
 import vista.FrmInicio;
 
-/**
- *
- * @author SR. MORA
- */
-public class ControladorIngresoC implements ActionListener, KeyListener{
+public class ControladorIngresoE implements ActionListener, KeyListener{
+    FrmIngresoE objVistaIngresoE = new FrmIngresoE();
+    FrmInicio objVistaInicio= new FrmInicio();
 
-    FrmIngresoC objVistaIngresoC = new FrmIngresoC();
-    FrmInicio objVistaInicio = new FrmInicio();
-    
-    
-    public ControladorIngresoC(FrmIngresoC ingreso, FrmInicio inicio){
-        objVistaIngresoC = ingreso;
+    public ControladorIngresoE(FrmIngresoE ingresoe, FrmInicio inicio) {
+        objVistaIngresoE = ingresoe;
         objVistaInicio = inicio;
-        
-        objVistaIngresoC.btnIngresarC.addActionListener(this);
-        objVistaIngresoC.btnRegresar.addActionListener(this);
-        
     }
-    //ABSTRACT METODS
     
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource()==objVistaIngresoC.btnRegresar){
-            objVistaInicio.setVisible(true);
-            objVistaIngresoC.setVisible(false);
-        }
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
-    
 
     @Override
     public void keyTyped(KeyEvent e) {

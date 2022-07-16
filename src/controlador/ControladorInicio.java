@@ -15,6 +15,7 @@ import modelo.PaqueteDAO;
 import modelo.Transporte;
 import modelo.TransporteDAO;
 import vista.FrmIngresoC;
+import vista.FrmIngresoE;
 import vista.FrmInicio;
 import vista.FrmRegistroCliente;
 
@@ -47,28 +48,43 @@ public class ControladorInicio implements ActionListener, KeyListener {
     FrmInicio objVistaInicio = new FrmInicio();
     FrmRegistroCliente objVistaRCliente = new FrmRegistroCliente();
     FrmIngresoC objVistaIngresoC = new FrmIngresoC();
+    FrmIngresoE objVistaIngresoE = new FrmIngresoE();
     
     
-    public ControladorInicio(FrmInicio inicio,FrmIngresoC ingreso){
+    public ControladorInicio(FrmInicio inicio,FrmIngresoC ingreso, FrmRegistroCliente registro, FrmIngresoE ingresoe){
         objVistaInicio = inicio;
         objVistaIngresoC = ingreso;
+        objVistaRCliente = registro;
+        objVistaIngresoE = ingresoe;
         
         //BOTONES JFRAME (INTERFAZ) INICIO
         objVistaInicio.btnIngresaC.addActionListener(this);
         objVistaInicio.btnIngresarE.addActionListener(this);
-        objVistaInicio.btnRegistro.addActionListener(this);
+        objVistaInicio.btnRegistroIC.addActionListener(this);
         objVistaInicio.btnGerencia.addActionListener(this);
         objVistaInicio.btnSalir.addActionListener(this);
        
     }
-    
+
+    ControladorInicio(FrmInicio in, FrmIngresoC inc, FrmRegistroCliente registroCliente) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     //abstract metods
     @Override
     public void actionPerformed(ActionEvent e) {
-                
+             
         if(e.getSource()== objVistaInicio.btnIngresaC){ 
             FrmIngresoC ingreso = new FrmIngresoC();
             ingreso.setVisible(true);
+            objVistaInicio.setVisible(false);
+        }
+        if(e.getSource()==objVistaInicio.btnRegistroIC){
+            objVistaRCliente.setVisible(true);
+            objVistaInicio.setVisible(false);
+        }
+        if(e.getSource()==objVistaInicio.btnIngresarE){
+            objVistaIngresoE.setVisible(true);
             objVistaInicio.setVisible(false);
         }
     }

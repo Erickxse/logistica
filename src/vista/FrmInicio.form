@@ -59,7 +59,7 @@
                   <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" pref="135" max="-2" attributes="0"/>
                   <EmptySpace pref="36" max="32767" attributes="0"/>
-                  <Component id="btnRegistro" min="-2" pref="121" max="-2" attributes="0"/>
+                  <Component id="btnRegistroIC" min="-2" pref="121" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="231" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
@@ -120,7 +120,7 @@
                   <Component id="jLabel2" min="-2" pref="34" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnRegistro" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                      <Component id="btnRegistroIC" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
@@ -156,7 +156,7 @@
             <Property name="text" type="java.lang.String" value="Sistema de Transporte de Mensajeria y Paqueteria"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btnRegistro">
+        <Component class="javax.swing.JButton" name="btnRegistroIC">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="99" green="99" red="99" type="rgb"/>
@@ -167,7 +167,7 @@
             <Property name="text" type="java.lang.String" value="REGISTRATE"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegistroActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRegistroICActionPerformed"/>
           </Events>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>

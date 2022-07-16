@@ -45,7 +45,7 @@ public class FrmRegistroCliente extends javax.swing.JFrame {
         txtNombre = new javax.swing.JTextField();
         btnRegistrarC = new javax.swing.JButton();
         cmbCiudadC = new javax.swing.JComboBox<>();
-        btnRegresar = new javax.swing.JButton();
+        btnRegresarIC = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -75,7 +75,7 @@ public class FrmRegistroCliente extends javax.swing.JFrame {
             }
         });
 
-        btnRegresar.setText("< Regresar");
+        btnRegresarIC.setText("< Regresar");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -93,7 +93,7 @@ public class FrmRegistroCliente extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnRegresar)
+                        .addComponent(btnRegresarIC)
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -165,7 +165,7 @@ public class FrmRegistroCliente extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(btnRegistrarC)
                 .addGap(50, 50, 50)
-                .addComponent(btnRegresar)
+                .addComponent(btnRegresarIC)
                 .addGap(18, 18, 18))
         );
 
@@ -230,7 +230,7 @@ public class FrmRegistroCliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnRegistrarC;
-    public javax.swing.JButton btnRegresar;
+    public javax.swing.JButton btnRegresarIC;
     public javax.swing.JComboBox<String> cmbCiudadC;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
