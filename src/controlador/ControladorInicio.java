@@ -27,17 +27,14 @@ public class ControladorInicio implements ActionListener, KeyListener {
         objVistaIngresoE = ingresoe;
         
         //BOTONES JFRAME (INTERFAZ) INICIO
-        inicio.btnIngresaC.addActionListener(this);
+        objVistaInicio.btnIngresaC.addActionListener(this);
         objVistaInicio.btnIngresarE.addActionListener(this);
         objVistaInicio.btnRegistroIC.addActionListener(this);
         objVistaInicio.btnGerencia.addActionListener(this);
         objVistaInicio.btnSalir.addActionListener(this);  
     }
 
-    ControladorInicio(FrmInicio in, FrmIngresoC inc, FrmRegistroCliente registroCliente) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
+    
     //abstract metods
     @Override
     public void actionPerformed(ActionEvent e) {

@@ -16,8 +16,13 @@ public class ControladorRegistroC implements ActionListener, KeyListener{
     public ControladorRegistroC(FrmRegistroCliente registro, FrmInicio inicio ) {
         objVistaRegistroC = registro;
         objVistaInicio = inicio;    
+        
+        objVistaRegistroC.btnRegresarIC.addActionListener(this);
+        objVistaRegistroC.btnRegistrarC.addActionListener(this);
                
     }
+    
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource()==objVistaRegistroC.btnRegresarIC) {
