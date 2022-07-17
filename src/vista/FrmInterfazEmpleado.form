@@ -58,7 +58,7 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                          <Component id="btnRegresar" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnRegresarIE" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="156" max="32767" attributes="0"/>
@@ -73,7 +73,7 @@
                   <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                   <Component id="btnIngresarPaquete" min="-2" max="-2" attributes="0"/>
                   <EmptySpace pref="160" max="32767" attributes="0"/>
-                  <Component id="btnRegresar" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnRegresarIE" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -96,7 +96,7 @@
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JButton" name="btnRegresar">
+        <Component class="javax.swing.JButton" name="btnRegresarIE">
           <Properties>
             <Property name="text" type="java.lang.String" value="&lt; Cerrar Sesion"/>
           </Properties>
