@@ -2,9 +2,11 @@ package controlador;
 
 import modelo.ClienteDAO;
 import vista.FrmGerencia;
+import vista.FrmIngresarPaquete;
 import vista.FrmIngresoC;
 import vista.FrmIngresoE;
 import vista.FrmInicio;
+import vista.FrmInterfazEmpleado;
 import vista.FrmRegistroCliente;
 
 public class GestorLogistica {
@@ -15,15 +17,17 @@ public class GestorLogistica {
             FrmRegistroCliente registroCliente = new FrmRegistroCliente();
             FrmIngresoE ingresoe = new FrmIngresoE();
             FrmGerencia gerencia = new FrmGerencia();
-            
+            FrmInterfazEmpleado continuarE = new FrmInterfazEmpleado();
+            FrmIngresarPaquete ingresarP = new FrmIngresarPaquete();
 
                 //DAO
             ClienteDAO objClienteDAO = new ClienteDAO();
             
-            ControladorInicio cl = new ControladorInicio(in, inc, registroCliente, ingresoe, gerencia);
+            
+            ControladorInicio cl = new ControladorInicio(in, inc, registroCliente, ingresoe, continuarE, ingresarP, gerencia);
             ControladorIngresoC cic = new ControladorIngresoC(inc, in);
             ControladorRegistroC registroClienteControlador = new ControladorRegistroC(registroCliente, in, objClienteDAO);
-            ControladorIngresoE ingresoEControlador = new ControladorIngresoE(ingresoe, in);
+            ControladorIngresoE ingresoEControlador = new ControladorIngresoE(ingresoe, in, continuarE, ingresarP);
             ControladorGerencia gerenciaCont = new ControladorGerencia(gerencia, in);
 
 
@@ -42,6 +46,12 @@ public class GestorLogistica {
             
             ingresoe.setVisible(false);
             ingresoe.setLocationRelativeTo(in);
+            
+            continuarE.setVisible(false);
+            continuarE.setVisible(ingresoe);
+            
+            ingresarP.setVisible(false);
+            ingresarP.setVisible(true);
             
             gerencia.setVisible(false);
             gerencia.setLocationRelativeTo(in);

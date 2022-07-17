@@ -32,7 +32,7 @@ public class FrmIngresoE extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtUsuarioE = new javax.swing.JTextField();
         txtClaveE = new javax.swing.JTextField();
-        btnIngresarE = new javax.swing.JButton();
+        btnContinuarE = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         btnRegresar = new javax.swing.JButton();
 
@@ -45,7 +45,7 @@ public class FrmIngresoE extends javax.swing.JFrame {
 
         jLabel3.setText("Clave:");
 
-        btnIngresarE.setText("Continuar");
+        btnContinuarE.setText("Continuar");
 
         jLabel4.setText("Ingrese usuario y contraseña para ingresar al Sistema");
 
@@ -72,7 +72,7 @@ public class FrmIngresoE extends javax.swing.JFrame {
                             .addComponent(txtUsuarioE, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(151, 151, 151)
-                        .addComponent(btnIngresarE, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnContinuarE, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 45, Short.MAX_VALUE)
@@ -98,7 +98,7 @@ public class FrmIngresoE extends javax.swing.JFrame {
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtClaveE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(51, 51, 51)
-                .addComponent(btnIngresarE)
+                .addComponent(btnContinuarE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(btnRegresar)
                 .addGap(14, 14, 14))
@@ -160,7 +160,7 @@ public class FrmIngresoE extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnIngresarE;
+    public javax.swing.JButton btnContinuarE;
     public javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
