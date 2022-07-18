@@ -18,13 +18,14 @@ public class ControladorIngresoE implements ActionListener, KeyListener{
     FrmInterfazEmpleado objVistaEmpleadoP = new FrmInterfazEmpleado();
     FrmIngresarPaquete objVistaIngresarP = new FrmIngresarPaquete();
     EmpleadoDAO objEmpleadoDAO = new EmpleadoDAO();
-
+    String nombreE, codigoE;
     public ControladorIngresoE(FrmIngresoE ingresoe, FrmInicio inicio, FrmInterfazEmpleado empleadoP, FrmIngresarPaquete ingresarPaquete) {
         objVistaIngresoE = ingresoe;
         objVistaInicio = inicio;
         objVistaEmpleadoP = empleadoP;
         objVistaIngresarP = ingresarPaquete;
         
+  
         objVistaIngresoE.btnContinuarE.addActionListener(this);
         objVistaIngresoE.btnRegresar.addActionListener(this);
         objVistaEmpleadoP.btnCerrarSesionE.addActionListener(this);
@@ -60,7 +61,9 @@ public class ControladorIngresoE implements ActionListener, KeyListener{
             if(empleadocheck.getCodigoemp().equals(objVistaIngresoE.txtCodigoEmpleado.getText())
                     &&empleadocheck.getClave().equals(objVistaIngresoE.jPwClaveE.getText())){
             JOptionPane.showMessageDialog(null, "Datos Correctos en la BD");
+            codigoE=objVistaIngresoE.txtCodigoEmpleado.getText();
                 objVistaEmpleadoP.setVisible(true);
+                insertarNombre();
                 objVistaIngresoE.setVisible(false);
             }else{
             JOptionPane.showMessageDialog(null, "ERROR, Clave incorrecta");
@@ -89,5 +92,9 @@ public class ControladorIngresoE implements ActionListener, KeyListener{
     public void limpiarElementos(){
     objVistaIngresoE.txtCodigoEmpleado.setText("");
     objVistaIngresoE.jPwClaveE.setText("");
+    }
+    
+    public void insertarNombre(){
+        objVistaEmpleadoP.jLcodigoEmpset.setText(codigoE);
     }
 }

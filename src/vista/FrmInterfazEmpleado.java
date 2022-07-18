@@ -30,6 +30,8 @@ public class FrmInterfazEmpleado extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         btnIngresarPaquete = new javax.swing.JButton();
         btnCerrarSesionE = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLcodigoEmpset = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,6 +41,11 @@ public class FrmInterfazEmpleado extends javax.swing.JFrame {
         btnIngresarPaquete.setText("Ingresar Nuevo Paquete");
 
         btnCerrarSesionE.setText("< Cerrar Sesion");
+
+        jLabel2.setText("Bienvenido");
+
+        jLcodigoEmpset.setFont(new java.awt.Font("DialogInput", 0, 18)); // NOI18N
+        jLcodigoEmpset.setBorder(new javax.swing.border.MatteBorder(null));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -50,11 +57,16 @@ public class FrmInterfazEmpleado extends javax.swing.JFrame {
                         .addGap(165, 165, 165)
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addComponent(btnIngresarPaquete))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(17, 17, 17)
-                        .addComponent(btnCerrarSesionE)))
+                        .addComponent(btnCerrarSesionE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(32, 32, 32)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLcodigoEmpset, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnIngresarPaquete))))
                 .addContainerGap(156, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -62,9 +74,16 @@ public class FrmInterfazEmpleado extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jLabel1)
-                .addGap(42, 42, 42)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel2))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addComponent(jLcodigoEmpset, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
                 .addComponent(btnIngresarPaquete)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
                 .addComponent(btnCerrarSesionE)
                 .addContainerGap())
         );
@@ -128,6 +147,8 @@ public class FrmInterfazEmpleado extends javax.swing.JFrame {
     public javax.swing.JButton btnCerrarSesionE;
     public javax.swing.JButton btnIngresarPaquete;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLcodigoEmpset;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
