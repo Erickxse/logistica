@@ -6,6 +6,7 @@ import vista.FrmIngresarPaquete;
 import vista.FrmIngresoC;
 import vista.FrmIngresoE;
 import vista.FrmInicio;
+import vista.FrmInterfazCliente;
 import vista.FrmRegistroCliente;
 import vista.FrmInterfazGerencia;
 import vista.FrmRegistrarE;
@@ -18,27 +19,40 @@ import vista.FrmTransporte;
 public class GestorLogistica {
  
         public static void main(String args[]){
+            
+            
             FrmInicio in = new FrmInicio();
+            
+            //frm ingresos
             FrmIngresoC inc = new FrmIngresoC();
-            FrmRegistroCliente registroCliente = new FrmRegistroCliente();
             FrmIngresoE ingresoE = new FrmIngresoE();
             FrmGerencia gerencia = new FrmGerencia();
-
-            FrmInterfazGerencia interfaz = new FrmInterfazGerencia();
+            //FRM REGISTROS
+            FrmRegistroCliente registroCliente = new FrmRegistroCliente();
             FrmRegistrarE regE = new FrmRegistrarE();
-            FrmTransporte tran = new FrmTransporte();
-            FrmInterfazEmpleado continuarE = new FrmInterfazEmpleado();
             FrmIngresarPaquete ingresarP = new FrmIngresarPaquete();
+        
+            //FRM INTERFACES
+            FrmInterfazGerencia interfaz = new FrmInterfazGerencia();
+            FrmInterfazCliente interfazC = new FrmInterfazCliente();
+            
+            
+            FrmInterfazEmpleado continuarE = new FrmInterfazEmpleado();
+            
                 //DAO
             ClienteDAO objClienteDAO = new ClienteDAO();
-
+            
+            //controladoresCliente
             ControladorInicio cl = new ControladorInicio(in, inc, registroCliente, ingresoE, continuarE,
                     ingresarP, gerencia);
-            ControladorIngresoC cic = new ControladorIngresoC(inc, in, objClienteDAO);
+            ControladorIngresoC cic = new ControladorIngresoC(inc, in, interfazC, objClienteDAO);
             ControladorRegistroC registroClienteControlador = new ControladorRegistroC(registroCliente, in, objClienteDAO);
+            
+            
+            
             ControladorIngresoE ingresoEControlador = new ControladorIngresoE(ingresoE, in, continuarE, ingresarP);
             ControladorGerencia gerenciaCont = new ControladorGerencia(gerencia, in, interfaz);
-            ControladorInterfazGerencia interfazGerencia = new ControladorInterfazGerencia(interfaz, gerencia, regE, tran);
+            //ControladorInterfazGerencia interfazGerencia = new ControladorInterfazGerencia(interfaz, gerencia, regE, tran);
 
             
             
@@ -51,6 +65,9 @@ public class GestorLogistica {
             
             inc.setVisible(false);
             inc.setLocationRelativeTo(in);
+            
+            interfazC.setVisible(false);
+            interfazC.setLocationRelativeTo(in);
             
             registroCliente.setVisible(false);
             registroCliente.setLocationRelativeTo(in);
@@ -69,6 +86,8 @@ public class GestorLogistica {
             
             interfaz.setVisible(false);
             interfaz.setLocationRelativeTo(in);
+            
+            
         }
         
 }

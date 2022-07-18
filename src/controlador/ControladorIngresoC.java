@@ -10,6 +10,7 @@ import modelo.Cliente;
 import modelo.ClienteDAO;
 import vista.FrmIngresoC;
 import vista.FrmInicio;
+import vista.FrmInterfazCliente;
 
 /**
  *
@@ -19,17 +20,20 @@ public class ControladorIngresoC implements ActionListener, KeyListener{
 
     FrmIngresoC objVistaIngresoC = new FrmIngresoC();
     FrmInicio objVistaInicio = new FrmInicio();
+    FrmInterfazCliente objVistaInterfazC = new FrmInterfazCliente();
     ClienteDAO objClienteDAO = new ClienteDAO();
     
     
-    public ControladorIngresoC(FrmIngresoC ingreso, FrmInicio inicio, ClienteDAO cdao){
+    public ControladorIngresoC(FrmIngresoC ingreso, FrmInicio inicio, FrmInterfazCliente interfazC, ClienteDAO cdao){
         objVistaIngresoC = ingreso;
         objVistaInicio = inicio;
+        objVistaInterfazC = interfazC;
         objClienteDAO = cdao;
         
         
         objVistaIngresoC.btnIngresarC.addActionListener(this);
         ingreso.btnRegresar.addActionListener(this);
+        interfazC.btnCerrarSesion.addActionListener(this);
         
     }
     //ABSTRACT METODS
@@ -55,10 +59,27 @@ public class ControladorIngresoC implements ActionListener, KeyListener{
                 JOptionPane.showMessageDialog(null, "Datos Correctos en la BD");
                 System.out.println(clientecheck.getUsuario());
                 System.out.println(objVistaIngresoC.txtUsuarioC.getText()); 
+                
+                objVistaInterfazC.setVisible(true);
+                objVistaIngresoC.setVisible(false);
                 }else{
                 JOptionPane.showMessageDialog(null, "ERROR");
                 }  
+            
+            limpiarElementos();
+            
         }
+        
+        if(e.getSource()==objVistaInterfazC.btnCerrarSesion){
+            objVistaInterfazC.setVisible(false);
+            objVistaIngresoC.setVisible(true);
+            System.out.println("SESION CERRADA");
+        }
+    }
+    
+    public void limpiarElementos(){
+    objVistaIngresoC.txtUsuarioC.setText("");
+    objVistaIngresoC.txtClaveC.setText("");
     }
     @Override
     public void keyTyped(KeyEvent e) {
