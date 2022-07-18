@@ -34,7 +34,7 @@ public class GestorLogistica {
 
             ControladorInicio cl = new ControladorInicio(in, inc, registroCliente, ingresoE, continuarE,
                     ingresarP, gerencia);
-            ControladorIngresoC cic = new ControladorIngresoC(inc, in);
+            ControladorIngresoC cic = new ControladorIngresoC(inc, in, objClienteDAO);
             ControladorRegistroC registroClienteControlador = new ControladorRegistroC(registroCliente, in, objClienteDAO);
             ControladorIngresoE ingresoEControlador = new ControladorIngresoE(ingresoE, in, continuarE, ingresarP);
             ControladorGerencia gerenciaCont = new ControladorGerencia(gerencia, in, interfaz);
