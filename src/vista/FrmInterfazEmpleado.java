@@ -29,7 +29,7 @@ public class FrmInterfazEmpleado extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         btnIngresarPaquete = new javax.swing.JButton();
-        btnRegresarIE = new javax.swing.JButton();
+        btnCerrarSesionE = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -38,7 +38,7 @@ public class FrmInterfazEmpleado extends javax.swing.JFrame {
 
         btnIngresarPaquete.setText("Ingresar Nuevo Paquete");
 
-        btnRegresarIE.setText("< Cerrar Sesion");
+        btnCerrarSesionE.setText("< Cerrar Sesion");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -54,7 +54,7 @@ public class FrmInterfazEmpleado extends javax.swing.JFrame {
                         .addComponent(btnIngresarPaquete))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(17, 17, 17)
-                        .addComponent(btnRegresarIE)))
+                        .addComponent(btnCerrarSesionE)))
                 .addContainerGap(156, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -65,7 +65,7 @@ public class FrmInterfazEmpleado extends javax.swing.JFrame {
                 .addGap(42, 42, 42)
                 .addComponent(btnIngresarPaquete)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
-                .addComponent(btnRegresarIE)
+                .addComponent(btnCerrarSesionE)
                 .addContainerGap())
         );
 
@@ -125,8 +125,8 @@ public class FrmInterfazEmpleado extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnCerrarSesionE;
     public javax.swing.JButton btnIngresarPaquete;
-    public javax.swing.JButton btnRegresarIE;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables

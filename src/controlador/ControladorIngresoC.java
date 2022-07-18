@@ -51,9 +51,8 @@ public class ControladorIngresoC implements ActionListener, KeyListener{
             Cliente clientevr = new Cliente(objVistaIngresoC.txtUsuarioC.getText(),
             objVistaIngresoC.jPwClaveC.getText());
             
-            //ArrayList clientecheck = objClienteDAO.buscarCliente(clientevr);
             Cliente clientecheck = objClienteDAO.buscarCliente(clientevr);
-            //System.out.println(clientecheck.get(0).toString());
+            
             if(clientecheck.getUsuario().equals(objVistaIngresoC.txtUsuarioC.getText())
                     &&clientecheck.getClave().equals(objVistaIngresoC.jPwClaveC.getText())){
                 JOptionPane.showMessageDialog(null, "Datos Correctos en la BD");

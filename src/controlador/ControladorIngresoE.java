@@ -4,6 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import javax.swing.JOptionPane;
+import modelo.Empleado;
+import modelo.EmpleadoDAO;
 import vista.FrmIngresarPaquete;
 import vista.FrmIngresoE;
 import vista.FrmInicio;
@@ -14,6 +17,7 @@ public class ControladorIngresoE implements ActionListener, KeyListener{
     FrmInicio objVistaInicio= new FrmInicio();
     FrmInterfazEmpleado objVistaEmpleadoP = new FrmInterfazEmpleado();
     FrmIngresarPaquete objVistaIngresarP = new FrmIngresarPaquete();
+    EmpleadoDAO objEmpleadoDAO = new EmpleadoDAO();
 
     public ControladorIngresoE(FrmIngresoE ingresoe, FrmInicio inicio, FrmInterfazEmpleado empleadoP, FrmIngresarPaquete ingresarPaquete) {
         objVistaIngresoE = ingresoe;
@@ -23,7 +27,7 @@ public class ControladorIngresoE implements ActionListener, KeyListener{
         
         objVistaIngresoE.btnContinuarE.addActionListener(this);
         objVistaIngresoE.btnRegresar.addActionListener(this);
-        objVistaEmpleadoP.btnRegresarIE.addActionListener(this);
+        objVistaEmpleadoP.btnCerrarSesionE.addActionListener(this);
         objVistaEmpleadoP.btnIngresarPaquete.addActionListener(this);
         objVistaIngresarP.btnRegresarE.addActionListener(this);
         
@@ -37,13 +41,33 @@ public class ControladorIngresoE implements ActionListener, KeyListener{
             objVistaInicio.setVisible(true);
             objVistaIngresoE.setVisible(false);
         }
-        if(e.getSource()==objVistaEmpleadoP.btnRegresarIE){
+        if(e.getSource()==objVistaEmpleadoP.btnCerrarSesionE){
             objVistaIngresoE.setVisible(true);
             objVistaEmpleadoP.setVisible(false);
+            System.out.println("SESION CERRADA");
+            JOptionPane.showMessageDialog(null, "SESION FINALIZADA!");
         }
         if(e.getSource()==objVistaIngresarP.btnRegresarE){
             objVistaEmpleadoP.setVisible(true);
             objVistaIngresarP.setVisible(false);
+        }
+        if(e.getSource()==objVistaIngresoE.btnContinuarE){
+            Empleado empleadovr = new Empleado(objVistaIngresoE.txtCodigoEmpleado.getText(),
+            objVistaIngresoE.jPwClaveE.getText());
+            
+            Empleado empleadocheck = objEmpleadoDAO.buscarEmpleado(empleadovr);
+            
+            if(empleadocheck.getCodigoemp().equals(objVistaIngresoE.txtCodigoEmpleado.getText())
+                    &&empleadocheck.getClave().equals(objVistaIngresoE.jPwClaveE.getText())){
+            JOptionPane.showMessageDialog(null, "Datos Correctos en la BD");
+                objVistaEmpleadoP.setVisible(true);
+                objVistaIngresoE.setVisible(false);
+            }else{
+            JOptionPane.showMessageDialog(null, "ERROR, Clave incorrecta");
+            }
+            
+            limpiarElementos();
+            
         }
     }
 
@@ -62,4 +86,8 @@ public class ControladorIngresoE implements ActionListener, KeyListener{
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
+    public void limpiarElementos(){
+    objVistaIngresoE.txtCodigoEmpleado.setText("");
+    objVistaIngresoE.jPwClaveE.setText("");
+    }
 }
