@@ -74,6 +74,7 @@ public class ControladorIngresoC implements ActionListener, KeyListener{
             objVistaInterfazC.setVisible(false);
             objVistaIngresoC.setVisible(true);
             System.out.println("SESION CERRADA");
+            JOptionPane.showMessageDialog(null, "SESION FINALIZADA!");
         }
     }
     
