@@ -30,7 +30,7 @@ public class Cliente {
         
         
     }
-
+    //con lista de paquetes
     public Cliente(String nombre, String apellido, String usuario, String clave, 
             String ciudad, String direccion, String nCedula, String nCelular, ArrayList paquetes) {
         this.nombre = nombre;

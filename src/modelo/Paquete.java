@@ -2,6 +2,8 @@ package modelo;
 
 public class Paquete {
     
+    private String emisorU;
+    private String receptorU;
     private String codigo;
     private double peso;
     private Ciudad ciudad1;

@@ -22,7 +22,7 @@ public class ControladorIngresoC implements ActionListener, KeyListener{
     FrmInicio objVistaInicio = new FrmInicio();
     FrmInterfazCliente objVistaInterfazC = new FrmInterfazCliente();
     ClienteDAO objClienteDAO = new ClienteDAO();
-    
+    String nombreC;
     
     public ControladorIngresoC(FrmIngresoC ingreso, FrmInicio inicio, FrmInterfazCliente interfazC, ClienteDAO cdao){
         objVistaIngresoC = ingreso;
@@ -58,8 +58,9 @@ public class ControladorIngresoC implements ActionListener, KeyListener{
                 JOptionPane.showMessageDialog(null, "Datos Correctos en la BD");
                 System.out.println(clientecheck.getUsuario());
                 System.out.println(objVistaIngresoC.txtUsuarioC.getText()); 
-                
+                nombreC=objVistaIngresoC.txtUsuarioC.getText();
                 objVistaInterfazC.setVisible(true);
+                insertarNombre();
                 objVistaIngresoC.setVisible(false);
                 }else{
                 JOptionPane.showMessageDialog(null, "ERROR, clave incorrecta");
@@ -80,6 +81,10 @@ public class ControladorIngresoC implements ActionListener, KeyListener{
     public void limpiarElementos(){
     objVistaIngresoC.txtUsuarioC.setText("");
     objVistaIngresoC.jPwClaveC.setText("");
+    }
+    
+    public void insertarNombre(){
+    objVistaInterfazC.jLnombreSet.setText(nombreC);
     }
     @Override
     public void keyTyped(KeyEvent e) {

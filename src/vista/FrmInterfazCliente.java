@@ -36,6 +36,7 @@ public class FrmInterfazCliente extends javax.swing.JFrame {
         btnRetirarP = new javax.swing.JButton();
         btnCerrarSesion = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        jLnombreSet = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -65,6 +66,9 @@ public class FrmInterfazCliente extends javax.swing.JFrame {
 
         jLabel3.setText("Bienvenido");
 
+        jLnombreSet.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLnombreSet.setBorder(new javax.swing.border.MatteBorder(null));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -89,7 +93,10 @@ public class FrmInterfazCliente extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(btnRegistrarP)
-                                    .addComponent(jLabel3)))))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addGap(55, 55, 55)
+                                        .addComponent(jLnombreSet, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(162, 162, 162)
                         .addComponent(jLabel1)))
@@ -107,8 +114,10 @@ public class FrmInterfazCliente extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel3)
-                        .addGap(31, 31, 31)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLnombreSet, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
                         .addComponent(btnRegistrarP)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addComponent(btnVerRecibos)
@@ -184,6 +193,7 @@ public class FrmInterfazCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel jLnombreSet;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JTable jTPaquetes;
