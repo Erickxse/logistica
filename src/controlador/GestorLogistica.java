@@ -1,6 +1,7 @@
 package controlador;
 
 import modelo.ClienteDAO;
+import modelo.EmpleadoDAO;
 import vista.FrmGerencia;
 import vista.FrmIngresarPaquete;
 import vista.FrmIngresoC;
@@ -31,9 +32,10 @@ public class GestorLogistica {
             FrmRegistroCliente registroCliente = new FrmRegistroCliente();
             FrmRegistrarE regE = new FrmRegistrarE();
             FrmIngresarPaquete ingresarP = new FrmIngresarPaquete();
+            FrmTransporte transporte = new FrmTransporte();
         
             //FRM INTERFACES
-            FrmInterfazGerencia interfaz = new FrmInterfazGerencia();
+            FrmInterfazGerencia interfazG = new FrmInterfazGerencia();
             FrmInterfazCliente interfazC = new FrmInterfazCliente();
             
             
@@ -41,18 +43,20 @@ public class GestorLogistica {
             
                 //DAO
             ClienteDAO objClienteDAO = new ClienteDAO();
+            EmpleadoDAO objEmpleadoDAO = new EmpleadoDAO();
             
             //controladoresCliente
             ControladorInicio cl = new ControladorInicio(in, inc, registroCliente, ingresoE, continuarE,
                     ingresarP, gerencia);
             ControladorIngresoC cic = new ControladorIngresoC(inc, in, interfazC, objClienteDAO);
             ControladorRegistroC registroClienteControlador = new ControladorRegistroC(registroCliente, in, objClienteDAO);
+            ControladorRegistroE registroEmpleado = new ControladorRegistroE(regE, interfazG, objEmpleadoDAO);
             
             
             
             ControladorIngresoE ingresoEControlador = new ControladorIngresoE(ingresoE, in, continuarE, ingresarP);
-            ControladorGerencia gerenciaCont = new ControladorGerencia(gerencia, in, interfaz);
-            //ControladorInterfazGerencia interfazGerencia = new ControladorInterfazGerencia(interfaz, gerencia, regE, tran);
+            ControladorGerencia gerenciaCont = new ControladorGerencia(gerencia, in, interfazG);
+            ControladorInterfazGerencia interfazGerencia = new ControladorInterfazGerencia(interfazG, gerencia, regE, transporte);
 
             
 
@@ -82,8 +86,8 @@ public class GestorLogistica {
             gerencia.setVisible(false);
             gerencia.setLocationRelativeTo(in);
             
-            interfaz.setVisible(false);
-            interfaz.setLocationRelativeTo(in);
+            interfazG.setVisible(false);
+            interfazG.setLocationRelativeTo(in);
             
             
         }

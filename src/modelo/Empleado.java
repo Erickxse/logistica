@@ -5,16 +5,22 @@ public class Empleado {
     
     private String nombre;
     private String apellido;
+    private String ncedula;
+    private String ciudad;
+    private String direccion;
     private String codigoemp;
     private String clave;
-    private Ciudad ciudad;
+    
 
-    public Empleado(String nombre, String apellido, String codigoemp, String clave, Ciudad ciudad) {
+    public Empleado(String nombre, String apellido, String ncedula, String ciudad, String direccion, String codigoemp, String clave) {
         this.nombre = nombre;
         this.apellido = apellido;
+        this.ncedula = ncedula;
+        this.ciudad = ciudad;
+        this.direccion = direccion;
         this.codigoemp = codigoemp;
         this.clave = clave;
-        this.ciudad = ciudad;
+        
     }
 
     public Empleado(String codigoemp, String clave) {
@@ -37,6 +43,11 @@ public class Empleado {
         return apellido;
     }
 
+    public String getNcedula() {
+        return ncedula;
+    }
+    
+
     public String getCodigoemp() {
         return codigoemp;
     }
@@ -45,9 +56,14 @@ public class Empleado {
         return clave;
     }
 
-    public Ciudad getCiudad() {
+    public String getCiudad() {
         return ciudad;
     }
+
+    public String getDireccion() {
+        return direccion;
+    }
+    
     
     
     //SETS
@@ -60,6 +76,11 @@ public class Empleado {
         this.apellido = apellido;
     }
 
+    public void setNcedula(String ncedula) {
+        this.ncedula = ncedula;
+    }
+
+        
     public void setCodigoemp(String codigoemp) {
         this.codigoemp = codigoemp;
     }
@@ -68,8 +89,12 @@ public class Empleado {
         this.clave = clave;
     }
 
-    public void setCiudad(Ciudad ciudad) {
+    public void setCiudad(String ciudad) {
         this.ciudad = ciudad;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
     }
     
     
