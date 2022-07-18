@@ -50,18 +50,14 @@ public class ControladorIngresoC implements ActionListener, KeyListener{
             //ArrayList clientecheck = objClienteDAO.buscarCliente(clientevr);
             Cliente clientecheck = objClienteDAO.buscarCliente(clientevr);
             //System.out.println(clientecheck.get(0).toString());
-            boolean activar;
-            if(clientecheck.getUsuario().equals(objVistaIngresoC.txtUsuarioC.getText())){
-                activar = true;
-                if(activar==true){
+            if(clientecheck.getUsuario().equals(objVistaIngresoC.txtUsuarioC.getText())
+                    &&clientecheck.getClave().equals(objVistaIngresoC.txtClaveC.getText())){
                 JOptionPane.showMessageDialog(null, "Datos Correctos en la BD");
                 System.out.println(clientecheck.getUsuario());
                 System.out.println(objVistaIngresoC.txtUsuarioC.getText()); 
-                }else if(activar ==false){
+                }else{
                 JOptionPane.showMessageDialog(null, "ERROR");
-                }
-            }
-            
+                }  
         }
     }
     @Override
