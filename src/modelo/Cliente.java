@@ -52,11 +52,6 @@ public class Cliente {
         this.usuario = usuario;
         this.clave = clave;
     }
-
-    public Cliente(ArrayList paquetes) {
-        this.paquetes = paquetes;
-    }
-    
     
     
     //GETS
@@ -132,11 +127,6 @@ public class Cliente {
     public void setnCelular(String nCelular) {
         this.nCelular = nCelular;
     }
-
-    public void setPaquetes(ArrayList paquetes) {
-        this.paquetes = paquetes;
-    }
-    
     
     
     

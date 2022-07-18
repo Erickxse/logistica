@@ -55,8 +55,6 @@ public class GestorLogistica {
             //ControladorInterfazGerencia interfazGerencia = new ControladorInterfazGerencia(interfaz, gerencia, regE, tran);
 
             
-            
-            
 
 
             

@@ -49,13 +49,13 @@ public class ControladorIngresoC implements ActionListener, KeyListener{
         if(e.getSource()==objVistaIngresoC.btnIngresarC){
         
             Cliente clientevr = new Cliente(objVistaIngresoC.txtUsuarioC.getText(),
-            objVistaIngresoC.txtClaveC.getText());
+            objVistaIngresoC.jPwClaveC.getText());
             
             //ArrayList clientecheck = objClienteDAO.buscarCliente(clientevr);
             Cliente clientecheck = objClienteDAO.buscarCliente(clientevr);
             //System.out.println(clientecheck.get(0).toString());
             if(clientecheck.getUsuario().equals(objVistaIngresoC.txtUsuarioC.getText())
-                    &&clientecheck.getClave().equals(objVistaIngresoC.txtClaveC.getText())){
+                    &&clientecheck.getClave().equals(objVistaIngresoC.jPwClaveC.getText())){
                 JOptionPane.showMessageDialog(null, "Datos Correctos en la BD");
                 System.out.println(clientecheck.getUsuario());
                 System.out.println(objVistaIngresoC.txtUsuarioC.getText()); 
@@ -63,7 +63,7 @@ public class ControladorIngresoC implements ActionListener, KeyListener{
                 objVistaInterfazC.setVisible(true);
                 objVistaIngresoC.setVisible(false);
                 }else{
-                JOptionPane.showMessageDialog(null, "ERROR");
+                JOptionPane.showMessageDialog(null, "ERROR, clave incorrecta");
                 }  
             
             limpiarElementos();
@@ -80,7 +80,7 @@ public class ControladorIngresoC implements ActionListener, KeyListener{
     
     public void limpiarElementos(){
     objVistaIngresoC.txtUsuarioC.setText("");
-    objVistaIngresoC.txtClaveC.setText("");
+    objVistaIngresoC.jPwClaveC.setText("");
     }
     @Override
     public void keyTyped(KeyEvent e) {

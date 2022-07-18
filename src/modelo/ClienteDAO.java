@@ -30,7 +30,7 @@ public class ClienteDAO {
         documento.put("usuarioC", c.getUsuario());
         documento.put("claveC", c.getClave());
         documento.put("ciudadC", c.getCiudad());
-        documento.put("direccionC", c.getCiudad());
+        documento.put("direccionC", c.getDireccion());
         documento.put("nCedulaC", c.getnCedula());
         documento.put("celularC", c.getnCelular());
         objCon.coleccionCliente.insert(documento); //insertar en base de datos

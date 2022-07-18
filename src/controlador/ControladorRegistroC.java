@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import javax.swing.JOptionPane;
 import modelo.Ciudad;
 import modelo.Cliente;
 import modelo.ClienteDAO;
@@ -35,6 +36,7 @@ public class ControladorRegistroC implements ActionListener, KeyListener{
         objVistaRegistroC.cmbCiudadC.addItem(Ciudad.GUAYAQUIL.name());
         objVistaRegistroC.cmbCiudadC.addItem(Ciudad.IBARRA.name());
         objVistaRegistroC.cmbCiudadC.addItem(Ciudad.LATACUNGA.name());
+        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.LOJA.name());
         objVistaRegistroC.cmbCiudadC.addItem(Ciudad.MACHALA.name());
         objVistaRegistroC.cmbCiudadC.addItem(Ciudad.MANTA.name());
         objVistaRegistroC.cmbCiudadC.addItem(Ciudad.QUITO.name());
@@ -62,7 +64,7 @@ public class ControladorRegistroC implements ActionListener, KeyListener{
             String apellido = objVistaRegistroC.txtApellido.getText();
             String usuario = objVistaRegistroC.txtUsuario.getText();
             String clave = objVistaRegistroC.txtUsuario.getText();
-            String ciudad = objVistaRegistroC.cmbCiudadC.getName();
+            String ciudad = objVistaRegistroC.cmbCiudadC.getSelectedItem().toString();
             String direccion = objVistaRegistroC.txtDireccion.getText();
             String nCedula = objVistaRegistroC.txtCedula.getText();
             String nCelular = objVistaRegistroC.txtTelefono.getText();
@@ -70,8 +72,12 @@ public class ControladorRegistroC implements ActionListener, KeyListener{
             Cliente objCliente = new Cliente(nombre, apellido, usuario, clave, ciudad, 
                     direccion, nCedula, nCelular);
             objClienteDAO.insertarCliente(objCliente);
+            JOptionPane.showMessageDialog(null, "Registro Exitoso");
+            limpiarElementos();
         
         }
+        
+        
     }
 
     @Override
@@ -89,5 +95,13 @@ public class ControladorRegistroC implements ActionListener, KeyListener{
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
-    
+    public void limpiarElementos(){
+    objVistaRegistroC.txtNombre.setText("");
+    objVistaRegistroC.txtApellido.setText("");
+    objVistaRegistroC.txtUsuario.setText("");
+    objVistaRegistroC.txtDireccion.setText("");
+    objVistaRegistroC.txtCedula.setText("");
+    objVistaRegistroC.txtTelefono.setText("");
+    objVistaRegistroC.txtClave.setText("");
+    }
 }
