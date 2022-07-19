@@ -3,8 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/SR.%20MORA/Desktop/PROYECTO%20POO/logistica/src/controlador/ControladorIngresoE.java</file>
+            <file>file:/C:/Users/SR.%20MORA/Desktop/PROYECTO%20POO/logistica/src/vista/FrmRegistroPaquete.java</file>
             <file>file:/C:/Users/SR.%20MORA/Desktop/PROYECTO%20POO/logistica/src/modelo/ClienteDAO.java</file>
+            <file>file:/C:/Users/SR.%20MORA/Desktop/PROYECTO%20POO/logistica/src/vista/FrmIngresoC.java</file>
+            <file>file:/C:/Users/SR.%20MORA/Desktop/PROYECTO%20POO/logistica/src/modelo/Cliente.java</file>
             <file>file:/C:/Users/SR.%20MORA/Desktop/PROYECTO%20POO/logistica/src/controlador/ControladorInterfazGerencia.java</file>
+            <file>file:/C:/Users/SR.%20MORA/Desktop/PROYECTO%20POO/logistica/src/modelo/PaqueteDAO.java</file>
+            <file>file:/C:/Users/SR.%20MORA/Desktop/PROYECTO%20POO/logistica/src/modelo/EmpleadoDAO.java</file>
+            <file>file:/C:/Users/SR.%20MORA/Desktop/PROYECTO%20POO/logistica/src/controlador/GestorLogistica.java</file>
+            <file>file:/C:/Users/SR.%20MORA/Desktop/PROYECTO%20POO/logistica/src/vista/FrmInterfazGerencia.java</file>
+            <file>file:/C:/Users/SR.%20MORA/Desktop/PROYECTO%20POO/logistica/src/controlador/ControladorRegistroC.java</file>
             <file>file:/C:/Users/SR.%20MORA/Desktop/PROYECTO%20POO/logistica/src/controlador/ControladorIngresoC.java</file>
         </group>
     </open-files>
