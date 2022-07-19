@@ -19,6 +19,9 @@ public class ControladorRegistroC implements ActionListener, KeyListener{
     FrmRegistroCliente objVistaRegistroC = new FrmRegistroCliente();
     FrmInicio objVistaInicio = new FrmInicio();
     ClienteDAO objClienteDAO = new ClienteDAO();
+    Paquete pVacio = new Paquete();
+    ArrayList<Paquete> listapVacia = new ArrayList();
+    
 
     public ControladorRegistroC(FrmRegistroCliente registro, FrmInicio inicio, ClienteDAO cdao ) {
         objVistaRegistroC = registro;
@@ -47,7 +50,8 @@ public class ControladorRegistroC implements ActionListener, KeyListener{
         objVistaRegistroC.cmbCiudadC.addItem(Ciudad.TENA.name());
         objVistaRegistroC.cmbCiudadC.addItem(Ciudad.TULCAN.name());
         
-        
+        //otros
+         listapVacia.add(pVacio);
                
     }
     
@@ -70,13 +74,14 @@ public class ControladorRegistroC implements ActionListener, KeyListener{
             String direccion = objVistaRegistroC.txtDireccion.getText();
             String nCedula = objVistaRegistroC.txtCedula.getText();
             String nCelular = objVistaRegistroC.txtTelefono.getText();
-            ArrayList<Paquete> paquetesC =null;
-                    ;
+            ArrayList<Paquete> paquetesC = null;
+                   
             
             Cliente objCliente = new Cliente(nombre, apellido, usuario, clave, ciudad, 
                     direccion, nCedula, nCelular, paquetesC);
             objClienteDAO.insertarCliente(objCliente);
             JOptionPane.showMessageDialog(null, "Registro Exitoso");
+            objClienteDAO.inicializarLista(objVistaRegistroC.txtUsuario.getText());
             limpiarElementos();
         
         }

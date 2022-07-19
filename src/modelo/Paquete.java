@@ -107,6 +107,12 @@ public class Paquete {
     public void setDireccion2(String direccion2) {
         this.direccion2 = direccion2;
     }
+
+    @Override
+    public String toString() {
+        return "Paquete{" + "emisorCI=" + emisorCI + ", receptorCI=" + receptorCI + ", codigo=" + codigo + ", peso=" + peso + ", ciudad1=" + ciudad1 + ", ciudad2=" + ciudad2 + ", direccion1=" + direccion1 + ", direccion2=" + direccion2 + '}';
+    }
+    
     
     
 }

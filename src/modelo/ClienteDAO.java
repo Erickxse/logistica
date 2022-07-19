@@ -41,7 +41,7 @@ public class ClienteDAO {
         Cliente c1; //creo un objeto cliente
         String usuarioCheck, claveCheck; //creo dos strings para Usuario y Clave
         ConexionBD objCon = new ConexionBD(); //Creo un Objeto Conexion
-        BasicDBObject buscado = new BasicDBObject("claveC", clientevr.getClave()); //Creo un BasicDB para localizar la clave
+        BasicDBObject buscado = new BasicDBObject("usuarioC", clientevr.getUsuario()); //Creo un BasicDB para localizar la clave
         DBCursor cursor = objCon.coleccionCliente.find(buscado); //creo un DBCursor para situarme en el usuario
         while(cursor.hasNext()){
             c1= new Cliente((String)cursor.next().get("nombreC"),(String)cursor.curr().get("apellidoC"), (String)cursor.curr().get("usuarioC"),(String)cursor.curr().get("claveC")
@@ -60,16 +60,29 @@ public class ClienteDAO {
         usuarioC=usuario;
     }
         
-    public void insertarPaquete(Paquete p){
-        ArrayList<Paquete> paquetesC = new ArrayList<Paquete>();
-        paquetesC.add(p);
+    public void insertarPaquete(){
+        
+        Paquete p = new Paquete("a","b","c",1,"d","e","f","g");
+        ArrayList<Paquete>listp1 = new ArrayList();
+        listp1.add(p);
         ConexionBD objCon = new ConexionBD();
-        System.out.println(usuarioC);
         DBObject buscado = new BasicDBObject("usuarioC", usuarioC);
-        //DBObject buscado = new BasicDBObject("usuarioC", usuarioC);
-        DBObject agregado = new BasicDBObject().append("$set", 
-                new BasicDBObject().append("paquetesC", paquetesC));
-        objCon.coleccionCliente.update(buscado, agregado );
+        System.out.println("NOMBRE: "+usuarioC);
+        DBObject actual = new BasicDBObject().append("$set", new BasicDBObject().append("paquetesC", listp1.toString()));
+        objCon.coleccionCliente.update(buscado, actual);
+        System.out.println("agregado");
+    }
     
+    public void inicializarLista(String usuario){
+        Paquete pprueba = new Paquete();
+        ArrayList <Paquete>listVacia = new ArrayList();
+        listVacia.add(pprueba);
+        
+        ConexionBD objCon = new ConexionBD();
+        DBObject buscado = new BasicDBObject("usuarioC", usuario);
+        System.out.println("NOMBRE: "+usuario);
+        DBObject actual = new BasicDBObject().append("$set", new BasicDBObject().append("paquetesC", listVacia.toString()));
+        objCon.coleccionCliente.update(buscado, actual);
+        System.out.println("agregado");
     }
 }
