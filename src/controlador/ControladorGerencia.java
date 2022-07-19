@@ -31,10 +31,8 @@ public class ControladorGerencia implements ActionListener, KeyListener{
         objVistaGerencia.setVisible(false);
         }
         if(e.getSource()==objVistaGerencia.btnIngresar){
-            if(objVistaGerencia.txtCodigoGerente==objVistaGerencia.txtCodigoGerente){ //CAMBIAR
-                objVistaInterfazGerencia.setVisible(true);
-                objVistaGerencia.setVisible(false);
-            }
+            objVistaInterfazGerencia.setVisible(true);
+            objVistaGerencia.setVisible(false);
         }
     }
 

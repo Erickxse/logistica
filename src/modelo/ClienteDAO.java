@@ -5,11 +5,6 @@ import com.mongodb.DBCursor;
 import java.awt.List;
 import java.util.ArrayList;
 
-
-/**
- *
- * @author SR. MORA
- */
 public class ClienteDAO {
     
     private ArrayList<Cliente> listaClientes;

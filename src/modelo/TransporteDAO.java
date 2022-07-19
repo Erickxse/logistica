@@ -8,8 +8,8 @@ public class TransporteDAO {
         
         ConexionBD objCon = new ConexionBD();
         BasicDBObject documento = new BasicDBObject();
-        documento.put("nUnidadT", t.getnUnidad());
         documento.put("placa", t.getPlaca());
+        documento.put("nUnidad", t.getnUnidad());
         objCon.coleccionTransporte.insert(documento);
     }
 }
