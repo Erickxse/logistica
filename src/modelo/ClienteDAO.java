@@ -7,11 +7,6 @@ import java.awt.List;
 import java.util.ArrayList;
 import vista.FrmInterfazCliente;
 
-
-/**
- *
- * @author SR. MORA
- */
 public class ClienteDAO {
     
     private ArrayList<Cliente> listaClientes;

@@ -2,36 +2,33 @@ package modelo;
 
 public class Transporte {
     
-    private int nUnidad;
     private String placa;
+    private int nUnidad;
 
-    public Transporte(int nUnidad, String placa) {
-        this.nUnidad = nUnidad;
+    public Transporte(String placa, int nUnidad){
         this.placa = placa;
+        this.nUnidad = nUnidad;
     }
 
-    public Transporte() {
+    public Transporte(){
     }
-    
     
     //GETS
-
-    public int getnUnidad() {
-        return nUnidad;
-    }
-
     public String getPlaca() {
         return placa;
     }
     
-    //sets
-
-    public void setnUnidad(int nUnidad) {
-        this.nUnidad = nUnidad;
+    public int getnUnidad() {
+        return nUnidad;
     }
 
+    //sets
     public void setPlaca(String placa) {
         this.placa = placa;
+    }
+    
+    public void setnUnidad(int nUnidad) {
+        this.nUnidad = nUnidad;
     }
     
     
