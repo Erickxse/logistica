@@ -2,6 +2,7 @@ package controlador;
 
 import modelo.ClienteDAO;
 import modelo.EmpleadoDAO;
+import modelo.GerenteDAO;
 
 import modelo.Paquete;
 import modelo.PaqueteDAO;
@@ -43,25 +44,22 @@ public class GestorLogistica {
             //FRM INTERFACES
             FrmInterfazGerencia interfazG = new FrmInterfazGerencia();
             FrmInterfazCliente interfazC = new FrmInterfazCliente();
-            
             FrmInterfazEmpleado continuarE = new FrmInterfazEmpleado();
             
                 //DAO
             ClienteDAO objClienteDAO = new ClienteDAO();
             EmpleadoDAO objEmpleadoDAO = new EmpleadoDAO();
             PaqueteDAO objPaqueteDAO = new PaqueteDAO();
-            
+            GerenteDAO objGerenciaDAO = new GerenteDAO();           
             TransporteDAO objTransporteDAO = new TransporteDAO();
             
             //controladoresCliente
             ControladorInicio cl = new ControladorInicio(in, inc, registroCliente, ingresoE,  continuarE,
                     ingresarP, gerencia);
             ControladorIngresoC cic = new ControladorIngresoC(inc, in, interfazC, registrarP, objClienteDAO, objPaqueteDAO);
-            ControladorRegistroC registroClienteControlador = new ControladorRegistroC(registroCliente, in, objClienteDAO);
-            
+            ControladorRegistroC registroClienteControlador = new ControladorRegistroC(registroCliente, in, objClienteDAO);           
             ControladorRegistroE registroEmpleado = new ControladorRegistroE(regE, interfazG, objEmpleadoDAO);
-            ControladorIngresoE ingresoEControlador = new ControladorIngresoE(ingresoE, in, continuarE, ingresarP);
-            
+            ControladorIngresoE ingresoEControlador = new ControladorIngresoE(ingresoE, in, continuarE, ingresarP);           
             ControladorGerencia gerenciaCont = new ControladorGerencia(gerencia, in, interfazG);
             ControladorInterfazGerencia interfazGerencia = new ControladorInterfazGerencia(interfazG, gerencia, regE, transporte);
 

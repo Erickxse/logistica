@@ -5,6 +5,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import javax.swing.JOptionPane;
+import modelo.Empleado;
 import vista.FrmGerencia;
 import vista.FrmInterfazGerencia;
 import vista.FrmRegistrarE;
@@ -42,6 +44,7 @@ public class ControladorInterfazGerencia implements ActionListener, KeyListener{
         objVistaGerencia.setVisible(true);
         objVistaInterfazGerencia.setVisible(false);
         }
+        
     }
 
     @Override
