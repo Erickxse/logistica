@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.ArrayList;
+
 
 public class Empleado {
     
@@ -10,6 +12,7 @@ public class Empleado {
     private String direccion;
     private String codigoemp;
     private String clave;
+    private ArrayList paquetes;
     
 
     public Empleado(String nombre, String apellido, String ncedula, String ciudad, String direccion, String codigoemp, String clave) {
@@ -22,6 +25,19 @@ public class Empleado {
         this.clave = clave;
         
     }
+
+    public Empleado(String nombre, String apellido, String ncedula, String ciudad, String direccion, String codigoemp, String clave, ArrayList paquetes) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.ncedula = ncedula;
+        this.ciudad = ciudad;
+        this.direccion = direccion;
+        this.codigoemp = codigoemp;
+        this.clave = clave;
+        this.paquetes = paquetes;
+    }
+    
+    
 
     public Empleado(String codigoemp, String clave) {
         this.codigoemp = codigoemp;

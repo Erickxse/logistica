@@ -48,4 +48,11 @@ public class EmpleadoDAO {
     Empleado empleadocheck = new Empleado(codigoCheck,claveCheck);
     return empleadocheck;
     }
+    
+    
+    public void insertarPaquete(Paquete p){
+    
+    }
    }
+
+    

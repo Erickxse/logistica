@@ -2,6 +2,8 @@ package controlador;
 
 import modelo.ClienteDAO;
 import modelo.EmpleadoDAO;
+import modelo.Paquete;
+import modelo.PaqueteDAO;
 import vista.FrmGerencia;
 import vista.FrmIngresarPaquete;
 import vista.FrmIngresoC;
@@ -15,6 +17,7 @@ import vista.FrmRegistrarE;
 import vista.FrmInterfazEmpleado;
 
 import vista.FrmRegistroCliente;
+import vista.FrmRegistroPaquete;
 import vista.FrmTransporte;
 
 public class GestorLogistica {
@@ -33,6 +36,7 @@ public class GestorLogistica {
             FrmRegistrarE regE = new FrmRegistrarE();
             FrmIngresarPaquete ingresarP = new FrmIngresarPaquete();
             FrmTransporte transporte = new FrmTransporte();
+            FrmRegistroPaquete registrarP = new FrmRegistroPaquete();
         
             //FRM INTERFACES
             FrmInterfazGerencia interfazG = new FrmInterfazGerencia();
@@ -44,11 +48,12 @@ public class GestorLogistica {
                 //DAO
             ClienteDAO objClienteDAO = new ClienteDAO();
             EmpleadoDAO objEmpleadoDAO = new EmpleadoDAO();
+            PaqueteDAO objPaqueteDAO = new PaqueteDAO();
             
             //controladoresCliente
-            ControladorInicio cl = new ControladorInicio(in, inc, registroCliente, ingresoE, continuarE,
+            ControladorInicio cl = new ControladorInicio(in, inc, registroCliente, ingresoE,  continuarE,
                     ingresarP, gerencia);
-            ControladorIngresoC cic = new ControladorIngresoC(inc, in, interfazC, objClienteDAO);
+            ControladorIngresoC cic = new ControladorIngresoC(inc, in, interfazC, registrarP, objClienteDAO, objPaqueteDAO);
             ControladorRegistroC registroClienteControlador = new ControladorRegistroC(registroCliente, in, objClienteDAO);
             ControladorRegistroE registroEmpleado = new ControladorRegistroE(regE, interfazG, objEmpleadoDAO);
             
@@ -88,6 +93,9 @@ public class GestorLogistica {
             
             interfazG.setVisible(false);
             interfazG.setLocationRelativeTo(in);
+            
+            registrarP.setVisible(false);
+            registrarP.setLocationRelativeTo(in);
             
             
         }

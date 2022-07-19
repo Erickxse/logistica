@@ -4,10 +4,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import modelo.Ciudad;
 import modelo.Cliente;
 import modelo.ClienteDAO;
+import modelo.Paquete;
 import vista.FrmInicio;
 import vista.FrmRegistroCliente;
 
@@ -63,14 +65,16 @@ public class ControladorRegistroC implements ActionListener, KeyListener{
             String nombre = objVistaRegistroC.txtNombre.getText();
             String apellido = objVistaRegistroC.txtApellido.getText();
             String usuario = objVistaRegistroC.txtUsuario.getText();
-            String clave = objVistaRegistroC.txtUsuario.getText();
+            String clave = objVistaRegistroC.txtClave.getText();
             String ciudad = objVistaRegistroC.cmbCiudadC.getSelectedItem().toString();
             String direccion = objVistaRegistroC.txtDireccion.getText();
             String nCedula = objVistaRegistroC.txtCedula.getText();
             String nCelular = objVistaRegistroC.txtTelefono.getText();
+            ArrayList<Paquete> paquetesC =null;
+                    ;
             
             Cliente objCliente = new Cliente(nombre, apellido, usuario, clave, ciudad, 
-                    direccion, nCedula, nCelular);
+                    direccion, nCedula, nCelular, paquetesC);
             objClienteDAO.insertarCliente(objCliente);
             JOptionPane.showMessageDialog(null, "Registro Exitoso");
             limpiarElementos();
