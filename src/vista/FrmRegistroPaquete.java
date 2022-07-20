@@ -46,6 +46,7 @@ public class FrmRegistroPaquete extends javax.swing.JFrame {
         txtCodigo = new javax.swing.JTextField();
         txtReceptor = new javax.swing.JTextField();
         txtEmisor = new javax.swing.JTextField();
+        txtBorrarD = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -74,6 +75,8 @@ public class FrmRegistroPaquete extends javax.swing.JFrame {
 
         btnCerrar.setText("Cerrar");
 
+        txtBorrarD.setText("Borrar");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -97,9 +100,6 @@ public class FrmRegistroPaquete extends javax.swing.JFrame {
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnRegistrarP)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnCerrar)
                         .addGap(23, 23, 23))
@@ -113,7 +113,12 @@ public class FrmRegistroPaquete extends javax.swing.JFrame {
                             .addComponent(cmbCiudad1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(cmbCiudad2, javax.swing.GroupLayout.Alignment.LEADING, 0, 131, Short.MAX_VALUE)
                             .addComponent(txtDireccion2, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtBorrarD)
+                            .addComponent(btnRegistrarP))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,7 +160,9 @@ public class FrmRegistroPaquete extends javax.swing.JFrame {
                     .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnRegistrarP)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtBorrarD)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCerrar)
                     .addComponent(btnVerRecibo))
@@ -215,6 +222,7 @@ public class FrmRegistroPaquete extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    public javax.swing.JButton txtBorrarD;
     public javax.swing.JTextField txtCodigo;
     public javax.swing.JTextField txtDireccion1;
     public javax.swing.JTextField txtDireccion2;

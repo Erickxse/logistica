@@ -2,33 +2,33 @@ package modelo;
 
 public class Paquete {
     
-    private String emisorCI;
-    private String receptorCI;
-    private String codigo;
-    private double peso;
-    private String ciudad1;
-    private String ciudad2;
-    private String direccion1;
-    private String direccion2;
+    private String cedula1;
+    private String cedula2;
+    private String codigoP;
+    private double pesoP;
+    private String ciudadP1;
+    private String ciudadP2;
+    private String direccionP1;
+    private String direccionP2;
 
-    public Paquete(String codigo, double peso, String ciudad1, String ciudad2, String direccion1, String direccion2) {
-        this.codigo = codigo;
-        this.peso = peso;
-        this.ciudad1 = ciudad1;
-        this.ciudad2 = ciudad2;
-        this.direccion1 = direccion1;
-        this.direccion2 = direccion2;
+    public Paquete(String codigoP, double pesoP, String ciudadP1, String ciudadP2, String direccionP1, String direccionP2) {
+        this.codigoP = codigoP;
+        this.pesoP = pesoP;
+        this.ciudadP1 = ciudadP1;
+        this.ciudadP2 = ciudadP2;
+        this.direccionP1 = direccionP1;
+        this.direccionP2 = direccionP2;
     }
 
-    public Paquete(String emisorCI, String receptorCI, String codigo, double peso, String ciudad1, String ciudad2, String direccion1, String direccion2) {
-        this.emisorCI = emisorCI;
-        this.receptorCI = receptorCI;
-        this.codigo = codigo;
-        this.peso = peso;
-        this.ciudad1 = ciudad1;
-        this.ciudad2 = ciudad2;
-        this.direccion1 = direccion1;
-        this.direccion2 = direccion2;
+    public Paquete(String cedula1, String cedula2, String codigoP, double pesoP, String ciudadP1, String ciudadP2, String direccionP1, String direccionP2) {
+        this.cedula1 = cedula1;
+        this.cedula2 = cedula2;
+        this.codigoP = codigoP;
+        this.pesoP = pesoP;
+        this.ciudadP1 = ciudadP1;
+        this.ciudadP2 = ciudadP2;
+        this.direccionP1 = direccionP1;
+        this.direccionP2 = direccionP2;
     }
     
     
@@ -38,79 +38,79 @@ public class Paquete {
     
     //GETS 
 
-    public String getEmisorCI() {
-        return emisorCI;
+    public String getCedula1() {
+        return cedula1;
     }
 
-    public String getReceptorCI() {
-        return receptorCI;
+    public String getCedula2() {
+        return cedula2;
     }
 
     
-    public String getCodigo() {
-        return codigo;
+    public String getCodigoP() {
+        return codigoP;
     }
 
-    public double getPeso() {
-        return peso;
+    public double getPesoP() {
+        return pesoP;
     }
 
-    public String getCiudad1() {
-        return ciudad1;
+    public String getCiudadP1() {
+        return ciudadP1;
     }
 
-    public String getCiudad2() {
-        return ciudad2;
+    public String getCiudadP2() {
+        return ciudadP2;
     }
 
-    public String getDireccion1() {
-        return direccion1;
+    public String getDireccionP1() {
+        return direccionP1;
     }
 
     public String getDireccion2() {
-        return direccion2;
+        return direccionP2;
     }
     
     
     //SETS
 
-    public void setEmisorCI(String emisorCI) {
-        this.emisorCI = emisorCI;
+    public void setCedula1(String cedula1) {
+        this.cedula1 = cedula1;
     }
 
-    public void setReceptorCI(String receptorCI) {
-        this.receptorCI = receptorCI;
+    public void setCedula2(String cedula2) {
+        this.cedula2 = cedula2;
     }
 
     
         
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
+    public void setCodigoP(String codigoP) {
+        this.codigoP = codigoP;
     }
 
-    public void setPeso(double peso) {
-        this.peso = peso;
+    public void setPesoP(double pesoP) {
+        this.pesoP = pesoP;
     }
 
-    public void setCiudad1(String ciudad1) {
-        this.ciudad1 = ciudad1;
+    public void setCiudad1(String ciudadP1) {
+        this.ciudadP1 = ciudadP1;
     }
 
-    public void setCiudad2(String ciudad2) {
-        this.ciudad2 = ciudad2;
+    public void setCiudad2(String ciudadP2) {
+        this.ciudadP2 = ciudadP2;
     }
 
-    public void setDireccion1(String direccion1) {
-        this.direccion1 = direccion1;
+    public void setDireccionP1(String direccionP1) {
+        this.direccionP1 = direccionP1;
     }
 
-    public void setDireccion2(String direccion2) {
-        this.direccion2 = direccion2;
+    public void setDireccionP2(String direccionP2) {
+        this.direccionP2 = direccionP2;
     }
 
     @Override
     public String toString() {
-        return "Paquete{" + "emisorCI=" + emisorCI + ", receptorCI=" + receptorCI + ", codigo=" + codigo + ", peso=" + peso + ", ciudad1=" + ciudad1 + ", ciudad2=" + ciudad2 + ", direccion1=" + direccion1 + ", direccion2=" + direccion2 + '}';
+        return "Paquete{" + "emisorCI=" + cedula1 + ", receptorCI=" + cedula2 + ", codigo=" + codigoP + ", peso=" + pesoP+ ", ciudad1=" + ciudadP1 + ", ciudad2=" + ciudadP2 + ", direccion1=" + direccionP1 + ", direccion2=" + direccionP2 + '}';
     }
     
     
