@@ -12,7 +12,7 @@ public class Cliente {
     private String direccion;
     private String nCedula;
     private String nCelular;
-    private ArrayList paquetes;
+    private ArrayList[] paquetes;
 
     
         // constructor
@@ -32,7 +32,7 @@ public class Cliente {
     }
     //con lista de paquetes
     public Cliente(String nombre, String apellido, String usuario, String clave, 
-            String ciudad, String direccion, String nCedula, String nCelular, ArrayList paquetes) {
+            String ciudad, String direccion, String nCedula, String nCelular, ArrayList[] paquetes) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.usuario = usuario;
@@ -88,7 +88,7 @@ public class Cliente {
         return nCelular;
     }
 
-    public ArrayList getPaquetes() {
+    public ArrayList[] getPaquetes() {
         return paquetes;
     }
     

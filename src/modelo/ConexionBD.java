@@ -18,6 +18,7 @@ public class ConexionBD {
     DBCollection coleccionEmpleado;
     DBCollection coleccionTransporte;
     DBCollection coleccionGerente;
+   
     
     public ConexionBD(){
         
