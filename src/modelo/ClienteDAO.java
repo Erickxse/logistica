@@ -63,31 +63,31 @@ public class ClienteDAO {
         
     public void insertarPaquete(Paquete p){
         
-//        String cedula1 = p.getEmisorCI();
-//        String cedula2 = p.getReceptorCI();
-//        String codigoP = p.getCodigo();
-//        double pesoP = p.getPeso();
-//        String ciudadP1 = p.getCiudad1();
-//        String ciudadP2 = p.getCiudad2();
-//        String direccionP1 = p.getDireccion1();
-//        String direccionP2 = p.getDireccion2();
+        String cedula1 = p.getCedula1();
+        String cedula2 = p.getCedula2();
+        String codigoP = p.getCodigoP();
+        double pesoP = p.getPesoP();
+        String ciudadP1 = p.getCiudadP1();
+        String ciudadP2 = p.getCiudadP2();
+        String direccionP1 = p.getDireccionP1();
+        String direccionP2 = p.getDireccionP2();
         
         ArrayList<Paquete>listp1 = new ArrayList();
         listp1.add(p);
         ConexionBD objCon = new ConexionBD();
-        DBObject buscado = new BasicDBObject("usuarioC", usuarioC);
-        System.out.println("NOMBRE: "+usuarioC);
-        
-        DBObject actual = new BasicDBObject().append("$set", new BasicDBObject().append("paquetesC", listp1.toString()));
-        objCon.coleccionCliente.update(buscado, actual);
-        System.out.println("agregado");
-
-//        DBObject findQuery = new BasicDBObject("usuarioC",usuarioC);
-//        DBObject listapaque = new BasicDBObject("paquetesC", new BasicDBObject("cedula1",cedula1).append("cedula2", cedula2).append("codigoP", codigoP)
-//        .append("pesoP", pesoP).append("ciudadP1", ciudadP1).append("ciudadP2", ciudadP2).append("direccionP1", direccionP1).append("direccionP2", direccionP2));
+//        DBObject buscado = new BasicDBObject("usuarioC", usuarioC);
+//        System.out.println("NOMBRE: "+usuarioC);
 //        
-//        DBObject updateQuery = new BasicDBObject("$push",listapaque);
-//        objCon.coleccionCliente.update(findQuery, updateQuery);
+//        DBObject actual = new BasicDBObject().append("$set", new BasicDBObject().append("paquetesC", listp1.toString()));
+//        objCon.coleccionCliente.update(buscado, actual);
+//        System.out.println("agregado");
+
+        DBObject findQuery = new BasicDBObject("usuarioC",usuarioC);
+        DBObject listapaque = new BasicDBObject("paquetesC", new BasicDBObject("cedula1",cedula1).append("cedula2", cedula2).append("codigoP", codigoP)
+        .append("pesoP", pesoP).append("ciudadP1", ciudadP1).append("ciudadP2", ciudadP2).append("direccionP1", direccionP1).append("direccionP2", direccionP2));
+        
+        DBObject updateQuery = new BasicDBObject("$set",listapaque);
+        objCon.coleccionCliente.update(findQuery, updateQuery);
     }
     
     }

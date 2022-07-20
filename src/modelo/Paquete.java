@@ -67,7 +67,7 @@ public class Paquete {
         return direccionP1;
     }
 
-    public String getDireccion2() {
+    public String getDireccionP2() {
         return direccionP2;
     }
     
@@ -110,8 +110,10 @@ public class Paquete {
 
     @Override
     public String toString() {
-        return "Paquete{" + "emisorCI=" + cedula1 + ", receptorCI=" + cedula2 + ", codigo=" + codigoP + ", peso=" + pesoP+ ", ciudad1=" + ciudadP1 + ", ciudad2=" + ciudadP2 + ", direccion1=" + direccionP1 + ", direccion2=" + direccionP2 + '}';
+        return "Paquete{" + "cedula1=" + cedula1 + ", cedula2=" + cedula2 + ", codigoP=" + codigoP + ", pesoP=" + pesoP + ", ciudadP1=" + ciudadP1 + ", ciudadP2=" + ciudadP2 + ", direccionP1=" + direccionP1 + ", direccionP2=" + direccionP2 + '}';
     }
+
+    
     
     
     
