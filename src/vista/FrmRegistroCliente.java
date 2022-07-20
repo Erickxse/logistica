@@ -15,6 +15,7 @@ public class FrmRegistroCliente extends javax.swing.JFrame {
      */
     public FrmRegistroCliente() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

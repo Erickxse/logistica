@@ -15,6 +15,7 @@ public class FrmRecibo extends javax.swing.JFrame {
      */
     public FrmRecibo() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

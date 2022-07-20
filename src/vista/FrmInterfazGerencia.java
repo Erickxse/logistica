@@ -15,6 +15,7 @@ public class FrmInterfazGerencia extends javax.swing.JFrame {
      */
     public FrmInterfazGerencia() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**

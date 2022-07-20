@@ -3,10 +3,8 @@ package controlador;
 import modelo.ClienteDAO;
 import modelo.EmpleadoDAO;
 import modelo.GerenteDAO;
-
 import modelo.Paquete;
 import modelo.PaqueteDAO;
-
 import modelo.TransporteDAO;
 import vista.FrmGerencia;
 import vista.FrmIngresarPaquete;
@@ -18,7 +16,6 @@ import vista.FrmRegistroCliente;
 import vista.FrmInterfazGerencia;
 import vista.FrmRegistrarE;
 import vista.FrmInterfazEmpleado;
-
 import vista.FrmRegistroCliente;
 import vista.FrmRegistroPaquete;
 import vista.FrmTransporte;
@@ -45,6 +42,7 @@ public class GestorLogistica {
             FrmInterfazGerencia interfazG = new FrmInterfazGerencia();
             FrmInterfazCliente interfazC = new FrmInterfazCliente();
             FrmInterfazEmpleado continuarE = new FrmInterfazEmpleado();
+            
             
                 //DAO
             ClienteDAO objClienteDAO = new ClienteDAO();
@@ -100,7 +98,7 @@ public class GestorLogistica {
 
             transporte.setVisible(false);
             transporte.setLocationRelativeTo(in);
-
+ 
             
         }
         

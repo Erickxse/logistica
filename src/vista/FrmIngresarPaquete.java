@@ -15,6 +15,7 @@ public class FrmIngresarPaquete extends javax.swing.JFrame {
      */
     public FrmIngresarPaquete() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
