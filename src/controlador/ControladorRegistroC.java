@@ -19,7 +19,6 @@ public class ControladorRegistroC implements ActionListener, KeyListener{
     FrmRegistroCliente objVistaRegistroC = new FrmRegistroCliente();
     FrmInicio objVistaInicio = new FrmInicio();
     ClienteDAO objClienteDAO = new ClienteDAO();
-    Paquete pVacio = new Paquete("a","a","a",0,"a","a","a","a");
     ArrayList<Paquete> listapVacia = new ArrayList();
     
 
@@ -51,7 +50,7 @@ public class ControladorRegistroC implements ActionListener, KeyListener{
         objVistaRegistroC.cmbCiudadC.addItem(Ciudad.TULCAN.name());
         
         //otros
-         listapVacia.add(pVacio);
+         //listapVacia.add(pVacio);
                
     }
     

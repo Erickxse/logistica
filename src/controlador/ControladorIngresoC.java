@@ -46,8 +46,7 @@ public class ControladorIngresoC implements ActionListener, KeyListener{
         
         objVistaRegistroP.btnRegistrarP.addActionListener(this);
         objVistaRegistroP.btnCerrar.addActionListener(this);
-        objVistaRegistroP.txtBorrarD.addActionListener(this);
-        objVistaRegistroP.btnVerRecibo.addActionListener(this);
+
         
         //CIUDAD 1
         objVistaRegistroP.cmbCiudad1.addItem(Ciudad.AMBATO.name());
@@ -156,10 +155,8 @@ public class ControladorIngresoC implements ActionListener, KeyListener{
             objPaqueteDAO.insertarPaquete(objPaquete);
             objClienteDAO.ObtenerNombre(objVistaInterfazC.jLnombreSet.getText());
             objClienteDAO.insertarPaquete(objPaquete);
-            JOptionPane.showMessageDialog(null, "Paquete Registrado");      
-            }
-            if(e.getSource()==objVistaRegistroP.txtBorrarD){
-             limpiarElementosPaquete();
+            JOptionPane.showMessageDialog(null, "Paquete Registrado");  
+            limpiarElementosPaquete();
             }
     }
     

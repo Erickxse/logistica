@@ -38,7 +38,6 @@ public class FrmRegistroPaquete extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         btnRegistrarP = new javax.swing.JButton();
-        btnVerRecibo = new javax.swing.JButton();
         btnCerrar = new javax.swing.JButton();
         txtDireccion2 = new javax.swing.JTextField();
         txtDireccion1 = new javax.swing.JTextField();
@@ -46,7 +45,6 @@ public class FrmRegistroPaquete extends javax.swing.JFrame {
         txtCodigo = new javax.swing.JTextField();
         txtReceptor = new javax.swing.JTextField();
         txtEmisor = new javax.swing.JTextField();
-        txtBorrarD = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,11 +69,7 @@ public class FrmRegistroPaquete extends javax.swing.JFrame {
 
         btnRegistrarP.setText("Registrar Paquete");
 
-        btnVerRecibo.setText("Ver Recibo");
-
         btnCerrar.setText("Cerrar");
-
-        txtBorrarD.setText("Borrar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -95,8 +89,7 @@ public class FrmRegistroPaquete extends javax.swing.JFrame {
                     .addComponent(jLabel3)
                     .addComponent(jLabel2)
                     .addComponent(jLabel9)
-                    .addComponent(jLabel8)
-                    .addComponent(btnVerRecibo))
+                    .addComponent(jLabel8))
                 .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -115,9 +108,7 @@ public class FrmRegistroPaquete extends javax.swing.JFrame {
                             .addComponent(txtDireccion2, javax.swing.GroupLayout.Alignment.LEADING))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtBorrarD)
-                            .addComponent(btnRegistrarP))
+                        .addComponent(btnRegistrarP)
                         .addGap(0, 0, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
@@ -160,12 +151,8 @@ public class FrmRegistroPaquete extends javax.swing.JFrame {
                     .addComponent(txtCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(btnRegistrarP)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtBorrarD)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnCerrar)
-                    .addComponent(btnVerRecibo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
+                .addComponent(btnCerrar)
                 .addGap(15, 15, 15))
         );
 
@@ -210,7 +197,6 @@ public class FrmRegistroPaquete extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnCerrar;
     public javax.swing.JButton btnRegistrarP;
-    public javax.swing.JButton btnVerRecibo;
     public javax.swing.JComboBox<String> cmbCiudad1;
     public javax.swing.JComboBox<String> cmbCiudad2;
     private javax.swing.JLabel jLabel1;
@@ -222,7 +208,6 @@ public class FrmRegistroPaquete extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    public javax.swing.JButton txtBorrarD;
     public javax.swing.JTextField txtCodigo;
     public javax.swing.JTextField txtDireccion1;
     public javax.swing.JTextField txtDireccion2;

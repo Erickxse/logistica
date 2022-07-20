@@ -12,7 +12,7 @@ public class Empleado {
     private String direccion;
     private String codigoemp;
     private String clave;
-    private ArrayList paquetes;
+    private ArrayList [] paquetes;
     
 
     public Empleado(String nombre, String apellido, String ncedula, String ciudad, String direccion, String codigoemp, String clave) {
@@ -26,7 +26,7 @@ public class Empleado {
         
     }
 
-    public Empleado(String nombre, String apellido, String ncedula, String ciudad, String direccion, String codigoemp, String clave, ArrayList paquetes) {
+    public Empleado(String nombre, String apellido, String ncedula, String ciudad, String direccion, String codigoemp, String clave, ArrayList[] paquetes) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.ncedula = ncedula;
@@ -79,6 +79,11 @@ public class Empleado {
     public String getDireccion() {
         return direccion;
     }
+
+    public ArrayList[] getPaquetes() {
+        return paquetes;
+    }
+    
     
     
     
@@ -112,6 +117,16 @@ public class Empleado {
     public void setDireccion(String direccion) {
         this.direccion = direccion;
     }
+
+    public void setPaquetes(ArrayList[] paquetes) {
+        this.paquetes = paquetes;
+    }
+
+    @Override
+    public String toString() {
+        return "Empleado{" + "nombre=" + nombre + ", apellido=" + apellido + ", ncedula=" + ncedula + ", ciudad=" + ciudad + ", direccion=" + direccion + ", codigoemp=" + codigoemp + ", clave=" + clave + ", paquetes=" + paquetes + '}';
+    }
+    
     
     
 }

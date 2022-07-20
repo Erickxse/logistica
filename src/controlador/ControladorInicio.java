@@ -67,11 +67,7 @@ public class ControladorInicio implements ActionListener, KeyListener {
             objVistaIngresoE.setVisible(true);
             objVistaInicio.setVisible(false);
         }
-        if(e.getSource()==objVistaEmpleadoP.btnIngresarPaquete){
-            objVistaIngresarPaquete.setVisible(true);
-            objVistaEmpleadoP.setVisible(false);
-        }
-        
+     
         if(e.getSource()==objVistaInicio.btnGerencia){
             objVistaGerencia.setVisible(true);
             objVistaInicio.setVisible(false);

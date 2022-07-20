@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import modelo.EmpleadoDAO;
 import modelo.Ciudad;
@@ -66,12 +67,14 @@ public class ControladorRegistroE implements ActionListener, KeyListener{
             String direccion = objVistaRegistroE.txtDireccion.getText();
             String codigoE = objVistaRegistroE.txtCodigoEmp.getText();
             String claveE = objVistaRegistroE.txtClave.getText();
+            ArrayList paquetesE [] = null;
             
             Empleado objEmpleado = new Empleado(nombre, apellido, ncedula, ciudad, 
-                    direccion, codigoE, claveE);
+                    direccion, codigoE, claveE, paquetesE);
             
             objEmpleadoDAO.insertarEmpleado(objEmpleado);
             JOptionPane.showMessageDialog(null, "Empleado Agregado");
+            limpiarElementos();
         }
     }
 

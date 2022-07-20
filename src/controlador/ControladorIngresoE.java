@@ -7,6 +7,7 @@ import java.awt.event.KeyListener;
 import javax.swing.JOptionPane;
 import modelo.Empleado;
 import modelo.EmpleadoDAO;
+import modelo.PaqueteDAO;
 import vista.FrmIngresarPaquete;
 import vista.FrmIngresoE;
 import vista.FrmInicio;
@@ -18,6 +19,8 @@ public class ControladorIngresoE implements ActionListener, KeyListener{
     FrmInterfazEmpleado objVistaEmpleadoP = new FrmInterfazEmpleado();
     FrmIngresarPaquete objVistaIngresarP = new FrmIngresarPaquete();
     EmpleadoDAO objEmpleadoDAO = new EmpleadoDAO();
+    PaqueteDAO objPaqueteDAO = new PaqueteDAO();
+    
     String nombreE, codigoE;
     public ControladorIngresoE(FrmIngresoE ingresoe, FrmInicio inicio, FrmInterfazEmpleado empleadoP, FrmIngresarPaquete ingresarPaquete) {
         objVistaIngresoE = ingresoe;
@@ -30,7 +33,12 @@ public class ControladorIngresoE implements ActionListener, KeyListener{
         objVistaIngresoE.btnRegresar.addActionListener(this);
         objVistaEmpleadoP.btnCerrarSesionE.addActionListener(this);
         objVistaEmpleadoP.btnIngresarPaquete.addActionListener(this);
+        
+        //INGRESO PAQUETE
         objVistaIngresarP.btnRegresarE.addActionListener(this);
+        objVistaIngresarP.btnVerRecibo.addActionListener(this);
+        objVistaIngresarP.btnIngresar.addActionListener(this);
+        
         
     }
     
@@ -71,6 +79,21 @@ public class ControladorIngresoE implements ActionListener, KeyListener{
             
             limpiarElementos();
             
+        }
+        
+        if(e.getSource()==objVistaEmpleadoP.btnIngresarPaquete){
+            objVistaIngresarP.setVisible(true);
+            objVistaEmpleadoP.setVisible(false);
+        }
+        
+        if(e.getSource()==objVistaIngresarP.btnIngresar){
+        
+            objEmpleadoDAO.ObteneNombre(objVistaEmpleadoP.jLcodigoEmpset.getText());
+            objPaqueteDAO.obtenerPaquete(objVistaIngresarP.txtIngresar.getText());
+            objEmpleadoDAO.insertarPaquete(objPaqueteDAO.obtenerPaquete(objVistaIngresarP.txtIngresar.getText()));
+            System.out.println(objVistaEmpleadoP.jLcodigoEmpset.getText());
+            System.out.println("INSERTADO");
+            JOptionPane.showMessageDialog(null, "Paquete Agregado");
         }
     }
 
