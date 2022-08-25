@@ -73,16 +73,21 @@ public class ClienteDAO {
         String ciudadP2 = p.getCiudadP2();
         String direccionP1 = p.getDireccionP1();
         String direccionP2 = p.getDireccionP2();
-        
+        //guardar los atributos del paquete
         ConexionBD objCon = new ConexionBD();
         
         DBObject findQuery = new BasicDBObject("usuarioC",usuarioC);
-        DBObject listapaque = new BasicDBObject("paquetesC", new BasicDBObject("cedula1",cedula1).append("cedula2", cedula2).append("codigoP", codigoP)
-        .append("pesoP", pesoP).append("ciudadP1", ciudadP1).append("ciudadP2", ciudadP2).append("direccionP1", direccionP1).append("direccionP2", direccionP2));
         
+        ArrayList matriz = new ArrayList();
+
+        DBObject objpaquete = new BasicDBObject("cedula1",cedula1).append("cedula2", cedula2).append("codigoP", codigoP)
+                .append("pesoP", pesoP).append("ciudadP1", ciudadP1).append("ciudadP2", ciudadP2).append("direccionP1", direccionP1).append("direccionP2", direccionP2);
+        matriz.add(objpaquete);
+        DBObject listapaque = new BasicDBObject("paquetesC", matriz);
         
+        //listapaque es un objeto que va a entrar en el documento
         
-        DBObject updateQuery = new BasicDBObject("$set",listapaque);
+        DBObject updateQuery = new BasicDBObject("$push",listapaque);
         objCon.coleccionCliente.update(findQuery, updateQuery);
     }
     
