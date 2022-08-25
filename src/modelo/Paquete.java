@@ -111,10 +111,5 @@ public class Paquete {
     @Override
     public String toString() {
         return "Paquete{" + "cedula1=" + cedula1 + ", cedula2=" + cedula2 + ", codigoP=" + codigoP + ", pesoP=" + pesoP + ", ciudadP1=" + ciudadP1 + ", ciudadP2=" + ciudadP2 + ", direccionP1=" + direccionP1 + ", direccionP2=" + direccionP2 + '}';
-    }
-
-    
-    
-    
-    
+    }   
 }
