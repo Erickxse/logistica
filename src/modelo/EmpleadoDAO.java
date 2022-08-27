@@ -29,11 +29,10 @@ public class EmpleadoDAO {
         documento.put("direccionE",e.getDireccion());
         documento.put("codigoE", e.getCodigoemp());
         documento.put("claveE", e.getClave());
-        documento.put("paquetesC", e.getPaquetes());
         objCon.coleccionEmpleado.insert(documento);
     }
     
-    public Empleado buscarEmpleado(Empleado empleadovr){
+    public Empleado verificarEmpleado(Empleado empleadovr){
     ArrayList<Empleado> listaempleado = new ArrayList<Empleado>();
     Empleado e1;
     String codigoCheck, claveCheck;
@@ -52,8 +51,9 @@ public class EmpleadoDAO {
     return empleadocheck;
     }
     
-    public void ObteneNombre(String codigo){
+    public String ObtenerNombre(String codigo){
         codigoE=codigo;
+        return codigo;
     }
     public void insertarPaquete(Paquete p){
         
@@ -66,15 +66,15 @@ public class EmpleadoDAO {
         String direccionP1 = p.getDireccionP1();
         String direccionP2 = p.getDireccionP2();
         
-        ArrayList<Paquete>listp1 = new ArrayList();
-        listp1.add(p);
+        
         ConexionBD objCon = new ConexionBD();
         
             DBObject findQuery = new BasicDBObject("codigoE", codigoE);
-            DBObject listapaque = new BasicDBObject("paquetesC", new BasicDBObject("cedula1",cedula1).append("cedula2", cedula2).append("codigoP", codigoP)
+            ArrayList matriz = new ArrayList();
+            DBObject objPaquete = new BasicDBObject("paquetesC", new BasicDBObject("cedula1",cedula1).append("cedula2", cedula2).append("codigoP", codigoP)
         .append("pesoP", pesoP).append("ciudadP1", ciudadP1).append("ciudadP2", ciudadP2).append("direccionP1", direccionP1).append("direccionP2", direccionP2));
-            
-            DBObject updateQuery = new BasicDBObject("$set",listapaque);
+            matriz.add(objPaquete);
+            DBObject updateQuery = new BasicDBObject("$push",matriz);
             objCon.coleccionEmpleado.update(findQuery, updateQuery);
     }
     

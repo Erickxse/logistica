@@ -23,7 +23,7 @@ public class ClienteDAO {
     
     
     
-    public void insertarCliente(Cliente c){ //Insertar a Base de Datos
+    public void insertarCliente(Cliente c){ 
     
         ConexionBD objCon = new ConexionBD();
         BasicDBObject documento = new BasicDBObject();
@@ -35,23 +35,21 @@ public class ClienteDAO {
         documento.put("direccionC", c.getDireccion());
         documento.put("nCedulaC", c.getnCedula());
         documento.put("celularC", c.getnCelular());
-        documento.put("paquetesC", c.getPaquetes());
-        objCon.coleccionCliente.insert(documento); //insertar en base de datos
+        objCon.coleccionCliente.insert(documento); 
     }
     
-    public Cliente buscarCliente(Cliente clientevr){ //recibe un cliente
-        ArrayList<Cliente> listacliente = new ArrayList<Cliente>(); //creo lista de clientes
-        Cliente c1; //creo un objeto cliente
-        String usuarioCheck, claveCheck; //creo dos strings para Usuario y Clave
-        ConexionBD objCon = new ConexionBD(); //Creo un Objeto Conexion
-        BasicDBObject buscado = new BasicDBObject("usuarioC", clientevr.getUsuario()); //Creo un BasicDB para localizar la clave
-        DBCursor cursor = objCon.coleccionCliente.find(buscado); //creo un DBCursor para situarme en el usuario
+    public Cliente verificarCliente(Cliente clientevr){ 
+        ArrayList<Cliente> listacliente = new ArrayList<Cliente>(); 
+        Cliente c1; 
+        String usuarioCheck, claveCheck; 
+        ConexionBD objCon = new ConexionBD(); 
+        BasicDBObject buscado = new BasicDBObject("usuarioC", clientevr.getUsuario()); 
+        DBCursor cursor = objCon.coleccionCliente.find(buscado); 
         while(cursor.hasNext()){
             c1= new Cliente((String)cursor.next().get("nombreC"),(String)cursor.curr().get("apellidoC"), (String)cursor.curr().get("usuarioC"),(String)cursor.curr().get("claveC")
             ,(String)cursor.curr().get("ciudadC"),(String)cursor.curr().get("direccionC"),(String)cursor.curr().get("nCedulaC"),(String)cursor.curr().get("celularC"));
-            //c1= new Cliente((String)cursor.next().get("usuarioC"), (String)cursor.curr().get("claveC"));
-            listacliente.add(0, c1);//itero y almaceno los datos en el objeto cliente 
-            //y luego los agrego a la arraylist
+            listacliente.add(0, c1); 
+            
         }
         usuarioCheck = listacliente.get(0).getUsuario();
         claveCheck = listacliente.get(0).getClave();
@@ -73,23 +71,37 @@ public class ClienteDAO {
         String ciudadP2 = p.getCiudadP2();
         String direccionP1 = p.getDireccionP1();
         String direccionP2 = p.getDireccionP2();
-        //guardar los atributos del paquete
+
         ConexionBD objCon = new ConexionBD();
         
         DBObject findQuery = new BasicDBObject("usuarioC",usuarioC);
-        
         ArrayList matriz = new ArrayList();
-
         DBObject objpaquete = new BasicDBObject("cedula1",cedula1).append("cedula2", cedula2).append("codigoP", codigoP)
                 .append("pesoP", pesoP).append("ciudadP1", ciudadP1).append("ciudadP2", ciudadP2).append("direccionP1", direccionP1).append("direccionP2", direccionP2);
-        matriz.add(objpaquete);
+                        matriz.add(objpaquete);
         DBObject listapaque = new BasicDBObject("paquetesC", matriz);
-        
-        //listapaque es un objeto que va a entrar en el documento
-        
+          
         DBObject updateQuery = new BasicDBObject("$push",listapaque);
         objCon.coleccionCliente.update(findQuery, updateQuery);
     }
     
+    
+    public DBObject buscarPaquete(String codigo){
+            
+        ConexionBD objCon = new ConexionBD();
+        DBObject findQuery = new BasicDBObject("usuarioC",usuarioC);
+        DBObject findPackage = new BasicDBObject("codidgoP",codigo);
+        return objCon.coleccionCliente.findOne(findQuery,findPackage);
+    }
+    
+    public void eliminarPaquete(Paquete p){
+        String codigoP = p.getCodigoP();
+        
+        ConexionBD objCon = new ConexionBD();
+        DBObject findQuery = new BasicDBObject("usuarioC",usuarioC);
+        
+        
+        
+    }
     }
 

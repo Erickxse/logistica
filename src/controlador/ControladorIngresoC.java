@@ -100,7 +100,7 @@ public class ControladorIngresoC implements ActionListener, KeyListener{
             Cliente clientevr = new Cliente(objVistaIngresoC.txtUsuarioC.getText(),
             objVistaIngresoC.jPwClaveC.getText());
             
-            Cliente clientecheck = objClienteDAO.buscarCliente(clientevr);
+            Cliente clientecheck = objClienteDAO.verificarCliente(clientevr);
             
             if(clientecheck.getUsuario().equals(objVistaIngresoC.txtUsuarioC.getText())
                     &&clientecheck.getClave().equals(objVistaIngresoC.jPwClaveC.getText())){
@@ -141,7 +141,7 @@ public class ControladorIngresoC implements ActionListener, KeyListener{
             
             if(e.getSource()==objVistaRegistroP.btnRegistrarP){
                 System.out.println("REGISTRANDO");
-                String emisorU  = objVistaRegistroP.txtEmisor.getText();
+            String emisorU  = objVistaRegistroP.txtEmisor.getText();
             String receptorU = objVistaRegistroP.txtReceptor.getText();
             String codigoP = objVistaRegistroP.txtCodigo.getText();
             double pesoP = Double.valueOf(objVistaRegistroP.txtPeso.getText());

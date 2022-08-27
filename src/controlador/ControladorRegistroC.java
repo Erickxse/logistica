@@ -80,7 +80,6 @@ public class ControladorRegistroC implements ActionListener, KeyListener{
                     direccion, nCedula, nCelular, paquetesC);
             objClienteDAO.insertarCliente(objCliente);
             JOptionPane.showMessageDialog(null, "Registro Exitoso");
-            //objClienteDAO.inicializarLista(objVistaRegistroC.txtUsuario.getText());
             limpiarElementos();
         
         }

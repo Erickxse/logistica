@@ -64,7 +64,7 @@ public class ControladorIngresoE implements ActionListener, KeyListener{
             Empleado empleadovr = new Empleado(objVistaIngresoE.txtCodigoEmpleado.getText(),
             objVistaIngresoE.jPwClaveE.getText());
             
-            Empleado empleadocheck = objEmpleadoDAO.buscarEmpleado(empleadovr);
+            Empleado empleadocheck = objEmpleadoDAO.verificarEmpleado(empleadovr);
             
             if(empleadocheck.getCodigoemp().equals(objVistaIngresoE.txtCodigoEmpleado.getText())
                     &&empleadocheck.getClave().equals(objVistaIngresoE.jPwClaveE.getText())){
@@ -88,11 +88,9 @@ public class ControladorIngresoE implements ActionListener, KeyListener{
         
         if(e.getSource()==objVistaIngresarP.btnIngresar){
         
-            objEmpleadoDAO.ObteneNombre(objVistaEmpleadoP.jLcodigoEmpset.getText());
-            objPaqueteDAO.obtenerPaquete(objVistaIngresarP.txtIngresar.getText());
-            objEmpleadoDAO.insertarPaquete(objPaqueteDAO.obtenerPaquete(objVistaIngresarP.txtIngresar.getText()));
-            System.out.println(objVistaEmpleadoP.jLcodigoEmpset.getText());
-            System.out.println("INSERTADO");
+            System.out.println("INGRESANDO PAQUETE");
+            String codigoP = objVistaIngresarP.txtIngresar.getText();
+            
             JOptionPane.showMessageDialog(null, "Paquete Agregado");
         }
     }
