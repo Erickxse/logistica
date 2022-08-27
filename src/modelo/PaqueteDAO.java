@@ -19,7 +19,7 @@ public class PaqueteDAO {
         documento.put("ciudadP2", p.getCiudadP2());
         documento.put("direccionP1", p.getDireccionP1());
         documento.put("direccionP2", p.getDireccionP2());
-        objCon.coleccionPaquete.insert(documento); //insertar paquete A BD
+        objCon.coleccionPaquete.insert(documento); 
     }
     
     public Paquete buscarPaquete(Paquete paquetevr){

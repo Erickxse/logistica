@@ -7,6 +7,7 @@ import java.awt.event.KeyListener;
 import javax.swing.JOptionPane;
 import modelo.Empleado;
 import modelo.EmpleadoDAO;
+import modelo.Paquete;
 import modelo.PaqueteDAO;
 import vista.FrmIngresarPaquete;
 import vista.FrmIngresoE;
@@ -88,9 +89,22 @@ public class ControladorIngresoE implements ActionListener, KeyListener{
         
         if(e.getSource()==objVistaIngresarP.btnIngresar){
         
-            System.out.println("INGRESANDO PAQUETE");
+            System.out.println("INGRESANDO PAQUETE A EMPLEADO");
             String codigoP = objVistaIngresarP.txtIngresar.getText();
             
+            String emisorU = objPaqueteDAO.obtenerPaquete(codigoP).getCedula1();
+            String receptorU = objPaqueteDAO.obtenerPaquete(codigoP).getCedula2();
+            double pesoP = Double.valueOf(objPaqueteDAO.obtenerPaquete(codigoP).getPesoP());
+            String ciudad1 = objPaqueteDAO.obtenerPaquete(codigoP).getCiudadP1();
+            String ciudad2= objPaqueteDAO.obtenerPaquete(codigoP).getCiudadP2();
+            String direccion1 = objPaqueteDAO.obtenerPaquete(codigoP).getDireccionP1();
+            String direccion2 = objPaqueteDAO.obtenerPaquete(codigoP).getDireccionP2();
+            
+            Paquete objPaquete = new Paquete(emisorU, receptorU, codigoP, pesoP, ciudad1,
+                    ciudad2, direccion1, direccion2);
+            
+            objEmpleadoDAO.ObtenerNombre(objVistaEmpleadoP.jLcodigoEmpset.getText());
+            objEmpleadoDAO.insertarPaquete(objPaquete);
             JOptionPane.showMessageDialog(null, "Paquete Agregado");
         }
     }
