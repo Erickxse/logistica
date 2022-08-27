@@ -9,6 +9,7 @@ import javax.swing.JOptionPane;
 import modelo.EmpleadoDAO;
 import modelo.Ciudad;
 import modelo.Empleado;
+import modelo.GerenteDAO;
 import vista.FrmInterfazGerencia;
 import vista.FrmRegistrarE;
 
@@ -17,6 +18,7 @@ public class ControladorRegistroE implements ActionListener, KeyListener{
         FrmRegistrarE objVistaRegistroE = new FrmRegistrarE();
         FrmInterfazGerencia objVistaInterfazG = new FrmInterfazGerencia();
         EmpleadoDAO objEmpleadoDAO = new EmpleadoDAO();
+        GerenteDAO objGerenteDAO = new GerenteDAO();
     
     public ControladorRegistroE(FrmRegistrarE registroe, FrmInterfazGerencia interfazg, EmpleadoDAO empdao){
     
@@ -73,6 +75,8 @@ public class ControladorRegistroE implements ActionListener, KeyListener{
                     direccion, codigoE, claveE, paquetesE);
             
             objEmpleadoDAO.insertarEmpleado(objEmpleado);
+            objGerenteDAO.obtenerCodigoG(objVistaInterfazG.lblAdmiGerente.getText());
+            objGerenteDAO.insertarEmpleado(objEmpleado);
             JOptionPane.showMessageDialog(null, "Empleado Agregado");
             limpiarElementos();
         }
