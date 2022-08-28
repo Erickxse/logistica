@@ -10,7 +10,9 @@ public class Paquete {
     private String ciudadP2;
     private String direccionP1;
     private String direccionP2;
-
+    private double pFinal; 
+    private boolean recibido;
+     
     public Paquete(String codigoP, double pesoP, String ciudadP1, String ciudadP2, String direccionP1, String direccionP2) {
         this.codigoP = codigoP;
         this.pesoP = pesoP;
@@ -20,7 +22,8 @@ public class Paquete {
         this.direccionP2 = direccionP2;
     }
 
-    public Paquete(String cedula1, String cedula2, String codigoP, double pesoP, String ciudadP1, String ciudadP2, String direccionP1, String direccionP2) {
+    public Paquete(String cedula1, String cedula2, String codigoP, double pesoP, String ciudadP1, String ciudadP2, 
+            String direccionP1, String direccionP2, double pFinal, boolean estado) {
         this.cedula1 = cedula1;
         this.cedula2 = cedula2;
         this.codigoP = codigoP;
@@ -29,11 +32,17 @@ public class Paquete {
         this.ciudadP2 = ciudadP2;
         this.direccionP1 = direccionP1;
         this.direccionP2 = direccionP2;
+        this.pFinal = pFinal;
+        this.recibido = estado;
     }
     
     
 
     public Paquete() {
+    }
+
+    public Paquete(boolean recibido) {
+        this.recibido = recibido;
     }
     
     //GETS 
@@ -69,6 +78,14 @@ public class Paquete {
 
     public String getDireccionP2() {
         return direccionP2;
+    }  
+
+    public double getpFinal() {
+        return pFinal;
+    }
+
+    public boolean isEstado() {
+        return recibido;
     }
     
     
@@ -107,6 +124,18 @@ public class Paquete {
     public void setDireccionP2(String direccionP2) {
         this.direccionP2 = direccionP2;
     }
+
+    public void setpFinal(double pFinal) {
+        this.pFinal = pFinal*pesoP;
+    }
+
+    public void setRecibido(boolean recibido) {
+        this.recibido = recibido;
+    }
+    
+    
+    
+    
 
     @Override
     public String toString() {

@@ -3,6 +3,7 @@ package modelo;
 
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
 import java.util.ArrayList;
 
 public class PaqueteDAO {
@@ -19,6 +20,8 @@ public class PaqueteDAO {
         documento.put("ciudadP2", p.getCiudadP2());
         documento.put("direccionP1", p.getDireccionP1());
         documento.put("direccionP2", p.getDireccionP2());
+        documento.put("precioP", p.getpFinal());
+        documento.put("recibido", p.isEstado());
         objCon.coleccionPaquete.insert(documento); 
     }
     
@@ -45,13 +48,25 @@ public class PaqueteDAO {
        BasicDBObject buscado = new BasicDBObject("codigoP", codigoP);
        DBCursor cursor = objCon.coleccionPaquete.find(buscado);
        while(cursor.hasNext()){
-           p1 = new Paquete((String)cursor.next().get("cedula1"),(String)cursor.curr().get("cedula2"),(String)cursor.curr().get("codigoP"), (Double)cursor.curr().get("pesoP"),
+           p1 = new Paquete((String)cursor.next().get("cedula1"),(String)cursor.curr().get("cedula2"),
+                   (String)cursor.curr().get("codigoP"), (Double)cursor.curr().get("pesoP"),
             (String)cursor.curr().get("ciudadP1"), (String)cursor.curr().get("ciudadP2"),
-            (String)cursor.curr().get("direccionP1"), (String)cursor.curr().get("direccionP2"));
+            (String)cursor.curr().get("direccionP1"), (String)cursor.curr().get("direccionP2"), 
+                   (double)cursor.curr().get("precioP"),(boolean)cursor.curr().get("recibido"));
            
            listapaq.add(0, p1);
        }
         
         return listapaq.get(0);
     }
+    
+    public void cambiarEstado(String codigo){
+       
+        ConexionBD objCon = new ConexionBD();
+        DBObject buscado = new BasicDBObject("codigoP", codigo);
+        DBObject updated = new BasicDBObject().append("$set", 
+                new BasicDBObject().append("recibido", true));
+        objCon.coleccionPaquete.update(buscado, updated);
+        }
+    
 }

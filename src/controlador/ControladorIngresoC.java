@@ -6,14 +6,18 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 import modelo.Ciudad;
 import modelo.Cliente;
 import modelo.ClienteDAO;
 import modelo.Paquete;
 import modelo.PaqueteDAO;
+import modelo.Precio;
 import vista.FrmIngresoC;
 import vista.FrmInicio;
 import vista.FrmInterfazCliente;
+import vista.FrmRecibo;
 import vista.FrmRegistroPaquete;
 
 /**
@@ -25,27 +29,38 @@ public class ControladorIngresoC implements ActionListener, KeyListener{
     FrmIngresoC objVistaIngresoC = new FrmIngresoC();
     FrmInterfazCliente objVistaInterfazC = new FrmInterfazCliente();
     FrmRegistroPaquete objVistaRegistroP = new FrmRegistroPaquete();
+    FrmRecibo objVistaRecibo = new FrmRecibo();
     ClienteDAO objClienteDAO = new ClienteDAO();
     PaqueteDAO objPaqueteDAO = new PaqueteDAO();
     String nombreC;
-    
+    public static DefaultTableModel modelo;
     public ControladorIngresoC(FrmIngresoC ingreso, FrmInicio inicio, FrmInterfazCliente interfazC, 
-            FrmRegistroPaquete registrop, ClienteDAO cdao, PaqueteDAO pdao){
+            FrmRegistroPaquete registrop, FrmRecibo recibo, ClienteDAO cdao, PaqueteDAO pdao){
         objVistaIngresoC = ingreso;
         objVistaInicio = inicio;
         objVistaInterfazC = interfazC;
         objVistaRegistroP = registrop;
+        objVistaRecibo = recibo;
         objClienteDAO = cdao;
         objPaqueteDAO = pdao;
         
+            JTable tablaRecibo = objVistaRecibo.jTablaRecibo;
+                modelo = (DefaultTableModel) tablaRecibo.getModel();
         
         objVistaIngresoC.btnIngresarC.addActionListener(this);
         objVistaIngresoC.btnRegresar.addActionListener(this);
         objVistaInterfazC.btnCerrarSesion.addActionListener(this);
         objVistaInterfazC.btnRegistrarP.addActionListener(this);
-        
+        objVistaInterfazC.btnRetirarP.addActionListener(this);
         objVistaRegistroP.btnRegistrarP.addActionListener(this);
         objVistaRegistroP.btnCerrar.addActionListener(this);
+        objVistaInterfazC.btnVerRecibos.addActionListener(this);
+        objVistaRecibo.btnBuscarCodigo.addActionListener(this);
+        objVistaRecibo.btnMostrarTodo.addActionListener(this);
+        objVistaRecibo.btnRegresar.addActionListener(this);
+        objVistaRecibo.btnBorrarElementos.addActionListener(this);
+        
+        
 
         
         //CIUDAD 1
@@ -140,6 +155,7 @@ public class ControladorIngresoC implements ActionListener, KeyListener{
             }
             
             if(e.getSource()==objVistaRegistroP.btnRegistrarP){
+                
                 System.out.println("REGISTRANDO");
             String emisorU  = objVistaRegistroP.txtEmisor.getText();
             String receptorU = objVistaRegistroP.txtReceptor.getText();
@@ -149,14 +165,54 @@ public class ControladorIngresoC implements ActionListener, KeyListener{
             String ciudad2 = objVistaRegistroP.cmbCiudad2.getSelectedItem().toString();
             String direccion1 = objVistaRegistroP.txtDireccion1.getText();
             String direccion2 = objVistaRegistroP.txtDireccion2.getText();
-            
+            double precioP = pesoP*Precio.PRECIO;
+                System.out.println("Precio Final: "+precioP);
             Paquete objPaquete = new Paquete(emisorU, receptorU, codigoP, pesoP, ciudad1,
-            ciudad2, direccion1, direccion2);
+            ciudad2, direccion1, direccion2, precioP,false);
             objPaqueteDAO.insertarPaquete(objPaquete);
             objClienteDAO.ObtenerNombre(objVistaInterfazC.jLnombreSet.getText());
-            objClienteDAO.insertarPaquete(objPaquete);
+            objClienteDAO.insertarPaqueteC(objPaquete);
             JOptionPane.showMessageDialog(null, "Paquete Registrado");  
             limpiarElementosPaquete();
+            }
+            
+            if(e.getSource()==objVistaInterfazC.btnVerRecibos){
+                objVistaInterfazC.setVisible(false);
+                objVistaRecibo.setVisible(true);
+            }
+            
+            if(e.getSource()==objVistaRecibo.btnRegresar){
+                objVistaRecibo.setVisible(false);
+                objVistaInterfazC.setVisible(true);
+            }
+            if(e.getSource()==objVistaRecibo.btnBuscarCodigo){
+                String texto = objVistaRecibo.txtCodigoBuscar.getText();
+                Paquete pq = null;
+                System.out.println(texto);
+                if(!texto.equals("")&&!texto.equals(null)){
+                    System.out.println("INGRESO");
+                pq = objPaqueteDAO.obtenerPaquete(texto);
+                String vector[] = new String[4];
+                vector[0]=pq.getCodigoP();
+                vector[1]=pq.getCiudadP1();
+                vector[2]=pq.getCiudadP2();
+                vector[3]=String.valueOf(pq.getpFinal());
+                modelo.addRow(vector);
+                }
+                    
+            }
+            
+            if(e.getSource()==objVistaInterfazC.btnRetirarP){
+                objPaqueteDAO.cambiarEstado(objVistaInterfazC.txtCodigoRetiro.getText());
+                JOptionPane.showMessageDialog(null, "RETIRADO");
+            
+            }
+            
+            if(e.getSource()==objVistaRecibo.btnMostrarTodo){
+                //mostrar todo
+            }
+            if(e.getSource()==objVistaRecibo.btnBorrarElementos){
+                //BORRAR
             }
     }
     

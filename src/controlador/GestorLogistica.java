@@ -19,6 +19,7 @@ import vista.FrmInterfazGerencia;
 import vista.FrmRegistrarE;
 import vista.FrmInterfazEmpleado;
 import vista.FrmInterfazTransporte;
+import vista.FrmRecibo;
 import vista.FrmRegistroCliente;
 import vista.FrmRegistroPaquete;
 import vista.FrmTransporte;
@@ -47,6 +48,7 @@ public class GestorLogistica {
             FrmInterfazEmpleado continuarE = new FrmInterfazEmpleado();
             FrmInterfazTransporte itransporte = new FrmInterfazTransporte();
             FrmInicioTransporte initransporte = new FrmInicioTransporte();
+            FrmRecibo reciboA = new FrmRecibo();
             
             //ENVIAR
             
@@ -61,7 +63,7 @@ public class GestorLogistica {
             //controladoresCliente
             ControladorInicio cl = new ControladorInicio(in, inc, registroCliente, ingresoE,  continuarE,
                     ingresarP, gerencia);
-            ControladorIngresoC cic = new ControladorIngresoC(inc, in, interfazC, registrarP, objClienteDAO, objPaqueteDAO);
+            ControladorIngresoC cic = new ControladorIngresoC(inc, in, interfazC, registrarP, reciboA, objClienteDAO, objPaqueteDAO);
             ControladorRegistroC registroClienteControlador = new ControladorRegistroC(registroCliente, in, objClienteDAO);           
             ControladorRegistroE registroEmpleado = new ControladorRegistroE(regE, interfazG, objEmpleadoDAO);
             ControladorIngresoE ingresoEControlador = new ControladorIngresoE(ingresoE, in, continuarE, ingresarP);           

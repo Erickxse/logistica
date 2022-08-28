@@ -9,6 +9,7 @@ import modelo.Empleado;
 import modelo.EmpleadoDAO;
 import modelo.Paquete;
 import modelo.PaqueteDAO;
+import modelo.Precio;
 import modelo.TransporteDAO;
 import vista.FrmEnviarP;
 import vista.FrmIngresarPaquete;
@@ -112,9 +113,11 @@ public class ControladorIngresoE implements ActionListener, KeyListener{
             String ciudad2= objPaqueteDAO.obtenerPaquete(codigoP).getCiudadP2();
             String direccion1 = objPaqueteDAO.obtenerPaquete(codigoP).getDireccionP1();
             String direccion2 = objPaqueteDAO.obtenerPaquete(codigoP).getDireccionP2();
+            double precioP = pesoP* Precio.PRECIO;
+    
             
             Paquete objPaquete = new Paquete(emisorU, receptorU, codigoP, pesoP, ciudad1,
-                    ciudad2, direccion1, direccion2);
+                    ciudad2, direccion1, direccion2, precioP, false);
             
             objEmpleadoDAO.ObtenerNombre(objVistaEmpleadoP.jLcodigoEmpset.getText());
             objEmpleadoDAO.insertarPaquete(objPaquete);
@@ -141,9 +144,10 @@ public class ControladorIngresoE implements ActionListener, KeyListener{
             String ciudad2 = objPaqueteDAO.obtenerPaquete(codigoP).getCiudadP2();
             String direccion1 = objPaqueteDAO.obtenerPaquete(codigoP).getDireccionP1();
             String direccion2 = objPaqueteDAO.obtenerPaquete(codigoP).getDireccionP2();
+            double precioP = pesoP*Precio.PRECIO;
             
             Paquete objPaquete = new Paquete(emisorU, receptorU, codigoP, pesoP, ciudad1,
-            ciudad2, direccion1, direccion2);
+            ciudad2, direccion1, direccion2, precioP, false);
             
            objTransporteDAO.obtenerCodigoT(objVistaEnviarP.txtCodigoV.getText());
            objTransporteDAO.insertarPaquete(objPaquete);

@@ -32,12 +32,11 @@ public class FrmInterfazCliente extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         btnRegistrarP = new javax.swing.JButton();
         btnVerRecibos = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTPaquetes = new javax.swing.JTable();
         btnRetirarP = new javax.swing.JButton();
         btnCerrarSesion = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jLnombreSet = new javax.swing.JLabel();
+        txtCodigoRetiro = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,19 +46,6 @@ public class FrmInterfazCliente extends javax.swing.JFrame {
         btnRegistrarP.setText("Registrar Paquete y Enviar");
 
         btnVerRecibos.setText("Ver Recibidos ");
-
-        jTPaquetes.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {},
-                {},
-                {},
-                {}
-            },
-            new String [] {
-
-            }
-        ));
-        jScrollPane1.setViewportView(jTPaquetes);
 
         btnRetirarP.setText("Retirar");
 
@@ -71,6 +57,8 @@ public class FrmInterfazCliente extends javax.swing.JFrame {
         jLnombreSet.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLnombreSet.setBorder(new javax.swing.border.MatteBorder(null));
         jLnombreSet.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
+        txtCodigoRetiro.setToolTipText("Ingrese Codigo de Paquete");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -85,8 +73,11 @@ public class FrmInterfazCliente extends javax.swing.JFrame {
                         .addGap(37, 37, 37)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnVerRecibos)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 351, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnRegistrarP)))
+                            .addComponent(btnRegistrarP)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(btnRetirarP)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtCodigoRetiro, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(25, 25, 25)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -95,16 +86,11 @@ public class FrmInterfazCliente extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jLnombreSet, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel2))))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(142, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(btnRetirarP)
-                        .addGap(21, 21, 21))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(184, 184, 184))))
+                .addComponent(jLabel1)
+                .addGap(184, 184, 184))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,11 +108,11 @@ public class FrmInterfazCliente extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnVerRecibos)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnRetirarP)
-                    .addComponent(btnCerrarSesion))
+                    .addComponent(txtCodigoRetiro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(106, 106, 106)
+                .addComponent(btnCerrarSesion)
                 .addContainerGap())
         );
 
@@ -195,7 +181,6 @@ public class FrmInterfazCliente extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     public javax.swing.JLabel jLnombreSet;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
-    public javax.swing.JTable jTPaquetes;
+    public javax.swing.JTextField txtCodigoRetiro;
     // End of variables declaration//GEN-END:variables
 }

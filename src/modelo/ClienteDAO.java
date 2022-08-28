@@ -61,7 +61,7 @@ public class ClienteDAO {
         usuarioC=usuario;
     }
         
-    public void insertarPaquete(Paquete p){
+    public void insertarPaqueteC(Paquete p){
         
         String cedula1 = p.getCedula1();
         String cedula2 = p.getCedula2();
@@ -71,13 +71,15 @@ public class ClienteDAO {
         String ciudadP2 = p.getCiudadP2();
         String direccionP1 = p.getDireccionP1();
         String direccionP2 = p.getDireccionP2();
+        double precioP = p.getpFinal();
 
         ConexionBD objCon = new ConexionBD();
         
         DBObject findQuery = new BasicDBObject("usuarioC",usuarioC);
         ArrayList matriz = new ArrayList();
         DBObject objpaquete = new BasicDBObject("cedula1",cedula1).append("cedula2", cedula2).append("codigoP", codigoP)
-                .append("pesoP", pesoP).append("ciudadP1", ciudadP1).append("ciudadP2", ciudadP2).append("direccionP1", direccionP1).append("direccionP2", direccionP2);
+                .append("pesoP", pesoP).append("ciudadP1", ciudadP1).append("ciudadP2", ciudadP2).append("direccionP1", direccionP1).append("direccionP2", direccionP2)
+                .append("precioP", precioP);
                         matriz.add(objpaquete);
         DBObject listapaque = new BasicDBObject("paquetesC", matriz);
           
@@ -94,14 +96,5 @@ public class ClienteDAO {
         return objCon.coleccionCliente.findOne(findQuery,findPackage);
     }
     
-    public void eliminarPaquete(Paquete p){
-        String codigoP = p.getCodigoP();
-        
-        ConexionBD objCon = new ConexionBD();
-        DBObject findQuery = new BasicDBObject("usuarioC",usuarioC);
-        
-        
-        
-    }
     }
 
