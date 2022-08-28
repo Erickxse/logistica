@@ -6,16 +6,19 @@ import modelo.GerenteDAO;
 import modelo.Paquete;
 import modelo.PaqueteDAO;
 import modelo.TransporteDAO;
+import vista.FrmEnviarP;
 import vista.FrmGerencia;
 import vista.FrmIngresarPaquete;
 import vista.FrmIngresoC;
 import vista.FrmIngresoE;
 import vista.FrmInicio;
+import vista.FrmInicioTransporte;
 import vista.FrmInterfazCliente;
 import vista.FrmRegistroCliente;
 import vista.FrmInterfazGerencia;
 import vista.FrmRegistrarE;
 import vista.FrmInterfazEmpleado;
+import vista.FrmInterfazTransporte;
 import vista.FrmRegistroCliente;
 import vista.FrmRegistroPaquete;
 import vista.FrmTransporte;
@@ -42,8 +45,12 @@ public class GestorLogistica {
             FrmInterfazGerencia interfazG = new FrmInterfazGerencia();
             FrmInterfazCliente interfazC = new FrmInterfazCliente();
             FrmInterfazEmpleado continuarE = new FrmInterfazEmpleado();
+            FrmInterfazTransporte itransporte = new FrmInterfazTransporte();
+            FrmInicioTransporte initransporte = new FrmInicioTransporte();
             
+            //ENVIAR
             
+            FrmEnviarP enviarPT = new FrmEnviarP();
                 //DAO
             ClienteDAO objClienteDAO = new ClienteDAO();
             EmpleadoDAO objEmpleadoDAO = new EmpleadoDAO();
@@ -61,7 +68,7 @@ public class GestorLogistica {
             ControladorGerencia gerenciaCont = new ControladorGerencia(gerencia, in, interfazG);
             ControladorInterfazGerencia interfazGerencia = new ControladorInterfazGerencia(interfazG, gerencia, regE, transporte);
 
-            ControladorTransporte regTransporte = new ControladorTransporte(transporte, objTransporteDAO, interfazG);
+            ControladorTransporte regTransporte = new ControladorTransporte(transporte, objTransporteDAO, interfazG, itransporte, initransporte, ingresoE);
 
 
             
@@ -99,7 +106,8 @@ public class GestorLogistica {
             transporte.setVisible(false);
             transporte.setLocationRelativeTo(in);
  
-            
+            enviarPT.setVisible(false);
+            enviarPT.setLocationRelativeTo(in);
         }
         
 }

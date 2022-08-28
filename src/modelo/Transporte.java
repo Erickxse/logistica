@@ -3,33 +3,44 @@ package modelo;
 public class Transporte {
     
     private String placa;
-    private int nUnidad;
+    private String codigoUnidad;
 
-    public Transporte(String placa, int nUnidad){
+    public Transporte(String placa, String codigoUnidad) {
         this.placa = placa;
-        this.nUnidad = nUnidad;
+        this.codigoUnidad = codigoUnidad;
     }
+
+    
 
     public Transporte(){
     }
+
+    public Transporte(String codigoUnidad) {
+        this.codigoUnidad = codigoUnidad;
+    }
+    
     
     //GETS
     public String getPlaca() {
         return placa;
     }
-    
-    public int getnUnidad() {
-        return nUnidad;
+
+    public String getCodigoUnidad() {
+        return codigoUnidad;
     }
+    
+   
 
     //sets
     public void setPlaca(String placa) {
         this.placa = placa;
     }
-    
-    public void setnUnidad(int nUnidad) {
-        this.nUnidad = nUnidad;
+
+    public void setCodigoUnidad(String codigoUnidad) {
+        this.codigoUnidad = codigoUnidad;
     }
+    
+    
     
     
 }

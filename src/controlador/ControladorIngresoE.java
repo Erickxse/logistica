@@ -9,6 +9,8 @@ import modelo.Empleado;
 import modelo.EmpleadoDAO;
 import modelo.Paquete;
 import modelo.PaqueteDAO;
+import modelo.TransporteDAO;
+import vista.FrmEnviarP;
 import vista.FrmIngresarPaquete;
 import vista.FrmIngresoE;
 import vista.FrmInicio;
@@ -19,8 +21,10 @@ public class ControladorIngresoE implements ActionListener, KeyListener{
     FrmInicio objVistaInicio= new FrmInicio();
     FrmInterfazEmpleado objVistaEmpleadoP = new FrmInterfazEmpleado();
     FrmIngresarPaquete objVistaIngresarP = new FrmIngresarPaquete();
+    FrmEnviarP objVistaEnviarP = new FrmEnviarP();
     EmpleadoDAO objEmpleadoDAO = new EmpleadoDAO();
     PaqueteDAO objPaqueteDAO = new PaqueteDAO();
+    TransporteDAO objTransporteDAO = new TransporteDAO();
     
     String nombreE, codigoE;
     public ControladorIngresoE(FrmIngresoE ingresoe, FrmInicio inicio, FrmInterfazEmpleado empleadoP, FrmIngresarPaquete ingresarPaquete) {
@@ -34,11 +38,19 @@ public class ControladorIngresoE implements ActionListener, KeyListener{
         objVistaIngresoE.btnRegresar.addActionListener(this);
         objVistaEmpleadoP.btnCerrarSesionE.addActionListener(this);
         objVistaEmpleadoP.btnIngresarPaquete.addActionListener(this);
+        objVistaEmpleadoP.btnEnviarPqt.addActionListener(this);
         
+        //INGRESO TRANSPORTE
+        
+        objVistaIngresoE.btnTransporte.addActionListener(this);
         //INGRESO PAQUETE
         objVistaIngresarP.btnRegresarE.addActionListener(this);
         objVistaIngresarP.btnVerRecibo.addActionListener(this);
         objVistaIngresarP.btnIngresar.addActionListener(this);
+        
+        //ENVIO PAQUETE
+        objVistaEnviarP.btnRegresar.addActionListener(this);
+        objVistaEnviarP.btnEnviarT.addActionListener(this);
         
         
     }
@@ -82,6 +94,7 @@ public class ControladorIngresoE implements ActionListener, KeyListener{
             
         }
         
+        
         if(e.getSource()==objVistaEmpleadoP.btnIngresarPaquete){
             objVistaIngresarP.setVisible(true);
             objVistaEmpleadoP.setVisible(false);
@@ -107,6 +120,42 @@ public class ControladorIngresoE implements ActionListener, KeyListener{
             objEmpleadoDAO.insertarPaquete(objPaquete);
             JOptionPane.showMessageDialog(null, "Paquete Agregado");
         }
+        
+        if(e.getSource()==objVistaEmpleadoP.btnEnviarPqt){
+            objVistaEmpleadoP.setVisible(false);
+            objVistaEnviarP.setVisible(true);
+        }
+        
+        if(e.getSource()==objVistaEnviarP.btnRegresar){
+            objVistaEnviarP.setVisible(false);
+            objVistaEmpleadoP.setVisible(true);
+        }
+        
+        if(e.getSource()==objVistaEnviarP.btnEnviarT){
+            System.out.println("ENVIANDO A TRANSPORTE");
+            String codigoP = objVistaEnviarP.txtCodigoP.getText();
+            String emisorU = objPaqueteDAO.obtenerPaquete(codigoP).getCedula1();
+            String receptorU = objPaqueteDAO.obtenerPaquete(codigoP).getCedula2();
+            double pesoP = Double.valueOf(objPaqueteDAO.obtenerPaquete(codigoP).getPesoP());
+            String ciudad1 = objPaqueteDAO.obtenerPaquete(codigoP).getCiudadP1();
+            String ciudad2 = objPaqueteDAO.obtenerPaquete(codigoP).getCiudadP2();
+            String direccion1 = objPaqueteDAO.obtenerPaquete(codigoP).getDireccionP1();
+            String direccion2 = objPaqueteDAO.obtenerPaquete(codigoP).getDireccionP2();
+            
+            Paquete objPaquete = new Paquete(emisorU, receptorU, codigoP, pesoP, ciudad1,
+            ciudad2, direccion1, direccion2);
+            
+           objTransporteDAO.obtenerCodigoT(objVistaEnviarP.txtCodigoV.getText());
+           objTransporteDAO.insertarPaquete(objPaquete);
+           JOptionPane.showMessageDialog(null, "Paquete Enviado a Transporte "+codigoP);
+           
+           objVistaEnviarP.txtCodigoP.setText("");
+           objVistaEnviarP.txtCodigoV.setText("");
+            
+        }
+
+        
+        
     }
 
     @Override

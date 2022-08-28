@@ -37,6 +37,7 @@ public class FrmIngresoE extends javax.swing.JFrame {
         btnRegresar = new javax.swing.JButton();
         jPwClaveE = new javax.swing.JPasswordField();
         jLabel5 = new javax.swing.JLabel();
+        btnTransporte = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,6 +55,8 @@ public class FrmIngresoE extends javax.swing.JFrame {
         btnRegresar.setText("< Regresar");
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/vista/empleado.png"))); // NOI18N
+
+        btnTransporte.setText("TRANSPORTE");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -81,7 +84,11 @@ public class FrmIngresoE extends javax.swing.JFrame {
                                 .addComponent(txtCodigoEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE)
                                 .addComponent(jPwClaveE)))
                         .addGap(36, 36, 36)))
-                .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(btnTransporte, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 8, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(201, 201, 201)
@@ -111,7 +118,9 @@ public class FrmIngresoE extends javax.swing.JFrame {
                         .addGap(34, 34, 34)
                         .addComponent(btnContinuarE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnRegresar)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnRegresar)
+                            .addComponent(btnTransporte))
                         .addGap(47, 47, 47))))
         );
 
@@ -172,6 +181,7 @@ public class FrmIngresoE extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnContinuarE;
     public javax.swing.JButton btnRegresar;
+    public javax.swing.JButton btnTransporte;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

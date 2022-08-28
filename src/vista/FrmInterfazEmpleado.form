@@ -64,7 +64,10 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jLcodigoEmpset" min="-2" pref="100" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="btnIngresarPaquete" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="btnEnviarPqt" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="btnIngresarPaquete" alignment="0" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                   </Group>
@@ -89,7 +92,9 @@
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="btnIngresarPaquete" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace pref="41" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                  <Component id="btnEnviarPqt" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace pref="53" max="32767" attributes="0"/>
                   <Component id="btnCerrarSesionE" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -136,6 +141,14 @@
                 <MatteColorBorder/>
               </Border>
             </Property>
+          </Properties>
+          <AuxValues>
+            <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+          </AuxValues>
+        </Component>
+        <Component class="javax.swing.JButton" name="btnEnviarPqt">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Enviar Paquete"/>
           </Properties>
           <AuxValues>
             <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
