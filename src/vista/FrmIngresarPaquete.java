@@ -32,7 +32,6 @@ public class FrmIngresarPaquete extends javax.swing.JFrame {
         txtIngresar = new javax.swing.JTextField();
         btnIngresar = new javax.swing.JButton();
         btnRegresarE = new javax.swing.JButton();
-        btnVerRecibo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -73,8 +72,6 @@ public class FrmIngresarPaquete extends javax.swing.JFrame {
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
-        btnVerRecibo.setText("Ver Recibo");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -83,19 +80,13 @@ public class FrmIngresarPaquete extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(154, 154, 154)
-                .addComponent(btnVerRecibo)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnVerRecibo)
-                .addContainerGap(11, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         pack();
@@ -139,7 +130,6 @@ public class FrmIngresarPaquete extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnIngresar;
     public javax.swing.JButton btnRegresarE;
-    public javax.swing.JButton btnVerRecibo;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     public javax.swing.JTextField txtIngresar;

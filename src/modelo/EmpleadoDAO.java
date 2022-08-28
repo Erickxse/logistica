@@ -54,6 +54,22 @@ public class EmpleadoDAO {
     public void ObtenerNombre(String codigo){
         codigoE=codigo;
     }
+    
+    public Empleado obtenerEmpleado(String codigo){
+        ArrayList<Empleado> listaemp = new ArrayList<Empleado>();
+        Empleado e1;
+        ConexionBD objCon = new ConexionBD();
+        BasicDBObject buscado = new BasicDBObject("codigoE",codigo);
+        DBCursor cursor = objCon.coleccionEmpleado.find(buscado);
+        while(cursor.hasNext()){
+         e1 = new Empleado ((String)cursor.next().get("nombreE"),(String)cursor.curr().get("apellidoE"),
+         (String)cursor.curr().get("nCedula"),(String)cursor.curr().get("ciudadE"),
+                 (String)cursor.curr().get("direccionE"),(String)cursor.curr().get("codigoE"),
+                 (String)cursor.curr().get("claveE"));
+                 listaemp.add(0,e1);
+        }
+            return listaemp.get(0);
+    }
     public void insertarPaquete(Paquete p){
         
         String cedula1 = p.getCedula1();
