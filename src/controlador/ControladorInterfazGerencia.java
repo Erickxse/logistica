@@ -7,6 +7,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import javax.swing.JOptionPane;
 import modelo.Empleado;
+import vista.FrmBorrarEmpleado;
 import vista.FrmGerencia;
 import vista.FrmInterfazGerencia;
 import vista.FrmRegistrarE;
@@ -18,16 +19,20 @@ public class ControladorInterfazGerencia implements ActionListener, KeyListener{
     FrmGerencia objVistaGerencia = new FrmGerencia();
     FrmRegistrarE objVistaRegistrarE = new FrmRegistrarE();
     FrmTransporte objVistaTransporte = new FrmTransporte();
+    FrmBorrarEmpleado objVistaBorrarE = new FrmBorrarEmpleado();
 
-    public ControladorInterfazGerencia(FrmInterfazGerencia interfazgerencia, FrmGerencia gerencia, FrmRegistrarE registrar, FrmTransporte transporte){
+    public ControladorInterfazGerencia(FrmInterfazGerencia interfazgerencia, FrmGerencia gerencia, FrmRegistrarE registrar, FrmTransporte transporte,
+    FrmBorrarEmpleado borrare){
         objVistaInterfazGerencia = interfazgerencia;
         objVistaGerencia = gerencia;
         objVistaRegistrarE = registrar;
         objVistaTransporte = transporte;
+        objVistaBorrarE = borrare;
         
         objVistaInterfazGerencia.btnAgregarE.addActionListener(this);
         objVistaInterfazGerencia.btnAgregarT.addActionListener(this);
         objVistaInterfazGerencia.btnCerrarSesion.addActionListener(this);
+        objVistaBorrarE.btnEliminarE.addActionListener(this);
     }
 
     @Override
@@ -44,7 +49,9 @@ public class ControladorInterfazGerencia implements ActionListener, KeyListener{
         objVistaGerencia.setVisible(true);
         objVistaInterfazGerencia.setVisible(false);
         }
+        if(e.getSource()==objVistaInterfazGerencia.btnEliminarE){
         
+        }
     }
 
     @Override

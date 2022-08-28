@@ -47,7 +47,6 @@ public class ControladorIngresoE implements ActionListener, KeyListener{
         objVistaIngresoE.btnTransporte.addActionListener(this);
         //INGRESO PAQUETE
         objVistaIngresarP.btnRegresarE.addActionListener(this);
-        objVistaIngresarP.btnVerRecibo.addActionListener(this);
         objVistaIngresarP.btnIngresar.addActionListener(this);
         
         //ENVIO PAQUETE

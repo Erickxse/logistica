@@ -31,9 +31,9 @@ public class FrmInterfazTransporte extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLblCodigo = new javax.swing.JLabel();
         txtCodigoPaq = new javax.swing.JTextField();
-        btnDescargar = new javax.swing.JToggleButton();
         txtIDEmpleado = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        btnDescargar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,9 +45,9 @@ public class FrmInterfazTransporte extends javax.swing.JFrame {
         jLblCodigo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLblCodigo.setBorder(new javax.swing.border.MatteBorder(null));
 
-        btnDescargar.setText("Descargar Paquete");
-
         jLabel2.setText("Empleado que recibe");
+
+        btnDescargar.setText("Descargar Paquete");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -70,9 +70,9 @@ public class FrmInterfazTransporte extends javax.swing.JFrame {
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(txtIDEmpleado, javax.swing.GroupLayout.DEFAULT_SIZE, 109, Short.MAX_VALUE)
                                     .addComponent(txtCodigoPaq))
-                                .addGap(18, 18, 18)
+                                .addGap(36, 36, 36)
                                 .addComponent(btnDescargar)))))
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addContainerGap(95, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -81,14 +81,14 @@ public class FrmInterfazTransporte extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLblCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
+                .addComponent(txtCodigoPaq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
-                        .addComponent(txtCodigoPaq, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(txtIDEmpleado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
+                        .addGap(1, 1, 1)
                         .addComponent(btnDescargar)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
@@ -153,7 +153,7 @@ public class FrmInterfazTransporte extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JToggleButton btnDescargar;
+    public javax.swing.JButton btnDescargar;
     public javax.swing.JButton btnRegresar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
