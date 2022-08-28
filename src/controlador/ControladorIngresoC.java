@@ -11,6 +11,7 @@ import javax.swing.table.DefaultTableModel;
 import modelo.Ciudad;
 import modelo.Cliente;
 import modelo.ClienteDAO;
+import modelo.Estado;
 import modelo.Paquete;
 import modelo.PaqueteDAO;
 import modelo.Precio;
@@ -24,6 +25,9 @@ import vista.FrmRegistroPaquete;
  *
  * @author SR. MORA
  */
+
+    
+
 public class ControladorIngresoC implements ActionListener, KeyListener{
     FrmInicio objVistaInicio = new FrmInicio();
     FrmIngresoC objVistaIngresoC = new FrmIngresoC();
@@ -168,7 +172,7 @@ public class ControladorIngresoC implements ActionListener, KeyListener{
             double precioP = pesoP*Precio.PRECIO;
                 System.out.println("Precio Final: "+precioP);
             Paquete objPaquete = new Paquete(emisorU, receptorU, codigoP, pesoP, ciudad1,
-            ciudad2, direccion1, direccion2, precioP,false);
+            ciudad2, direccion1, direccion2, precioP, Estado.CLIENTE.toString());
             objPaqueteDAO.insertarPaquete(objPaquete);
             objClienteDAO.ObtenerNombre(objVistaInterfazC.jLnombreSet.getText());
             objClienteDAO.insertarPaqueteC(objPaquete);
@@ -203,9 +207,21 @@ public class ControladorIngresoC implements ActionListener, KeyListener{
             }
             
             if(e.getSource()==objVistaInterfazC.btnRetirarP){
-                objPaqueteDAO.cambiarEstado(objVistaInterfazC.txtCodigoRetiro.getText());
+                Paquete p1 = objPaqueteDAO.obtenerPaquete(objVistaInterfazC.txtCodigoRetiro.getText());
+                Cliente c1 = objClienteDAO.obtenerCliente(objVistaInterfazC.jLnombreSet.getText());
+                String cedulaC1 = c1.getnCedula();
+                String ciudadC1 = c1.getCiudad();
+                String ciudadPq2 = p1.getCiudadP2();
+                String cedulaPq = p1.getCedula2();
+                if(cedulaC1 == null ? cedulaPq == null : cedulaC1.equals(cedulaPq)
+                        && ciudadC1 == null ? ciudadPq2 == null : ciudadC1.equals(ciudadPq2)){
+                objPaqueteDAO.cambiarEstadoR(objVistaInterfazC.txtCodigoRetiro.getText());
                 JOptionPane.showMessageDialog(null, "RETIRADO");
-            
+                }else if(cedulaC1 == null ? cedulaPq != null : !cedulaC1.equals(cedulaPq)
+                        && ciudadC1 == null ? ciudadPq2 != null : !ciudadC1.equals(ciudadPq2)){
+                    JOptionPane.showMessageDialog(null, "Identidad No Valida");
+                }
+                objVistaInterfazC.txtCodigoRetiro.setText("");
             }
             
             if(e.getSource()==objVistaRecibo.btnMostrarTodo){

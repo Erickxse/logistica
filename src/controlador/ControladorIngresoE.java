@@ -7,6 +7,7 @@ import java.awt.event.KeyListener;
 import javax.swing.JOptionPane;
 import modelo.Empleado;
 import modelo.EmpleadoDAO;
+import modelo.Estado;
 import modelo.Paquete;
 import modelo.PaqueteDAO;
 import modelo.Precio;
@@ -117,11 +118,13 @@ public class ControladorIngresoE implements ActionListener, KeyListener{
     
             
             Paquete objPaquete = new Paquete(emisorU, receptorU, codigoP, pesoP, ciudad1,
-                    ciudad2, direccion1, direccion2, precioP, false);
+                    ciudad2, direccion1, direccion2, precioP, Estado.BODEGA.toString());
             
             objEmpleadoDAO.ObtenerNombre(objVistaEmpleadoP.jLcodigoEmpset.getText());
             objEmpleadoDAO.insertarPaquete(objPaquete);
             JOptionPane.showMessageDialog(null, "Paquete Agregado");
+            objPaqueteDAO.cambiarEstadoB(objPaquete.getCodigoP());
+            objVistaIngresarP.txtIngresar.setText("");
         }
         
         if(e.getSource()==objVistaEmpleadoP.btnEnviarPqt){
@@ -147,11 +150,12 @@ public class ControladorIngresoE implements ActionListener, KeyListener{
             double precioP = pesoP*Precio.PRECIO;
             
             Paquete objPaquete = new Paquete(emisorU, receptorU, codigoP, pesoP, ciudad1,
-            ciudad2, direccion1, direccion2, precioP, false);
+            ciudad2, direccion1, direccion2, precioP, Estado.CAMINO.toString());
             
            objTransporteDAO.obtenerCodigoT(objVistaEnviarP.txtCodigoV.getText());
            objTransporteDAO.insertarPaquete(objPaquete);
            JOptionPane.showMessageDialog(null, "Paquete Enviado a Transporte "+codigoP);
+           objPaqueteDAO.cambiarEstadoT(objPaquete.getCodigoP());
            
            objVistaEnviarP.txtCodigoP.setText("");
            objVistaEnviarP.txtCodigoV.setText("");

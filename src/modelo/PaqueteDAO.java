@@ -21,7 +21,7 @@ public class PaqueteDAO {
         documento.put("direccionP1", p.getDireccionP1());
         documento.put("direccionP2", p.getDireccionP2());
         documento.put("precioP", p.getpFinal());
-        documento.put("recibido", p.isEstado());
+        documento.put("estado", p.getEstado());
         objCon.coleccionPaquete.insert(documento); 
     }
     
@@ -52,7 +52,7 @@ public class PaqueteDAO {
                    (String)cursor.curr().get("codigoP"), (Double)cursor.curr().get("pesoP"),
             (String)cursor.curr().get("ciudadP1"), (String)cursor.curr().get("ciudadP2"),
             (String)cursor.curr().get("direccionP1"), (String)cursor.curr().get("direccionP2"), 
-                   (double)cursor.curr().get("precioP"),(boolean)cursor.curr().get("recibido"));
+                   (double)cursor.curr().get("precioP"),(String)cursor.curr().get("estado"));
            
            listapaq.add(0, p1);
        }
@@ -60,13 +60,38 @@ public class PaqueteDAO {
         return listapaq.get(0);
     }
     
-    public void cambiarEstado(String codigo){
+    public void cambiarEstadoB(String codigo){
        
         ConexionBD objCon = new ConexionBD();
         DBObject buscado = new BasicDBObject("codigoP", codigo);
         DBObject updated = new BasicDBObject().append("$set", 
-                new BasicDBObject().append("recibido", true));
+                new BasicDBObject().append("estado", Estado.BODEGA.toString()));
         objCon.coleccionPaquete.update(buscado, updated);
         }
     
+    public void cambiarEstadoR(String codigo){
+       
+        ConexionBD objCon = new ConexionBD();
+        DBObject buscado = new BasicDBObject("codigoP", codigo);
+        DBObject updated = new BasicDBObject().append("$set", 
+                new BasicDBObject().append("estado", Estado.RETIRADO.toString()));
+        objCon.coleccionPaquete.update(buscado, updated);
+        }
+    
+    public void cambiarEstadoT(String codigo){
+       
+        ConexionBD objCon = new ConexionBD();
+        DBObject buscado = new BasicDBObject("codigoP", codigo);
+        DBObject updated = new BasicDBObject().append("$set", 
+                new BasicDBObject().append("estado", Estado.CAMINO.toString()));
+        objCon.coleccionPaquete.update(buscado, updated);
+        }
+        
+    
+//    public String obtenerCedula(String codigo){
+//        ArrayList<Paquete> listapaq = new ArrayList<Paquete>();
+//        String cedula;
+//        ConexionBD objCon = new ConexionBD();
+//    
+//    }
 }

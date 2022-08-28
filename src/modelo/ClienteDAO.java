@@ -96,5 +96,22 @@ public class ClienteDAO {
         return objCon.coleccionCliente.findOne(findQuery,findPackage);
     }
     
+    public Cliente obtenerCliente (String usuario){
+        ArrayList<Cliente> listacliente = new ArrayList<Cliente>();
+        Cliente c1;
+        ConexionBD objCon = new ConexionBD();
+        BasicDBObject buscado = new BasicDBObject("usuarioC",usuario);
+        DBCursor cursor = objCon.coleccionCliente.find(buscado);
+        while(cursor.hasNext()){
+            c1 = new Cliente((String)cursor.next().get("nombreC"),(String)cursor.curr().get("apellidoC"),
+            (String)cursor.curr().get("usuarioC"),(String)cursor.curr().get("claveC"),
+            (String)cursor.curr().get("ciudadC"),(String)cursor.curr().get("direccionC"),
+            (String)cursor.curr().get("nCedulaC"),(String)cursor.curr().get("celularC"));
+            
+            listacliente.add(0,c1);
+        }
+        return listacliente.get(0);
+    }
+    
     }
 
