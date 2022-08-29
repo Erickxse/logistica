@@ -7,7 +7,7 @@ import java.awt.event.KeyListener;
 import javax.swing.JOptionPane;
 import modelo.Empleado;
 import modelo.EmpleadoDAO;
-import modelo.Estado;
+import modelo.EnumEstado;
 import modelo.Paquete;
 import modelo.PaqueteDAO;
 import modelo.Precio;
@@ -18,7 +18,7 @@ import vista.FrmIngresoE;
 import vista.FrmInicio;
 import vista.FrmInterfazEmpleado;
 
-public class ControladorIngresoE implements ActionListener, KeyListener{
+public class ControladorIngresoE implements ActionListener{
     FrmIngresoE objVistaIngresoE = new FrmIngresoE();
     FrmInicio objVistaInicio= new FrmInicio();
     FrmInterfazEmpleado objVistaEmpleadoP = new FrmInterfazEmpleado();
@@ -117,7 +117,7 @@ public class ControladorIngresoE implements ActionListener, KeyListener{
     
             
             Paquete objPaquete = new Paquete(emisorU, receptorU, codigoP, pesoP, ciudad1,
-                    ciudad2, direccion1, direccion2, precioP, Estado.BODEGA.toString());
+                    ciudad2, direccion1, direccion2, precioP, EnumEstado.BODEGA.toString());
             
             objEmpleadoDAO.ObtenerNombre(objVistaEmpleadoP.jLcodigoEmpset.getText());
             objEmpleadoDAO.insertarPaquete(objPaquete);
@@ -149,7 +149,7 @@ public class ControladorIngresoE implements ActionListener, KeyListener{
             double precioP = pesoP*Precio.PRECIO;
             
             Paquete objPaquete = new Paquete(emisorU, receptorU, codigoP, pesoP, ciudad1,
-            ciudad2, direccion1, direccion2, precioP, Estado.CAMINO.toString());
+            ciudad2, direccion1, direccion2, precioP, EnumEstado.CAMINO.toString());
             
            objTransporteDAO.obtenerCodigoT(objVistaEnviarP.txtCodigoV.getText());
            objTransporteDAO.insertarPaquete(objPaquete);
@@ -164,22 +164,6 @@ public class ControladorIngresoE implements ActionListener, KeyListener{
         
         
     }
-
-    @Override
-    public void keyTyped(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
     public void limpiarElementos(){
     objVistaIngresoE.txtCodigoEmpleado.setText("");
     objVistaIngresoE.jPwClaveE.setText("");

@@ -5,6 +5,6 @@ package modelo;
  *
  * @author SR. MORA
  */
-public enum Estado {
+public enum EnumEstado {
     CLIENTE, BODEGA, CAMINO, RETIRADO
 }

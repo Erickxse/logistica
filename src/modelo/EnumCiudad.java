@@ -1,6 +1,6 @@
 package modelo;
 
-public enum Ciudad {
+public enum EnumCiudad {
     TULCAN, IBARRA, QUITO, STO_DOMINGO, LATACUNGA, LOJA, AMBATO, RIOBAMBA, GUARANDA, 
     CUENCA, AZOGUES, GUAYAQUIL, MACHALA, ESMERALDAS, MANTA, TENA
 }

@@ -7,13 +7,13 @@ import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import modelo.EmpleadoDAO;
-import modelo.Ciudad;
+import modelo.EnumCiudad;
 import modelo.Empleado;
 import modelo.GerenteDAO;
 import vista.FrmInterfazGerencia;
 import vista.FrmRegistrarE;
 
-public class ControladorRegistroE implements ActionListener, KeyListener{
+public class ControladorRegistroE implements ActionListener{
 
         FrmRegistrarE objVistaRegistroE = new FrmRegistrarE();
         FrmInterfazGerencia objVistaInterfazG = new FrmInterfazGerencia();
@@ -31,22 +31,22 @@ public class ControladorRegistroE implements ActionListener, KeyListener{
             objVistaRegistroE.btnRegresar.addActionListener(this);
             
             //combo box
-            objVistaRegistroE.cmbCiudadE.addItem(Ciudad.AMBATO.name());
-            objVistaRegistroE.cmbCiudadE.addItem(Ciudad.AZOGUES.name());
-            objVistaRegistroE.cmbCiudadE.addItem(Ciudad.CUENCA.name());
-            objVistaRegistroE.cmbCiudadE.addItem(Ciudad.ESMERALDAS.name());
-            objVistaRegistroE.cmbCiudadE.addItem(Ciudad.GUARANDA.name());
-            objVistaRegistroE.cmbCiudadE.addItem(Ciudad.GUAYAQUIL.name());
-            objVistaRegistroE.cmbCiudadE.addItem(Ciudad.IBARRA.name());
-            objVistaRegistroE.cmbCiudadE.addItem(Ciudad.LATACUNGA.name());
-            objVistaRegistroE.cmbCiudadE.addItem(Ciudad.LOJA.name());
-            objVistaRegistroE.cmbCiudadE.addItem(Ciudad.MACHALA.name());
-            objVistaRegistroE.cmbCiudadE.addItem(Ciudad.MANTA.name());
-            objVistaRegistroE.cmbCiudadE.addItem(Ciudad.QUITO.name());
-            objVistaRegistroE.cmbCiudadE.addItem(Ciudad.RIOBAMBA.name());
-            objVistaRegistroE.cmbCiudadE.addItem(Ciudad.STO_DOMINGO.name());
-            objVistaRegistroE.cmbCiudadE.addItem(Ciudad.TENA.name());
-            objVistaRegistroE.cmbCiudadE.addItem(Ciudad.TULCAN.name());
+            objVistaRegistroE.cmbCiudadE.addItem(EnumCiudad.AMBATO.name());
+            objVistaRegistroE.cmbCiudadE.addItem(EnumCiudad.AZOGUES.name());
+            objVistaRegistroE.cmbCiudadE.addItem(EnumCiudad.CUENCA.name());
+            objVistaRegistroE.cmbCiudadE.addItem(EnumCiudad.ESMERALDAS.name());
+            objVistaRegistroE.cmbCiudadE.addItem(EnumCiudad.GUARANDA.name());
+            objVistaRegistroE.cmbCiudadE.addItem(EnumCiudad.GUAYAQUIL.name());
+            objVistaRegistroE.cmbCiudadE.addItem(EnumCiudad.IBARRA.name());
+            objVistaRegistroE.cmbCiudadE.addItem(EnumCiudad.LATACUNGA.name());
+            objVistaRegistroE.cmbCiudadE.addItem(EnumCiudad.LOJA.name());
+            objVistaRegistroE.cmbCiudadE.addItem(EnumCiudad.MACHALA.name());
+            objVistaRegistroE.cmbCiudadE.addItem(EnumCiudad.MANTA.name());
+            objVistaRegistroE.cmbCiudadE.addItem(EnumCiudad.QUITO.name());
+            objVistaRegistroE.cmbCiudadE.addItem(EnumCiudad.RIOBAMBA.name());
+            objVistaRegistroE.cmbCiudadE.addItem(EnumCiudad.STO_DOMINGO.name());
+            objVistaRegistroE.cmbCiudadE.addItem(EnumCiudad.TENA.name());
+            objVistaRegistroE.cmbCiudadE.addItem(EnumCiudad.TULCAN.name());
     }
     
     
@@ -81,23 +81,6 @@ public class ControladorRegistroE implements ActionListener, KeyListener{
             limpiarElementos();
         }
     }
-
-    @Override
-    public void keyTyped(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
-    
     public void limpiarElementos(){
     objVistaRegistroE.txtNombre.setText("");
     objVistaRegistroE.txtApellido.setText("");

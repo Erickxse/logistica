@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import modelo.Ciudad;
+import modelo.EnumCiudad;
 import modelo.Cliente;
 import modelo.ClienteDAO;
-import modelo.Estado;
+import modelo.EnumEstado;
 import modelo.Paquete;
 import modelo.PaqueteDAO;
 import modelo.Precio;
@@ -28,7 +28,7 @@ import vista.FrmRegistroPaquete;
 
     
 
-public class ControladorIngresoC implements ActionListener, KeyListener{
+public class ControladorIngresoC implements ActionListener{
     FrmInicio objVistaInicio = new FrmInicio();
     FrmIngresoC objVistaIngresoC = new FrmIngresoC();
     FrmInterfazCliente objVistaInterfazC = new FrmInterfazCliente();
@@ -60,7 +60,6 @@ public class ControladorIngresoC implements ActionListener, KeyListener{
         objVistaRegistroP.btnCerrar.addActionListener(this);
         objVistaInterfazC.btnVerRecibos.addActionListener(this);
         objVistaRecibo.btnBuscarCodigo.addActionListener(this);
-        objVistaRecibo.btnMostrarTodo.addActionListener(this);
         objVistaRecibo.btnRegresar.addActionListener(this);
         objVistaRecibo.btnBorrarElementos.addActionListener(this);
         
@@ -68,41 +67,41 @@ public class ControladorIngresoC implements ActionListener, KeyListener{
 
         
         //CIUDAD 1
-        objVistaRegistroP.cmbCiudad1.addItem(Ciudad.AMBATO.name());
-        objVistaRegistroP.cmbCiudad1.addItem(Ciudad.AZOGUES.name());
-        objVistaRegistroP.cmbCiudad1.addItem(Ciudad.CUENCA.name());
-        objVistaRegistroP.cmbCiudad1.addItem(Ciudad.ESMERALDAS.name());
-        objVistaRegistroP.cmbCiudad1.addItem(Ciudad.GUARANDA.name());
-        objVistaRegistroP.cmbCiudad1.addItem(Ciudad.GUAYAQUIL.name());
-        objVistaRegistroP.cmbCiudad1.addItem(Ciudad.IBARRA.name());
-        objVistaRegistroP.cmbCiudad1.addItem(Ciudad.LATACUNGA.name());
-        objVistaRegistroP.cmbCiudad1.addItem(Ciudad.LOJA.name());
-        objVistaRegistroP.cmbCiudad1.addItem(Ciudad.MACHALA.name());
-        objVistaRegistroP.cmbCiudad1.addItem(Ciudad.MANTA.name());
-        objVistaRegistroP.cmbCiudad1.addItem(Ciudad.QUITO.name());
-        objVistaRegistroP.cmbCiudad1.addItem(Ciudad.RIOBAMBA.name());
-        objVistaRegistroP.cmbCiudad1.addItem(Ciudad.STO_DOMINGO.name());
-        objVistaRegistroP.cmbCiudad1.addItem(Ciudad.TENA.name());
-        objVistaRegistroP.cmbCiudad1.addItem(Ciudad.TULCAN.name());
+        objVistaRegistroP.cmbCiudad1.addItem(EnumCiudad.AMBATO.name());
+        objVistaRegistroP.cmbCiudad1.addItem(EnumCiudad.AZOGUES.name());
+        objVistaRegistroP.cmbCiudad1.addItem(EnumCiudad.CUENCA.name());
+        objVistaRegistroP.cmbCiudad1.addItem(EnumCiudad.ESMERALDAS.name());
+        objVistaRegistroP.cmbCiudad1.addItem(EnumCiudad.GUARANDA.name());
+        objVistaRegistroP.cmbCiudad1.addItem(EnumCiudad.GUAYAQUIL.name());
+        objVistaRegistroP.cmbCiudad1.addItem(EnumCiudad.IBARRA.name());
+        objVistaRegistroP.cmbCiudad1.addItem(EnumCiudad.LATACUNGA.name());
+        objVistaRegistroP.cmbCiudad1.addItem(EnumCiudad.LOJA.name());
+        objVistaRegistroP.cmbCiudad1.addItem(EnumCiudad.MACHALA.name());
+        objVistaRegistroP.cmbCiudad1.addItem(EnumCiudad.MANTA.name());
+        objVistaRegistroP.cmbCiudad1.addItem(EnumCiudad.QUITO.name());
+        objVistaRegistroP.cmbCiudad1.addItem(EnumCiudad.RIOBAMBA.name());
+        objVistaRegistroP.cmbCiudad1.addItem(EnumCiudad.STO_DOMINGO.name());
+        objVistaRegistroP.cmbCiudad1.addItem(EnumCiudad.TENA.name());
+        objVistaRegistroP.cmbCiudad1.addItem(EnumCiudad.TULCAN.name());
         
         //CIUDAD 2
         
-        objVistaRegistroP.cmbCiudad2.addItem(Ciudad.AMBATO.name());
-        objVistaRegistroP.cmbCiudad2.addItem(Ciudad.AZOGUES.name());
-        objVistaRegistroP.cmbCiudad2.addItem(Ciudad.CUENCA.name());
-        objVistaRegistroP.cmbCiudad2.addItem(Ciudad.ESMERALDAS.name());
-        objVistaRegistroP.cmbCiudad2.addItem(Ciudad.GUARANDA.name());
-        objVistaRegistroP.cmbCiudad2.addItem(Ciudad.GUAYAQUIL.name());
-        objVistaRegistroP.cmbCiudad2.addItem(Ciudad.IBARRA.name());
-        objVistaRegistroP.cmbCiudad2.addItem(Ciudad.LATACUNGA.name());
-        objVistaRegistroP.cmbCiudad2.addItem(Ciudad.LOJA.name());
-        objVistaRegistroP.cmbCiudad2.addItem(Ciudad.MACHALA.name());
-        objVistaRegistroP.cmbCiudad2.addItem(Ciudad.MANTA.name());
-        objVistaRegistroP.cmbCiudad2.addItem(Ciudad.QUITO.name());
-        objVistaRegistroP.cmbCiudad2.addItem(Ciudad.RIOBAMBA.name());
-        objVistaRegistroP.cmbCiudad2.addItem(Ciudad.STO_DOMINGO.name());
-        objVistaRegistroP.cmbCiudad2.addItem(Ciudad.TENA.name());
-        objVistaRegistroP.cmbCiudad2.addItem(Ciudad.TULCAN.name());
+        objVistaRegistroP.cmbCiudad2.addItem(EnumCiudad.AMBATO.name());
+        objVistaRegistroP.cmbCiudad2.addItem(EnumCiudad.AZOGUES.name());
+        objVistaRegistroP.cmbCiudad2.addItem(EnumCiudad.CUENCA.name());
+        objVistaRegistroP.cmbCiudad2.addItem(EnumCiudad.ESMERALDAS.name());
+        objVistaRegistroP.cmbCiudad2.addItem(EnumCiudad.GUARANDA.name());
+        objVistaRegistroP.cmbCiudad2.addItem(EnumCiudad.GUAYAQUIL.name());
+        objVistaRegistroP.cmbCiudad2.addItem(EnumCiudad.IBARRA.name());
+        objVistaRegistroP.cmbCiudad2.addItem(EnumCiudad.LATACUNGA.name());
+        objVistaRegistroP.cmbCiudad2.addItem(EnumCiudad.LOJA.name());
+        objVistaRegistroP.cmbCiudad2.addItem(EnumCiudad.MACHALA.name());
+        objVistaRegistroP.cmbCiudad2.addItem(EnumCiudad.MANTA.name());
+        objVistaRegistroP.cmbCiudad2.addItem(EnumCiudad.QUITO.name());
+        objVistaRegistroP.cmbCiudad2.addItem(EnumCiudad.RIOBAMBA.name());
+        objVistaRegistroP.cmbCiudad2.addItem(EnumCiudad.STO_DOMINGO.name());
+        objVistaRegistroP.cmbCiudad2.addItem(EnumCiudad.TENA.name());
+        objVistaRegistroP.cmbCiudad2.addItem(EnumCiudad.TULCAN.name());
     }
     //ABSTRACT METODS
     
@@ -172,7 +171,7 @@ public class ControladorIngresoC implements ActionListener, KeyListener{
             double precioP = pesoP*Precio.PRECIO;
                 System.out.println("Precio Final: "+precioP);
             Paquete objPaquete = new Paquete(emisorU, receptorU, codigoP, pesoP, ciudad1,
-            ciudad2, direccion1, direccion2, precioP, Estado.CLIENTE.toString());
+            ciudad2, direccion1, direccion2, precioP, EnumEstado.CLIENTE.toString());
             objPaqueteDAO.insertarPaquete(objPaquete);
             objClienteDAO.ObtenerNombre(objVistaInterfazC.jLnombreSet.getText());
             objClienteDAO.insertarPaqueteC(objPaquete);
@@ -196,11 +195,12 @@ public class ControladorIngresoC implements ActionListener, KeyListener{
                 if(!texto.equals("")&&!texto.equals(null)){
                     System.out.println("INGRESO");
                 pq = objPaqueteDAO.obtenerPaquete(texto);
-                String vector[] = new String[4];
+                String vector[] = new String[5];
                 vector[0]=pq.getCodigoP();
                 vector[1]=pq.getCiudadP1();
                 vector[2]=pq.getCiudadP2();
                 vector[3]=String.valueOf(pq.getpFinal());
+                vector[4]=pq.getEstado();
                 modelo.addRow(vector);
                 }
                     
@@ -224,30 +224,11 @@ public class ControladorIngresoC implements ActionListener, KeyListener{
                 objVistaInterfazC.txtCodigoRetiro.setText("");
             }
             
-            if(e.getSource()==objVistaRecibo.btnMostrarTodo){
-                //mostrar todo
-            }
             if(e.getSource()==objVistaRecibo.btnBorrarElementos){
                 //BORRAR
             }
     }
-    
-    
-    @Override
-    public void keyTyped(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
-    @Override
-    public void keyPressed(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
     public void limpiarElementos(){
     objVistaIngresoC.txtUsuarioC.setText("");
     objVistaIngresoC.jPwClaveC.setText("");

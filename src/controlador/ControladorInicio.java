@@ -12,7 +12,7 @@ import vista.FrmInicio;
 import vista.FrmInterfazEmpleado;
 import vista.FrmRegistroCliente;
 
-public class ControladorInicio implements ActionListener, KeyListener {
+public class ControladorInicio implements ActionListener{
 
     
 
@@ -77,22 +77,4 @@ public class ControladorInicio implements ActionListener, KeyListener {
             System.exit(0);
         }
     }
-
-    @Override
-    public void keyTyped(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
-    
-    
 }

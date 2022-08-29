@@ -60,4 +60,11 @@ public class TransporteDAO {
         DBObject updateQuery = new BasicDBObject("$push",listapaque);
         objCon.coleccionTransporte.update(findQuery, updateQuery);
     }
+    
+    public void eliminarTransporte(String nunidad){
+        ConexionBD objCon = new ConexionBD();
+        BasicDBObject documento = new BasicDBObject();
+        documento.put("nUnidad", nunidad);
+        objCon.coleccionTransporte.remove(documento);
+    }
 }

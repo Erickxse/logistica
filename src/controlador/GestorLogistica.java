@@ -6,6 +6,8 @@ import modelo.GerenteDAO;
 import modelo.Paquete;
 import modelo.PaqueteDAO;
 import modelo.TransporteDAO;
+import vista.FrmBorrarEmpleado;
+import vista.FrmBorrarTransporte;
 import vista.FrmEnviarP;
 import vista.FrmGerencia;
 import vista.FrmIngresarPaquete;
@@ -49,6 +51,8 @@ public class GestorLogistica {
             FrmInterfazTransporte itransporte = new FrmInterfazTransporte();
             FrmInicioTransporte initransporte = new FrmInicioTransporte();
             FrmRecibo reciboA = new FrmRecibo();
+            FrmBorrarEmpleado borrarE = new FrmBorrarEmpleado();
+            FrmBorrarTransporte borrarT = new FrmBorrarTransporte();
             
             //ENVIAR
             
@@ -68,7 +72,8 @@ public class GestorLogistica {
             ControladorRegistroE registroEmpleado = new ControladorRegistroE(regE, interfazG, objEmpleadoDAO);
             ControladorIngresoE ingresoEControlador = new ControladorIngresoE(ingresoE, in, continuarE, ingresarP);           
             ControladorGerencia gerenciaCont = new ControladorGerencia(gerencia, in, interfazG);
-            ControladorInterfazGerencia interfazGerencia = new ControladorInterfazGerencia(interfazG, gerencia, regE, transporte);
+            ControladorInterfazGerencia interfazGerencia = new ControladorInterfazGerencia(interfazG, gerencia, regE, transporte,
+            borrarE, borrarT);
 
             ControladorTransporte regTransporte = new ControladorTransporte(transporte, objTransporteDAO, interfazG, itransporte, initransporte, ingresoE);
 

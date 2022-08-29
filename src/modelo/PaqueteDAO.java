@@ -65,7 +65,7 @@ public class PaqueteDAO {
         ConexionBD objCon = new ConexionBD();
         DBObject buscado = new BasicDBObject("codigoP", codigo);
         DBObject updated = new BasicDBObject().append("$set", 
-                new BasicDBObject().append("estado", Estado.BODEGA.toString()));
+                new BasicDBObject().append("estado", EnumEstado.BODEGA.toString()));
         objCon.coleccionPaquete.update(buscado, updated);
         }
     
@@ -74,7 +74,7 @@ public class PaqueteDAO {
         ConexionBD objCon = new ConexionBD();
         DBObject buscado = new BasicDBObject("codigoP", codigo);
         DBObject updated = new BasicDBObject().append("$set", 
-                new BasicDBObject().append("estado", Estado.RETIRADO.toString()));
+                new BasicDBObject().append("estado", EnumEstado.RETIRADO.toString()));
         objCon.coleccionPaquete.update(buscado, updated);
         }
     
@@ -83,7 +83,7 @@ public class PaqueteDAO {
         ConexionBD objCon = new ConexionBD();
         DBObject buscado = new BasicDBObject("codigoP", codigo);
         DBObject updated = new BasicDBObject().append("$set", 
-                new BasicDBObject().append("estado", Estado.CAMINO.toString()));
+                new BasicDBObject().append("estado", EnumEstado.CAMINO.toString()));
         objCon.coleccionPaquete.update(buscado, updated);
         }
         

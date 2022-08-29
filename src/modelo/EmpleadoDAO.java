@@ -94,7 +94,14 @@ public class EmpleadoDAO {
             objCon.coleccionEmpleado.update(findQuery, updateQuery);
     }
     
-    
+    public void eliminarEmpleado(String codigo){
+       
+        ConexionBD objCon = new ConexionBD();
+        BasicDBObject documento = new BasicDBObject();
+        documento.put("codigoE", codigo);
+        objCon.coleccionEmpleado.remove(documento);
+            
+    }
    }
 
     

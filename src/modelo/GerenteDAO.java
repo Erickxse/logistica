@@ -65,4 +65,18 @@ public class GerenteDAO {
         DBObject updateQuery = new BasicDBObject("$push",listaempleado);
         objCon.coleccionGerente.update(findQuery, updateQuery);
     }
+    
+    public Gerente obtenerGerente(String codigo){
+    ArrayList<Gerente> listagerente = new ArrayList<Gerente>();
+    Gerente g1;
+    ConexionBD objCon = new ConexionBD();
+    BasicDBObject buscado = new BasicDBObject("codeGerente",codigo);
+    DBCursor cursor = objCon.coleccionGerente.find(buscado);
+    while(cursor.hasNext()){
+    g1 = new Gerente((String)cursor.next().get("codeGerente"),
+            (String)cursor.curr().get("sucursal"));
+    listagerente.add(0,g1);
+    }
+    return listagerente.get(0);
+    }
 }

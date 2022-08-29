@@ -6,7 +6,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
-import modelo.Ciudad;
+import modelo.EnumCiudad;
 import modelo.Cliente;
 import modelo.ClienteDAO;
 import modelo.Paquete;
@@ -14,7 +14,7 @@ import vista.FrmInicio;
 import vista.FrmRegistroCliente;
 
 
-public class ControladorRegistroC implements ActionListener, KeyListener{
+public class ControladorRegistroC implements ActionListener{
     
     FrmRegistroCliente objVistaRegistroC = new FrmRegistroCliente();
     FrmInicio objVistaInicio = new FrmInicio();
@@ -32,22 +32,22 @@ public class ControladorRegistroC implements ActionListener, KeyListener{
         objVistaRegistroC.btnRegistrarC.addActionListener(this);
         
         //combo box
-        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.AMBATO.name());
-        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.AZOGUES.name());
-        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.CUENCA.name());
-        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.ESMERALDAS.name());
-        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.GUARANDA.name());
-        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.GUAYAQUIL.name());
-        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.IBARRA.name());
-        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.LATACUNGA.name());
-        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.LOJA.name());
-        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.MACHALA.name());
-        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.MANTA.name());
-        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.QUITO.name());
-        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.RIOBAMBA.name());
-        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.STO_DOMINGO.name());
-        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.TENA.name());
-        objVistaRegistroC.cmbCiudadC.addItem(Ciudad.TULCAN.name());
+        objVistaRegistroC.cmbCiudadC.addItem(EnumCiudad.AMBATO.name());
+        objVistaRegistroC.cmbCiudadC.addItem(EnumCiudad.AZOGUES.name());
+        objVistaRegistroC.cmbCiudadC.addItem(EnumCiudad.CUENCA.name());
+        objVistaRegistroC.cmbCiudadC.addItem(EnumCiudad.ESMERALDAS.name());
+        objVistaRegistroC.cmbCiudadC.addItem(EnumCiudad.GUARANDA.name());
+        objVistaRegistroC.cmbCiudadC.addItem(EnumCiudad.GUAYAQUIL.name());
+        objVistaRegistroC.cmbCiudadC.addItem(EnumCiudad.IBARRA.name());
+        objVistaRegistroC.cmbCiudadC.addItem(EnumCiudad.LATACUNGA.name());
+        objVistaRegistroC.cmbCiudadC.addItem(EnumCiudad.LOJA.name());
+        objVistaRegistroC.cmbCiudadC.addItem(EnumCiudad.MACHALA.name());
+        objVistaRegistroC.cmbCiudadC.addItem(EnumCiudad.MANTA.name());
+        objVistaRegistroC.cmbCiudadC.addItem(EnumCiudad.QUITO.name());
+        objVistaRegistroC.cmbCiudadC.addItem(EnumCiudad.RIOBAMBA.name());
+        objVistaRegistroC.cmbCiudadC.addItem(EnumCiudad.STO_DOMINGO.name());
+        objVistaRegistroC.cmbCiudadC.addItem(EnumCiudad.TENA.name());
+        objVistaRegistroC.cmbCiudadC.addItem(EnumCiudad.TULCAN.name());
         
         //otros
          //listapVacia.add(pVacio);
@@ -86,22 +86,6 @@ public class ControladorRegistroC implements ActionListener, KeyListener{
         
         
     }
-
-    @Override
-    public void keyTyped(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-
-    @Override
-    public void keyReleased(KeyEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
     public void limpiarElementos(){
     objVistaRegistroC.txtNombre.setText("");
     objVistaRegistroC.txtApellido.setText("");
